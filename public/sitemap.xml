@@ -2,17 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://theoreticles.netlify.app/posts/reductions/</loc>
-    <lastmod>2022-12-03T11:51:18+05:30</lastmod>
+    <loc>https://theoreticles.netlify.app/categories/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/categories/experiences/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
     <loc>https://theoreticles.netlify.app/posts/</loc>
-    <lastmod>2022-12-03T11:51:18+05:30</lastmod>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/</loc>
-    <lastmod>2022-12-03T11:51:18+05:30</lastmod>
-  </url><url>
-    <loc>https://theoreticles.netlify.app/categories/</loc>
+    <loc>https://theoreticles.netlify.app/posts/qtml/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
     <loc>https://theoreticles.netlify.app/tags/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/tags/travel/</loc>
+    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/posts/reductions/</loc>
+    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/categories/pedagogy/</loc>
+    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/tags/reductions/</loc>
+    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoreticles.netlify.app/tags/tcs/</loc>
+    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
   </url>
 </urlset>

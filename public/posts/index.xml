@@ -10,11 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 11:51:18 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Nov 2022 19:47:31 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QTML 2022</title>
+      <link>https://theoreticles.netlify.app/posts/qtml/</link>
+      <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
+      
+      <guid>https://theoreticles.netlify.app/posts/qtml/</guid>
+      <description>QTML 2022 Once thought to be niche curiosity, the field of QML is growing at an astounding pace. QTML or &amp;lsquo;&amp;lsquo;Quantum Techniques in Machine Learning&amp;rsquo;&amp;rsquo; is an annual conference that caters to its eponymous field. The conference describes itself as &amp;lsquo;focused on the interplay between machine learning and quantum physics.&amp;rsquo;
+This year was the sixth iteration of the conference having been hosted earlier in Verona (Italy), Durban (South Africa), and Daejeon (South Korea), with a couple of online fixtures due to the pandemic.</description>
+    </item>
+    
     <item>
       <title>An Introduction to Reductions</title>
       <link>https://theoreticles.netlify.app/posts/reductions/</link>
-      <pubDate>Sat, 03 Dec 2022 11:51:18 +0530</pubDate>
+      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
       
       <guid>https://theoreticles.netlify.app/posts/reductions/</guid>
       <description>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability is also assumed. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.

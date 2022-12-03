@@ -40,7 +40,7 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: true
   showtoc: true
@@ -63,13 +63,13 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
+    enabled: true # needs to be explicitly set
     title: Theoreticles
-    subtitle: "This is a collection of my thoughts"
-    # imageUrl: "<img location>"
-    # imageWidth: 120
-    # imageHeight: 120
-    # imageTitle: my image
+    subtitle: "This is a collection of essays and posts on various topics in Theoretical CS."
+    imageUrl: "dp.jpg"
+    imageWidth: 400
+    imageHeight: 400
+    imageTitle: my image
     buttons:
       - name: Posts
         url: posts
@@ -109,6 +109,9 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+taxonomies:
+  tag: tags
+  category: categories
 menu:
   main:
     - identifier: categories
