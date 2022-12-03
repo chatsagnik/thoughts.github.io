@@ -1,6 +1,6 @@
 ---
 title: "An Introduction to Reductions"
-date: 2022-12-03T11:51:18+05:30
+date: 2022-07-17T11:51:18+05:30
 draft: false
 ---
 

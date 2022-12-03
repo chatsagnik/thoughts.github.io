@@ -63,7 +63,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: false # needs to be explicitly set
     title: Theoreticles
     subtitle: "This is a collection of my thoughts"
     # imageUrl: "<img location>"
@@ -77,9 +77,9 @@ params:
         url: tags
 
   # home-info mode
-  # homeInfoParams:
-  #   Title: "Hi there \U0001F44B"
-  #   Content: Welcome to my blog
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to Theoreticles!
 
   socialIcons:
     - name: twitter
