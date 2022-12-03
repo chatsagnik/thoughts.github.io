@@ -42,8 +42,8 @@ params:
   disableScrollToTop: false
   comments: false
   hidemeta: false
-  hideSummary: false
-  showtoc: false
+  hideSummary: true
+  showtoc: true
   tocopen: false
 
   assets:
@@ -62,13 +62,13 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    enabled: true # needs to be explicitly set
+    title: Theoreticles
+    subtitle: "This is a collection of my thoughts"
+    # imageUrl: "<img location>"
+    # imageWidth: 120
+    # imageHeight: 120
+    # imageTitle: my image
     buttons:
       - name: Posts
         url: posts
@@ -82,11 +82,11 @@ params:
 
   socialIcons:
     - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+      url: "https://twitter.com/chatsagnik"
+    # - name: stackoverflow
+    #   url: "https://stackoverflow.com"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/chatsagnik"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -118,9 +118,9 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: home
+      name: chatsagnik
+      url: https://chatsagnik.github.io
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
