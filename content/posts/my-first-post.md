@@ -10,4 +10,8 @@ This is **bold** text, and this is _emphasized_ text.
 
 Added new stuff to see changes.
 
+1. Make changes here.
+2. Run hugo command in terminal.
+3. Commit and push changes.
+
 Visit the [Hugo](https://gohugo.io) website!

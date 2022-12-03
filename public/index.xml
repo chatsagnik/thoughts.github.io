@@ -19,7 +19,7 @@
       <guid>https://theoreticles.netlify.app/posts/my-first-post/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Added new stuff to see changes.
-Visit the Hugo website!</description>
+Make changes here. Run hugo command in terminal. Commit and push changes. Visit the Hugo website!</description>
     </item>
     
   </channel>
