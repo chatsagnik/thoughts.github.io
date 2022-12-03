@@ -10,61 +10,131 @@ categories: [experiences]
 
 Once thought to be niche curiosity, the field of QML is growing at an astounding pace. QTML or ''Quantum Techniques in Machine Learning'' is an annual conference that caters to its eponymous field. The conference describes itself as 'focused on the interplay between machine learning and quantum physics.'
 
-This year was the sixth iteration of the conference having been hosted earlier in Verona (Italy), Durban (South Africa), and Daejeon (South Korea), with a couple of online fixtures due to the pandemic. The location for this year was at the Centro Congressi University of Naples Federico II in Naples, Italy, which is situated right on the coast across from the majestic Castel dell'Ovo ([Castle of the Egg](https://en.wikipedia.org/wiki/Castel_dell%27Ovo)). The conference lasted for 6 days (7th-12th of November), with pre-conference and post-conference events and workshops.
+This year was the sixth iteration of the conference having been hosted earlier in Verona (Italy), Durban (South Africa), and Daejeon (South Korea), with a couple of online fixtures due to the pandemic. The location for this year was at the Centro Congressi University of Naples Federico II in Naples, Italy, which is situated right on the coast across from the majestic Castel dell'Ovo ([Castle of the Egg](https://en.wikipedia.org/wiki/Castel_dell%27Ovo)). The conference lasted for 6 days (7th-12th of November), with pre-conference and post-conference events and workshops. Our paper on "Quantum Boosting using Domain-Partitioning Hypotheses" ([see preprint here](https://arxiv.org/abs/2110.12793)) was selected for a short talk.
+
+![Talk](/posts/qtml/talk.jpg)
 
 > > “Rome is stately and impressive; Florence is all beauty and enchantment; Genoa is picturesque; Venice is a dream city; but Naples is simply — fascinating.” ~ Lilian Whiting
 
 Before we go on, enjoy a few pics in and around the conference venue!
 
-|                                     |
-| ----------------------------------- |
-| ![Naples1](/posts/qtml/naples1.jpg) |
-| View from the breakroom 1           |
-| ![Naples2](/posts/qtml/naples2.jpg) |
-| View from the breakroom 2           |
-| ![Naples2](/posts/qtml/naples3.jpg) |
-| Me in front of Castel dell'Ovo      |
-| ![Naples2](/posts/qtml/naples4.jpg) |
-| The Conference Hall                 |
+|                                     |                                     |
+| ----------------------------------- | ----------------------------------- |
+| ![Naples1](/posts/qtml/naples1.jpg) | ![Naples2](/posts/qtml/naples2.jpg) |
+| View from the breakroom 1           | View from the breakroom 2           |
+| ![Naples2](/posts/qtml/naples3.jpg) | ![Naples2](/posts/qtml/naples4.jpg) |
+| Me in front of Castel dell'Ovo      | The Conference Hall                 |
 
 _The conference is happening at CERN next year!_
 
 There were about a 100 attendees with participants mainly from Europe, some small groups from the US, South Africa, South Korea, and one Indian (me!). There was a good mix of industry (companies like Zapata, Xanadu, QuNova had sent in talks and representatives) and academia (with faculty, postdocs, PhDs, and a couple of undergrads). I was very excited to connect with a lot of QML folks, most of whom I had only stalked on arXiv thus far.
 
-## Covering the Conference via Tweets
+# QTML in Tweets
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Peter Wittek session is underway at <a href="https://twitter.com/hashtag/qtml?src=hash&amp;ref_src=twsrc%5Etfw">#qtml</a> 2022, after Seth Lloyd&#39;s overview of quantum machine learning. <a href="https://t.co/SRK65pmi1t">pic.twitter.com/SRK65pmi1t</a></p>&mdash; Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1589927555595145217?ref_src=twsrc%5Etfw">November 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+## The Peter Wittek Session: Seth Lloyd on QML
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A fascinating theoretical perspective into hardness results on explainability and reliability by <a href="https://twitter.com/GittaKutyniok?ref_src=twsrc%5Etfw">@GittaKutyniok</a> at QTML2022 <a href="https://twitter.com/hashtag/qtml2022?src=hash&amp;ref_src=twsrc%5Etfw">#qtml2022</a>. <a href="https://t.co/7oTkpo6Odf">pic.twitter.com/7oTkpo6Odf</a></p>&mdash; Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1589949245867819014?ref_src=twsrc%5Etfw">November 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> The Peter Wittek session is underway at [#qtml](https://twitter.com/hashtag/qtml?src=hash&ref_src=twsrc%5Etfw) 2022, after Seth Lloyd's overview of quantum machine learning. [pic.twitter.com/SRK65pmi1t](https://t.co/SRK65pmi1t)
+>
+> — Sagnik Chatterjee (@chatsagnik) [November 8, 2022](https://twitter.com/chatsagnik/status/1589927555595145217?ref_src=twsrc%5Etfw)
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today&#39;s illuminating keynote speech by <a href="https://twitter.com/JacobBiamonte?ref_src=twsrc%5Etfw">@JacobBiamonte</a> at QTML on a host of topics related to variational quantum algorithms. <a href="https://t.co/j6MAEXnI3l">pic.twitter.com/j6MAEXnI3l</a></p>&mdash; Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1590303738719531010?ref_src=twsrc%5Etfw">November 9, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+## Gitta Kutyniok's keynote talk
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fereshte Mozafari talks about an alternative way for Quantum State Preparation at <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> 2022 today. <a href="https://t.co/Ru5MsrXpXd">pic.twitter.com/Ru5MsrXpXd</a></p>&mdash; Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1590637060549128192?ref_src=twsrc%5Etfw">November 10, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> A fascinating theoretical perspective into hardness results on explainability and reliability by [@GittaKutyniok](https://twitter.com/GittaKutyniok?ref_src=twsrc%5Etfw) at QTML2022 [#qtml2022](https://twitter.com/hashtag/qtml2022?src=hash&ref_src=twsrc%5Etfw). [pic.twitter.com/7oTkpo6Odf](https://t.co/7oTkpo6Odf)
+>
+> — Sagnik Chatterjee (@chatsagnik) [November 8, 2022](https://twitter.com/chatsagnik/status/1589949245867819014?ref_src=twsrc%5Etfw)
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today&#39;s QTML personal highlights so far.<br>1. <a href="https://twitter.com/QuantumManuel?ref_src=twsrc%5Etfw">@QuantumManuel</a>&#39;s talk on how classical Tensor networks can be useful to simulate shallow quantum circuits.<br>2. <a href="https://twitter.com/MartinLaroo?ref_src=twsrc%5Etfw">@MartinLaroo</a> on group-invariant QML motivated by geometric DL.<br><br>I have a talk later in the day so feel free to catch up! <a href="https://t.co/Dgut1Vmxqk">pic.twitter.com/Dgut1Vmxqk</a></p>&mdash; Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1591020029436649473?ref_src=twsrc%5Etfw">November 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+## Jacob Biamonte's keynote talk on VQA
 
-<!-- Who – This is where you can start to bring your personal experience of the event into the post. Who was there? How many people attended? Were they from industry, academia or both? Were any ‘big names’ present? -->
+> Today's illuminating keynote speech by [@JacobBiamonte](https://twitter.com/JacobBiamonte?ref_src=twsrc%5Etfw) at QTML on a host of topics related to variational quantum algorithms. [pic.twitter.com/j6MAEXnI3l](https://t.co/j6MAEXnI3l)
+>
+> — Sagnik Chatterjee (@chatsagnik) [November 9, 2022](https://twitter.com/chatsagnik/status/1590303738719531010?ref_src=twsrc%5Etfw)
 
-<!-- When – The dates are essential of course, but it can be worth mentioning how frequent the event is. If it only happens every two years it will clearly carry more impact than if it takes places every few months. -->
+> [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw) slides: "On parameterisation effects in training variational quantum circuits"  
+> Thanks to [@Alessdip](https://twitter.com/Alessdip?ref_src=twsrc%5Etfw) and other organisers. [https://t.co/LNio4y6LT7](https://t.co/LNio4y6LT7)
+>
+> — Jacob Biamonte (@JacobBiamonte) [November 10, 2022](https://twitter.com/JacobBiamonte/status/1590566837200519169?ref_src=twsrc%5Etfw)
 
-<!-- Why – Why is the event happening? What is the purpose of it? The conference organisers will usually have some sort of strapline, and if you can’t improve on that yourself then it’s acceptable to put it in quote marks and attribute it accordingly. -->
+## Quantum State Preparation by Fereshte Mozafari
 
-<!-- # Pre conference
+> Fereshte Mozafari talks about an alternative way for Quantum State Preparation at [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw) 2022 today. [pic.twitter.com/Ru5MsrXpXd](https://t.co/Ru5MsrXpXd)
+>
+> — Sagnik Chatterjee (@chatsagnik) [November 10, 2022](https://twitter.com/chatsagnik/status/1590637060549128192?ref_src=twsrc%5Etfw)
+
+## Quantum Recurrent Neural Networks by Michal Siemaszko
+
+> Michal Siemaszko from [@UniWarszawski](https://twitter.com/UniWarszawski?ref_src=twsrc%5Etfw) Warsaw (from [@StobinskaQCAT](https://twitter.com/StobinskaQCAT?ref_src=twsrc%5Etfw) group) presenting today at [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw) 2022 in Naples our work on quantum recurrent networks in collab w/ [@ESA_EO](https://twitter.com/ESA_EO?ref_src=twsrc%5Etfw) [#Philab](https://twitter.com/hashtag/Philab?src=hash&ref_src=twsrc%5Etfw) (visiting researcher spring 2022).
+>
+> Arxiv: [https://t.co/QIjTvPUFxE](https://t.co/QIjTvPUFxE)[#QC4EO](https://twitter.com/hashtag/QC4EO?src=hash&ref_src=twsrc%5Etfw) [pic.twitter.com/LrOUzrfSxN](https://t.co/LrOUzrfSxN)
+>
+> — Bertrand Le Saux (@blesa_ux) [November 9, 2022](https://twitter.com/blesa_ux/status/1590395028060663808?ref_src=twsrc%5Etfw)
+
+## Avoiding barren plateaus in VQAs by Antonio A. Mele
+
+> I am thrilled to have presented my talk today at [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw) 2022. It was my first scientific talk in front of so many people.  
+> You can find the slides on my website here: [https://t.co/EPMNKlWtxH](https://t.co/EPMNKlWtxH)
+>
+> — Antonio Anna Mele (@QuAntonioMele) [November 9, 2022](https://twitter.com/QuAntonioMele/status/1590317381624434689?ref_src=twsrc%5Etfw)
+
+## Talks by Quantinuum
+
+> My colleagues [@LuukCoopmans](https://twitter.com/LuukCoopmans?ref_src=twsrc%5Etfw) and [@Sam_Duffield](https://twitter.com/Sam_Duffield?ref_src=twsrc%5Etfw) will present their research at [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw) in Naples this week.
+>
+> 1️⃣ Thu: Predicting Gibbs State Expectation Values with Pure Thermal Shadows  
+> 2️⃣ Fri: Bayesian Learning of Parameterised Quantum Circuits
+>
+> If you're there, consider attending
+>
+> — Matthias Rosenkranz ✨ (@rosenkranz) [November 9, 2022](https://twitter.com/rosenkranz/status/1590312707852750850?ref_src=twsrc%5Etfw)
+
+## Final Day
+
+> Today's QTML personal highlights so far.  
+> 1\. [@QuantumManuel](https://twitter.com/QuantumManuel?ref_src=twsrc%5Etfw)'s talk on how classical Tensor networks can be useful to simulate shallow quantum circuits.  
+> 2\. [@MartinLaroo](https://twitter.com/MartinLaroo?ref_src=twsrc%5Etfw) on group-invariant QML motivated by geometric DL.
+>
+> I have a talk later in the day so feel free to catch up! [pic.twitter.com/Dgut1Vmxqk](https://t.co/Dgut1Vmxqk)
+>
+> — Sagnik Chatterjee (@chatsagnik) [November 11, 2022](https://twitter.com/chatsagnik/status/1591020029436649473?ref_src=twsrc%5Etfw)
+
+## The Quantum Software Workshop
+
+> At today's Workshop on [#QuantumSoftware](https://twitter.com/hashtag/QuantumSoftware?src=hash&ref_src=twsrc%5Etfw) (co-located with [#QTML](https://twitter.com/hashtag/QTML?src=hash&ref_src=twsrc%5Etfw)), [@QuantumMato](https://twitter.com/QuantumMato?ref_src=twsrc%5Etfw) presented our tools for [#QuantumComputing](https://twitter.com/hashtag/QuantumComputing?src=hash&ref_src=twsrc%5Etfw).👍🙂
+>
+> 👉Overview: [https://t.co/kxZPcaO8V1](https://t.co/kxZPcaO8V1)  
+> 👉Code/github: [https://t.co/uO7unDWbQh](https://t.co/uO7unDWbQh) [pic.twitter.com/KSIZTLPA4C](https://t.co/KSIZTLPA4C)
+>
+> — Robert Wille (@rbrtwll) [November 12, 2022](https://twitter.com/rbrtwll/status/1591528253415895041?ref_src=twsrc%5Etfw)
+
+# Pre conference
+
+If you have stuck around thus far, the rest of the blog contains stuff about my travel and experiences in Italy.
 
 ## VISA struggles
 
+The plight of COVID PhD's in terms of international travel is indescribable. Just getting your paper accepted at a conference is not enough anymore. You have to wait for all the threads of fate to align in order to be able to actually present the paper.
+
+Italy has a (very weird) residential constraint for VISA applications. You can only be serviced by a VFS centre which falls within your residential jurisdiction (i.e. your place of residence for the last 6 months). This makes the already daunting challenge of finding open slots at VFS centres nearly impossible to overcome. I got a slot for 21st October (purely by luck) at the Delhi centre after the usual shenanigans of clicking refresh multiple times a day. The visa itself was processed quite fast - it took less than 5 working days for me to receive the visa.
+
+Next came the challenge of trying to procure Euro bills for the journey. What should have been a pretty straightforward endeavour became another adventure through the dusty narrow corridors and dilapidated buildings of Nehru Place to find agencies which could arrange cash on short notice (by the time I received the visa I had less than a week till my flight to Rome.) The entire experience was extremely shady, but surprisingly everything turned alright.
+
 ## Getting there
 
-# The highlights of the conference
-
-## Workshop on statistical learning theory
-
-## The Poster Session
-
-## A few interesting papers
+I left for Rome on the night of 6th. Due to extremely short transit times (around 1.5 hrs) at Doha, I did not have the time to explore the airport much, but I managed to snag a pic with these two beauties.
+|||
+|---|---|
+|![Car](/posts/qtml/mclaren.jpg)|![Bike](/posts/qtml/bike.jpg)|
 
 # Post conference
 
-## Naples, Pompeii and Rome -->
+After the conference I had a couple of days in hand. I decided to sightsee in Naples, visit the ruins of Pompeii, and carried out a whirlwind checklist tour in Rome. Enjoy the pics!
+
+## Naples, Pompeii and Rome
+
+|                                           |                                                                                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![Food](/posts/qtml/italy-food.jpg)       | _Clockwise from top_: Caprese Salad, Cheese Sandwich with Chocolate Croissant and a double shot of espresso, Fish and Chips, Arancino, Seafood Risotto |
+| ![Pizza](/posts/qtml/pizza.jpg)           | Neopolitan Pizza Margherita                                                                                                                            |
+| ![Site](/posts/qtml/italy-siteseeing.jpg) | Various shots of Pompeii and Rome                                                                                                                      |
+| ![My pics](/posts/qtml/Various.jpg)       | Me in those places                                                                                                                                     |
 
 > > “Vedi Napoli e poi muori! — See Naples and die!”
