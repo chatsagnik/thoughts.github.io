@@ -15,3 +15,5 @@ Added new stuff to see changes.
 3. Commit and push changes.
 
 Visit the [Hugo](https://gohugo.io) website!
+
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
