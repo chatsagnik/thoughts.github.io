@@ -10,17 +10,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 10:56:54 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 11:51:18 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://theoreticles.netlify.app/posts/my-first-post/</link>
-      <pubDate>Sat, 03 Dec 2022 10:56:54 +0530</pubDate>
+      <title>An Introduction to Reductions</title>
+      <link>https://theoreticles.netlify.app/posts/reductions/</link>
+      <pubDate>Sat, 03 Dec 2022 11:51:18 +0530</pubDate>
       
-      <guid>https://theoreticles.netlify.app/posts/my-first-post/</guid>
-      <description>Introduction This is bold text, and this is emphasized text.
-Added new stuff to see changes.
-Make changes here. Run hugo command in terminal. Commit and push changes. Visit the Hugo website!
-$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</description>
+      <guid>https://theoreticles.netlify.app/posts/reductions/</guid>
+      <description>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability is also assumed. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.
+Introduction Why do we need reductions? From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &amp;lsquo;Eureka!&amp;rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.</description>
     </item>
     
   </channel>
