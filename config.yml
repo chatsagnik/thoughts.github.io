@@ -1,4 +1,4 @@
-baseURL: "http://example.org/"
+baseURL: "https://theoreticles.netlify.app/"
 languageCode: en-us
 title: Thoughts
 theme: "PaperMod"
@@ -9,11 +9,14 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: UA-123-45
-
 minify:
   disableXML: true
   minifyOutput: true
+
+build:
+  noJSConfigInAssets: false
+  useResourceCacheWhen: fallback
+  writeStats: false
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -84,14 +87,6 @@ params:
       url: "https://stackoverflow.com"
     - name: github
       url: "https://github.com/"
-
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data

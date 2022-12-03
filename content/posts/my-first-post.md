@@ -8,4 +8,6 @@ draft: false
 
 This is **bold** text, and this is _emphasized_ text.
 
+Added new stuff to see changes.
+
 Visit the [Hugo](https://gohugo.io) website!
