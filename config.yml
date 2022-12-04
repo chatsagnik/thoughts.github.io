@@ -18,11 +18,18 @@ build:
   useResourceCacheWhen: fallback
   writeStats: false
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Theoreticles
-  description: "ExampleSite description"
-  keywords: [Blog, Portfolio, PaperMod]
+  description: "A blog on Quantum Computing and Theoretical Computer Science"
+  keywords:
+    [Quantum, Computer Science, Machine Learning, Blog, Portfolio, PaperMod]
   author: Me
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
@@ -37,12 +44,12 @@ params:
   ShowCodeCopyButtons: false
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
+  UseHugoToc: false
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: true
   hidemeta: false
-  hideSummary: true
+  hideSummary: false
   showtoc: true
   tocopen: false
   math: true
@@ -65,7 +72,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Theoreticles
-    subtitle: "This is a collection of essays and posts on various topics in Theoretical CS."
+    subtitle: "A collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!"
     imageUrl: "dp.jpg"
     imageWidth: 400
     imageHeight: 400
@@ -75,6 +82,8 @@ params:
         url: posts
       - name: Tags
         url: tags
+      - name: Archive
+        url: "/archive"
 
   # home-info mode
   homeInfoParams:
@@ -104,9 +113,10 @@ params:
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
+    includeMatches: true
     location: 0
     distance: 1000
-    threshold: 0.4
+    threshold: 0.2
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
 taxonomies:
