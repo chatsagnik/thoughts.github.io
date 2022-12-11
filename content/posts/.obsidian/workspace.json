@@ -1,0 +1,145 @@
+{
+  "main": {
+    "id": "918918b30f0416f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "bff63c28f8ecd86a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad7040ed289cae69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dj-fourier.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "88031a56bc00f2f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "72c674e0268b3db2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0e86e4085545f42",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6f7584ed62c9e968",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3776a270436138ae",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2bd2dbc8651fda99",
+    "type": "split",
+    "children": [
+      {
+        "id": "f42c450ff2807332",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7bc810ee851962d4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "dj-fourier.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "61040672ffe9dad4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "dj-fourier.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4d35a3049de757c3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0424dd3fca0b77f3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "dj-fourier.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "b0e86e4085545f42",
+  "lastOpenFiles": [
+    "my-first-post.md",
+    "reductions.md",
+    "qtml.md",
+    "dj-fourier.md"
+  ]
+}
