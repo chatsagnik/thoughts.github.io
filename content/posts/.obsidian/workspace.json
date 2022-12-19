@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2bd2dbc8651fda99",
@@ -128,14 +129,24 @@
                 "file": "dj-fourier.md"
               }
             }
+          },
+          {
+            "id": "6c46420050f62d20",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
-  "active": "b0e86e4085545f42",
+  "active": "0424dd3fca0b77f3",
   "lastOpenFiles": [
     "my-first-post.md",
     "reductions.md",
