@@ -70,8 +70,8 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
-    title: Theoreticles
+    enabled: false # needs to be explicitly set
+    title: Welcome to Theoreticles
     subtitle: "A collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!"
     imageUrl: "dp.jpg"
     imageWidth: 400
@@ -87,8 +87,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to Theoreticles!
+    Title: "\U0001F44B Welcome to Theoreticles"
+    Content: This blog will contain a collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!
 
   socialIcons:
     - name: twitter
@@ -97,6 +97,12 @@ params:
     #   url: "https://stackoverflow.com"
     - name: github
       url: "https://github.com/chatsagnik"
+    - name: "rss"
+      url: "https://theoreticles.netlify.app/index.xml"
+    - name: "Personal website"
+      url: "https://chatsagnik.github.io/"
+    - name: mastodon
+      url: "https://qubit-social.xyz/web/@chatsagnik"
 
   cover:
     hidden: true # hide everywhere but not in structured data
