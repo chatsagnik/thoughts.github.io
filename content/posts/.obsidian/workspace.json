@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reductions.md",
+                "file": "An Introduction to Learning Theory.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reductions.md",
+                "file": "An Introduction to Learning Theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reductions.md",
+                "file": "An Introduction to Learning Theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reductions.md"
+                "file": "An Introduction to Learning Theory.md"
               }
             }
           },
@@ -165,10 +165,10 @@
   },
   "active": "bebcffb7919d7785",
   "lastOpenFiles": [
-    "qtml.md",
-    "my-first-post.md",
-    "templates/post.md",
     "reductions.md",
+    "An Introduction to Learning Theory.md",
+    "qtml.md",
+    "templates/post.md",
     "Untitled.canvas",
     "2023-05-30.md",
     "templates",
