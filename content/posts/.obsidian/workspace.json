@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9bc8cd9f3df1474f",
+        "id": "fa920ae652af64f7",
         "type": "tabs",
         "children": [
           {
-            "id": "56ee6702c0928014",
+            "id": "bebcffb7919d7785",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -163,14 +163,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56ee6702c0928014",
+  "active": "bebcffb7919d7785",
   "lastOpenFiles": [
-    "Untitled.canvas",
-    "reductions.md",
-    "2023-05-30.md",
-    "templates",
     "qtml.md",
     "my-first-post.md",
+    "templates/post.md",
+    "reductions.md",
+    "Untitled.canvas",
+    "2023-05-30.md",
+    "templates",
     "GANs.md",
     "dj-fourier.md"
   ]
