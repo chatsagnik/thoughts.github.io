@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "897abe72e11c131c",
+        "id": "4041c523df013225",
         "type": "tabs",
         "children": [
           {
-            "id": "c4de6b321529877f",
+            "id": "15689bcce15e57bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spectra of Random Graphs.md",
+                "file": "An Introduction to Learning Theory.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2bd2dbc8651fda99",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spectra of Random Graphs.md",
+                "file": "An Introduction to Learning Theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spectra of Random Graphs.md",
+                "file": "An Introduction to Learning Theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spectra of Random Graphs.md"
+                "file": "An Introduction to Learning Theory.md"
               }
             }
           },
@@ -165,11 +164,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c4de6b321529877f",
+  "active": "15689bcce15e57bd",
   "lastOpenFiles": [
-    "reductions.md",
+    "Lattices1.md",
+    "Lattices2.md",
+    "Lattices3.md",
     "qtml.md",
+    "quantumQueryUpperBound1.md",
+    "quantumQueryUpperBound2.md",
+    "reductions.md",
     "Spectra of Random Graphs.md",
+    "().md",
+    "^ajtai96.md",
     "An Introduction to Learning Theory.md",
     "templates/post.md",
     "Untitled.canvas",
