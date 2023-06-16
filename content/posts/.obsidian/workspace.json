@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "An Introduction to Learning Theory.md",
+                "file": "Lattices1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1f20695932d3643b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "quantumQueryUpperBound1.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "An Introduction to Learning Theory.md",
+                "file": "quantumQueryUpperBound1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "An Introduction to Learning Theory.md",
+                "file": "quantumQueryUpperBound1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "An Introduction to Learning Theory.md"
+                "file": "quantumQueryUpperBound1.md"
               }
             }
           },
@@ -164,19 +177,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "15689bcce15e57bd",
+  "active": "1f20695932d3643b",
   "lastOpenFiles": [
     "Lattices1.md",
+    "quantumQueryUpperBound1.md",
+    "An Introduction to Learning Theory.md",
     "Lattices2.md",
     "Lattices3.md",
     "qtml.md",
-    "quantumQueryUpperBound1.md",
     "quantumQueryUpperBound2.md",
     "reductions.md",
     "Spectra of Random Graphs.md",
     "().md",
     "^ajtai96.md",
-    "An Introduction to Learning Theory.md",
     "templates/post.md",
     "Untitled.canvas",
     "2023-05-30.md",
