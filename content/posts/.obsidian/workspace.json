@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lattices1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1f20695932d3643b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "quantumQueryUpperBound1.md",
+                "file": "reductions.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "quantumQueryUpperBound1.md",
+                "file": "reductions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "quantumQueryUpperBound1.md",
+                "file": "reductions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "quantumQueryUpperBound1.md"
+                "file": "reductions.md"
               }
             }
           },
@@ -177,17 +164,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1f20695932d3643b",
+  "active": "15689bcce15e57bd",
   "lastOpenFiles": [
-    "Lattices1.md",
     "quantumQueryUpperBound1.md",
-    "An Introduction to Learning Theory.md",
+    "Spectra of Random Graphs.md",
+    "Lattices1.md",
+    "quantumQueryUpperBound2.md",
+    "qtml.md",
     "Lattices2.md",
     "Lattices3.md",
-    "qtml.md",
-    "quantumQueryUpperBound2.md",
+    "An Introduction to Learning Theory.md",
     "reductions.md",
-    "Spectra of Random Graphs.md",
     "().md",
     "^ajtai96.md",
     "templates/post.md",
