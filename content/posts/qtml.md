@@ -1,14 +1,22 @@
 ---
-title: "QTML 2022"
+title: QTML 2022
 date: 2022-11-19T19:47:31+05:30
 draft: false
-tags: [travel]
-categories: [experiences]
+tags:
+  - travel
+  - conference
+categories:
+  - experiences
+  - conferences
 ---
 
 # QTML 2022
 
-Once thought to be a niche curiosity, the field of QML is growing astoundingly fast. QTML, or ''Quantum Techniques in Machine Learning'' is an annual conference that caters to its eponymous field. The conference describes itself as 'focused on the interplay between machine learning and quantum physics.' For an overview of various subfields of QML, check out [this survey article](https://www.nature.com/articles/nature23474) by Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd from 2017. If you are more interested in the complexity-theoretic and learning-theoretic aspects, [this guest article](https://arxiv.org/abs/1701.06806) by Arunachalam and Ronald de Wolf serves as a good introduction. Finally, I would like to list Peter Wittek's [magnum opus](https://www.sciencedirect.com/book/9780128009536/quantum-machine-learning) as a keystone in the foundation of the entire QML field.
+Once thought to be a niche curiosity, the field of QML is growing astoundingly fast. QTML, or ''Quantum Techniques in Machine Learning'' is an annual conference that caters to its eponymous field. The conference describes itself as 'focused on the interplay between machine learning and quantum physics.' 
+
+For an overview of various subfields of QML, check out [this survey article](https://www.nature.com/articles/nature23474) by Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd from 2017. 
+
+If you are more interested in the complexity-theoretic and learning-theoretic aspects, [this guest article](https://arxiv.org/abs/1701.06806) by Arunachalam and Ronald de Wolf serves as a good introduction. Finally, I would like to list Peter Wittek's [magnum opus](https://www.sciencedirect.com/book/9780128009536/quantum-machine-learning) as a keystone in the foundation of the entire QML field.
 
 > > “Rome is stately and impressive; Florence is all beauty and enchantment; Genoa is picturesque; Venice is a dream city; but Naples is simply — fascinating.” ~ Lilian Whiting
 

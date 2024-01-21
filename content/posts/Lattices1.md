@@ -5,42 +5,50 @@ draft: false
 tags: [tcs, lattices]
 categories: [pedagogy]
 ---
-In this post we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives. 
+In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives. 
+## Hardness of problems
+Computational hardness usually revolves around problems with **worst-case hardness** guarantees since we want to design algorithms that run efficiently even on the worst possible input. 
 
+On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with **average-case hardness** guarantees. 
+
+However, it is not immediately apparent **how to create hard instances of problems** with worst-case hardness guarantees. In other words, how to design the most secure keys for cryptographic applications is unclear.
+
+Any random instance of a problem with **average-case hardness** guarantee **is hard** with a positive probability. Suppose one could show that such a random instance is as hard as the hardest instance (a reduction from average-case hardness to worst-case hardness). In that case, such a reduction immediately lends itself to applications in cryptography. This reduction is precisely the central thesis of the seminal work Ajtai'96 [^ajtai96].
 
 # Lattice-based Cryptography
-## Hardness of problems
-Computational hardness usually revolves around problems with **worst-case hardness guarantees**, while cryptographic applications require problems with **average-case hardness guarantees**. An intuitive reasoning for this would be as follows: 
-- Cryptographic schemes require security guarantees for random keys, but it is not immediately apparent **how to create hard instances of problems** with **worst-case hardness** guarantees. 
-- On the other hand, **any random instance of a problem** with **average-case hardness** guarantee **is hard** with a positive probability, which immediately lends itself to applications in cryptography.
-
 ## What is a Lattice?
-A Lattice $\Lambda$ or $\mathcal{L}$ is defined as the set of all integer linear combinations of $n$ linearly independent $m$-dimensional vectors $B=\\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\\}$.  Mathematically, this is represented as 
-$$\mathcal{L}(B)=\\{Bx, x\in\mathbb{Z}^{m}\\}=\left\\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\\}$$
-The set $B\in\mathbb{R}^{n\times m}$ is said to be the basis of the lattice $\Lambda$. We note here that **any lattice $\Lambda$ is characterized by its basis**. Later in this post, *we will deviate from this definition* by showing another characterization of lattices which will be useful in cryptographic construction schemes. Later in this post we will discuss a few lattice problems with **known worst-case hardness guarantees.**
+A Lattice $\Lambda$ or $\mathcal{L}$ is defined as the set of all integer linear combinations of $n$ linearly independent $m$-dimensional vectors $B=\\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\\}$.  Formally, we denote lattices as 
+$$\mathcal{L}(B)=\\{Bx, x\in\mathbb{Z}^{m}\\}=\left\\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\\}.$$
+The set $B\in\mathbb{R}^{n\times m}$ is said to be the basis of the lattice $\Lambda$. We note here that **any lattice $\Lambda$ is characterized by its basis**. Shortly, *we will generalize the definition of lattices* by showing a different characterization of lattices which will be useful in cryptographic construction schemes. 
 ## Why Lattice-based Cryptography?
-Ajtai'96 [^ajtai96] showed **reductions** from **lattice based problems** with *average-case hardness* guarantees to lattice problems with *worst-case guarantees*. This immediately makes lattices an extremely important tool in cryptography. In fact, lattice based cryptographic constructions are invaluable for their many potential advantages as follows:
+Ajtai'96 [^ajtai96] showed **reductions** from **lattice based problems** with *average-case hardness* guarantees to lattice problems with *worst-case guarantees*.  Intuitively, this shows that any randomly sampled instance of a lattice is as hard as the hardest instance. 
+
+Later in this post, we will discuss a few lattice problems with **known worst-case hardness guarantees**. This immediately makes lattices an extremely important tool in cryptography. 
+
+In fact, lattice based cryptographic constructions are invaluable for their many potential advantages as follows:
 1. Lattice-based schemes usually **only require linear operations on integers** which leads to asymptotic efficiency.
-2. Lattice-based schemes have been shown to be **resistant to cryptanalysis by quantum algorithms** unlike current cryptographic schemes which are based on factoring or discrete log (Shor'95 [^shor95]). This makes lattice-based cryptography the cornerstone of post-quantum cryptography.
+2. Lattice-based schemes have been shown to be **resistant to cryptanalysis by quantum algorithms** unlike current classical cryptographic schemes which are based on factoring or discrete log (Shor'95 [^shor95]). This makes lattice-based cryptography the cornerstone of post-quantum cryptography.
 3. As noted earlier, random instances of lattice based constructions are “*as hard as possible*”, which lends itself to **conceptual simplicity** while designing cryptographic schemes.
 
 ## Hard Lattice problems w/ known worst-case hardness guarantees.
 
-In this section, we discuss some important worst-case hard problems associated with lattices.
+In this section, we discuss some important worst-case hard problems associated with lattices. As stated earlier, we would like to show a reduction from randomly generated lattices to instances of one of these problems.
 
-### Shortest Vector Problem ($\mathrm{SVP}_\gamma$)
+### Shortest Vector Problem $\left(\mathrm{SVP}_\gamma\right)$
 In the $\gamma$-approximate Shortest Vector Problem, we are asked find the length of the shortest non-zero vector (denoted by $\lambda_1$) in an $n$-dimensional lattice, approximately, up to a polynomial factor $\gamma$.
+- It is known that the approximate (and also decision) SVP is **NP-hard** under a randomized reduction.[^BP23]
 
-### Shortest Independent Vector Problem ($\mathrm{SIVP}_\gamma$)
+### Shortest Independent Vector Problem $\left(\mathrm{SIVP}_\gamma\right)$
 The goal of the $\gamma$-approximate Shortest Independent Vector problem is to output a set of $n$ linearly independent lattice vectors in an $n$-dimensional lattice, approximately of length$\leq\gamma\lambda_n$.
+- SIVP is **NP-hard** to approximate for any constant approximation factor.[^BS99]
 
-### Shortest Basis Problem ($\mathrm{SBP}_\gamma$)
+### Shortest Basis Problem $\left(\mathrm{SBP}_\gamma\right)$
 The $\gamma$-approximate Shortest Basis Problem asks us to find a basis $B=\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\}$ for an $n$-dimensional lattice $\mathcal{L}(B)$ such that $\mathrm{max}_i \lVert\mathrm{b_i}\rVert$ is the smallest possible upto a factor of $\gamma$.
 
 Later in this post we will see the connection between the above problems. 
 
 ## Constructing random instances of a Hard Lattice problem
-We now state some important results from Ajtai'96[^ajtai96] and Ajtai'99[^ajtai99] which deal with the construction of random instances of hard lattice problems.
+We now state some important results from Ajtai'96[^ajtai96] and Ajtai'99[^ajtai99] which deal with the construction of random instances of hard lattice problems. The following lemma shows that hardness of SBP by reduction to SVP.
 ### Lemma 1 (Ajtai'96)
 If $\mathrm{SBP}_\gamma$ has no polynomial time solution for $\gamma=\mathrm{poly}(n)$, then we can generate a random lattice $\Lambda$ (over some distribution $\mathcal{D}$) together with a "short" vector $x\in\Lambda$ in polynomial time s.t. there is no algorithm which can find a vector shorter than $\sqrt{n}$ in $\Lambda$ over $\mathcal{D}$ w.p. greater than $n^{-c}$, for sufficiently large $n$ and any $c>0$. 
 
@@ -79,7 +87,9 @@ We define a **Collision-Resistant Hash function** (CRHF) as follows:
 - **Hash function:** Define a **Shrinking function** (shrinking since the domain is greater than the range): $f_A:\{0,\ldots, d-1\}^m\xrightarrow{}\mathbb{Z}^n_q$ s.t. $f_A(x)=Ax\mod q$.
 - **Goal:** Find $x,x^{\prime}\in\{0,1\}^m$ s.t. $f_A(x)=f_A(x^{\prime})$.
 
-Note that finding a solution to the collision problem yields a solution $z=x-x^\prime$ to the $\mathrm{SIS}$ problem as $0=f_A(x)-f_A(x^{\prime})=Ax-Ax^\prime=Az\equiv 0\mod{q}$. We now define a class of random lattices known as $q$-ary lattices and connect it to the $\mathrm{SIS}$ problem.
+Note that finding a solution to the collision problem yields a solution $z=x-x^\prime$ to the $\mathrm{SIS}$ problem as $0=f_A(x)-f_A(x^{\prime})=Ax-Ax^\prime=Az\equiv 0\mod{q}$. 
+
+> We now define a class of random lattices known as $q$-ary lattices and connect it to the $\mathrm{SIS}$ problem.
 
 # $q$-ary Lattices at last!
 Given $A\sim \mathbb{Z}^{n\times m}_q$, $q$-ary lattices $\Lambda_q^\perp(A)$ are defined as
@@ -107,3 +117,7 @@ Finding short $z\in\Lambda_q^\perp(A)$ s.t. $\left|{z}\right|\leq \beta < q$, im
 [^ajtai99]: **Ajtai99:** Miklós Ajtai. 1999. Generating Hard Instances of the Short Basis Problem. In Proceedings of the 26th International Colloquium on Automata, Languages and Programming (ICAL '99). Springer-Verlag, Berlin, Heidelberg, 1–9.
 
 [^gold11]: **GGH11:** O. Goldreich, S. Goldwasser, and S. Halevi. Collision-free hashing from lattice  problems. Studies in Complexity and Cryptography. Miscellanea on the Interplay between Randomness and Computation: In Collaboration with Lidor Avigad, Mihir Bellare, Zvika Brakerski, Shafi Goldwasser, Shai Halevi,  Tali Kaufman, Leonid Levin, Noam Nisan, Dana Ron, Madhu Sudan, Luca  Trevisan, Salil Vadhan, Avi Wigderson, David Zuckerman, pages 30–39,  2011
+
+[^BP23]: **BP23:** Huck Bennett and Chris Peikert. Hardness of the (Approximate) Shortest Vector Problem: A Simple Proof via Reed-Solomon Codes. In Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques (APPROX/RANDOM 2023). Leibniz International Proceedings in Informatics (LIPIcs), Volume 275, pp. 37:1-37:20, Schloss Dagstuhl - Leibniz-Zentrum für Informatik (2023). [https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2023.37](https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2023.37)
+
+[^BS99]: **BS99:** Johannes Blömer and Jean-Pierre Seifert. On the complexity of computing short linearly independent vectors and short bases in a lattice. In Proceedings of the Thirty-first Annual ACM Symposium on Theory of Computing, STOC ’99, pages 711–720, New York, NY, USA, 1999. ACM.
