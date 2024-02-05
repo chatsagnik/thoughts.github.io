@@ -1,7 +1,7 @@
 ---
 title: QTML 2022
 date: 2022-11-19T19:47:31+05:30
-draft: false
+draft: true
 tags:
   - travel
   - conference
