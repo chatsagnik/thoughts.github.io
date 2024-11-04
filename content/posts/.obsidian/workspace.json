@@ -13,7 +13,6 @@
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
                 "file": "QIP 2024.md",
                 "mode": "source",
                 "source": false
@@ -27,9 +26,6 @@
               "type": "markdown",
               "state": {
                 "file": "qtml.md",
-=======
-                "file": "reductions.md",
->>>>>>> parent of 52c7056 (update)
                 "mode": "source",
                 "source": false
               }
@@ -109,11 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
                 "file": "QIP 2024.md",
-=======
-                "file": "reductions.md",
->>>>>>> parent of 52c7056 (update)
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,11 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
                 "file": "QIP 2024.md",
-=======
-                "file": "reductions.md",
->>>>>>> parent of 52c7056 (update)
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,11 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
                 "file": "QIP 2024.md"
-=======
-                "file": "reductions.md"
->>>>>>> parent of 52c7056 (update)
               }
             }
           },
@@ -194,7 +178,6 @@
   },
   "active": "15689bcce15e57bd",
   "lastOpenFiles": [
-<<<<<<< HEAD
     "HoffmanBoundChromatic.md",
     "qtml.md",
     "QIP 2024.md",
@@ -209,12 +192,7 @@
     "Lattices3.md",
     "().md",
     "^ajtai96.md",
-=======
-    "qtml.md",
-    "my-first-post.md",
->>>>>>> parent of 52c7056 (update)
     "templates/post.md",
-    "reductions.md",
     "Untitled.canvas",
     "2023-05-30.md",
     "templates",

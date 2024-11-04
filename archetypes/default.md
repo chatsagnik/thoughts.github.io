@@ -5,5 +5,3 @@ draft: true
 tags: []
 categories: []
 ---
-
-<!-- Contains default data for all new posts -->
