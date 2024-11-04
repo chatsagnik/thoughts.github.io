@@ -2,41 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://theoreticles.netlify.app/categories/</loc>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-07-11T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-07-11T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/lattices1/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lattices/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/pedagogy/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tcs/</loc>
+    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/decision-trees/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/guessing-complexity/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pedagogy/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/quantum/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/quantumqueryupperbound1/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/query-complexity/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rank/</loc>
+    <lastmod>2023-03-01T12:04:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/conference/</loc>
     <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/experiences/</loc>
+    <loc>http://localhost:1313/categories/conferences/</loc>
     <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/posts/</loc>
+    <loc>http://localhost:1313/categories/experiences/</loc>
     <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/posts/qtml/</loc>
+    <loc>http://localhost:1313/posts/qtml/</loc>
     <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/</loc>
+    <loc>http://localhost:1313/tags/travel/</loc>
     <lastmod>2022-11-19T19:47:31+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/</loc>
-    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
-  </url><url>
-    <loc>https://theoreticles.netlify.app/tags/travel/</loc>
-    <lastmod>2022-11-19T19:47:31+05:30</lastmod>
-  </url><url>
-    <loc>https://theoreticles.netlify.app/posts/reductions/</loc>
+    <loc>http://localhost:1313/posts/reductions/</loc>
     <lastmod>2022-07-17T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/pedagogy/</loc>
+    <loc>http://localhost:1313/tags/reductions/</loc>
     <lastmod>2022-07-17T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/reductions/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/tcs/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
-  </url><url>
-    <loc>https://theoreticles.netlify.app/archives/</loc>
-  </url><url>
-    <loc>https://theoreticles.netlify.app/archive/</loc>
+    <loc>http://localhost:1313/archive/</loc>
   </url>
 </urlset>

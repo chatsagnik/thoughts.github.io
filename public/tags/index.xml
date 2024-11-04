@@ -1,42 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Theoreticles</description>
-    <image>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Nov 2022 19:47:31 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>travel</title>
-      <link>https://theoreticles.netlify.app/tags/travel/</link>
+      <title>Lattices</title>
+      <link>http://localhost:1313/tags/lattices/</link>
+      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/tags/lattices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tcs</title>
+      <link>http://localhost:1313/tags/tcs/</link>
+      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/tags/tcs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Decision-Trees</title>
+      <link>http://localhost:1313/tags/decision-trees/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/decision-trees/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guessing-Complexity</title>
+      <link>http://localhost:1313/tags/guessing-complexity/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/guessing-complexity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pedagogy</title>
+      <link>http://localhost:1313/tags/pedagogy/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/pedagogy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quantum</title>
+      <link>http://localhost:1313/tags/quantum/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/quantum/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Query-Complexity</title>
+      <link>http://localhost:1313/tags/query-complexity/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/query-complexity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rank</title>
+      <link>http://localhost:1313/tags/rank/</link>
+      <pubDate>Wed, 01 Mar 2023 12:04:49 +0530</pubDate>
+      <guid>http://localhost:1313/tags/rank/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conference</title>
+      <link>http://localhost:1313/tags/conference/</link>
       <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/tags/travel/</guid>
+      <guid>http://localhost:1313/tags/conference/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reductions</title>
-      <link>https://theoreticles.netlify.app/tags/reductions/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/tags/reductions/</guid>
+      <title>Travel</title>
+      <link>http://localhost:1313/tags/travel/</link>
+      <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
+      <guid>http://localhost:1313/tags/travel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tcs</title>
-      <link>https://theoreticles.netlify.app/tags/tcs/</link>
+      <title>Reductions</title>
+      <link>http://localhost:1313/tags/reductions/</link>
       <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/tags/tcs/</guid>
+      <guid>http://localhost:1313/tags/reductions/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptography on Theoreticles</title>
+    <link>http://localhost:1313/tags/cryptography/</link>
+    <description>Recent content in Cryptography on Theoreticles</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>$q$-ary Lattices</title>
+      <link>http://localhost:1313/posts/qary/</link>
+      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/posts/qary/</guid>
+      <description>&lt;p&gt;In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hardness-of-problems&#34;&gt;Hardness of problems&lt;/h2&gt;&#xA;&lt;p&gt;Computational hardness usually revolves around problems with &lt;strong&gt;worst-case hardness&lt;/strong&gt; guarantees since we want to design algorithms that run efficiently even on the worst possible input.&lt;/p&gt;&#xA;&lt;p&gt;On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with &lt;strong&gt;average-case hardness&lt;/strong&gt; guarantees.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

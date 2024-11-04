@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Theoreticles</description>
-    <image>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Nov 2022 19:47:31 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>QTML 2022</title>
-      <link>https://theoreticles.netlify.app/posts/qtml/</link>
-      <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/posts/qtml/</guid>
-      <description>QTML 2022 Once thought to be a niche curiosity, the field of QML is growing astoundingly fast. QTML, or &amp;lsquo;&amp;lsquo;Quantum Techniques in Machine Learning&amp;rsquo;&amp;rsquo; is an annual conference that caters to its eponymous field. The conference describes itself as &amp;lsquo;focused on the interplay between machine learning and quantum physics.&amp;rsquo; For an overview of various subfields of QML, check out this survey article by Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd from 2017.</description>
+      <title>$q$-ary Lattices</title>
+      <link>http://localhost:1313/posts/qary/</link>
+      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/posts/qary/</guid>
+      <description>&lt;p&gt;In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hardness-of-problems&#34;&gt;Hardness of problems&lt;/h2&gt;&#xA;&lt;p&gt;Computational hardness usually revolves around problems with &lt;strong&gt;worst-case hardness&lt;/strong&gt; guarantees since we want to design algorithms that run efficiently even on the worst possible input.&lt;/p&gt;&#xA;&lt;p&gt;On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with &lt;strong&gt;average-case hardness&lt;/strong&gt; guarantees.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>An Introduction to Reductions</title>
-      <link>https://theoreticles.netlify.app/posts/reductions/</link>
+      <link>http://localhost:1313/posts/reductions/</link>
       <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/posts/reductions/</guid>
-      <description>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.
-Introduction Why do we need reductions? From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &amp;lsquo;Eureka!&amp;rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.</description>
+      <guid>http://localhost:1313/posts/reductions/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;h2 id=&#34;why-do-we-need-reductions&#34;&gt;Why do we need reductions?&lt;/h2&gt;&#xA;&lt;p&gt;From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &amp;lsquo;Eureka!&amp;rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

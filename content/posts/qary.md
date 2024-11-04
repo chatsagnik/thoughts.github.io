@@ -2,8 +2,8 @@
 title: "$q$-ary Lattices"
 date: 2023-04-01T12:03:46+05:30
 draft: false
-tags: [tcs, lattices]
-categories: [pedagogy]
+tags: [lattices, coding theory, cryptography]
+categories: [cryptography]
 ---
 In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives. 
 ## Hardness of problems

@@ -2,8 +2,8 @@
 title: "An Introduction to Reductions"
 date: 2022-07-17T11:51:18+05:30
 draft: false
-tags: [tcs, reductions]
-categories: [pedagogy]
+tags: [reductions]
+categories: [theorytoolkit]
 ---
 
 _This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don't hesitate to contact me via email if you need further clarification. Without further ado, let's dive in._
