@@ -132,8 +132,12 @@ Imagine you would like to design a function $B$ that takes the binary descriptio
 This in effect describes the Halting problem, where $B$ is a universal Turing machine and $A$ can be any Turing Machine. It has been shown that there does not exist any such $B$ which solves this problem. Therefore the Halting problem cannot be decided, and is formally referred to as an **undecidable** problem.
 
 ### The SAT Problem
+<<<<<<< HEAD:content/post/reductions.md
 
 A Boolean formula $f$ accepts as input an $n$-bit string and outputs a $1$ (if it accepts the string), or a $0$ (if it rejects the string). Mathematically, $f:\{0,1\}^{n}\xrightarrow{}\{0,1\}$.
+=======
+A Boolean formula $f$ accepts as input an $n$-bit string and outputs a $1$ (if it accepts the string), or a $0$ (if it rejects the string). Mathematically, $f:\{0,1\}^{n}\xrightarrow\{0,1\}$. 
+>>>>>>> parent of 52c7056 (update):content/posts/reductions.md
 
 > **The satisfiability(SAT) problem:** Given a formula $f$ and an arbitrary $n$ bit string $x\in\{0,1\}^{n}$, is $f(x)=1$?
 

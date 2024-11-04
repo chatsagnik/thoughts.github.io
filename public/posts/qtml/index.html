@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>QTML 2022 | Theoretics</title>
+<meta name="keywords" content="travel, conference">
+<meta name="description" content="QTML 2022
+Once thought to be a niche curiosity, the field of QML is growing astoundingly fast. QTML, or &lsquo;&lsquo;Quantum Techniques in Machine Learning&rsquo;&rsquo; is an annual conference that caters to its eponymous field. The conference describes itself as &lsquo;focused on the interplay between machine learning and quantum physics.&rsquo;
+For an overview of various subfields of QML, check out this survey article by Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd from 2017.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/qtml/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3299c596a7007118365635c056dd427dace22b7b8c1341fdef6fa6c31359ba10.css" integrity="sha256-MpnFlqcAcRg2VjXAVt1CfaziK3uME0H972&#43;mwxNZuhA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/qtml/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Theoretics (Alt + H)">Theoretics</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      QTML 2022
+    </h1>
+    <div class="post-meta">&lt;span title=&#39;2022-11-19 19:47:31 &#43;0530 IST&#39;&gt;November 19, 2022&lt;/span&gt;
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="qtml-2022">QTML 2022<a hidden class="anchor" aria-hidden="true" href="#qtml-2022">#</a></h1>
+<p>Once thought to be a niche curiosity, the field of QML is growing astoundingly fast. QTML, or &lsquo;&lsquo;Quantum Techniques in Machine Learning&rsquo;&rsquo; is an annual conference that caters to its eponymous field. The conference describes itself as &lsquo;focused on the interplay between machine learning and quantum physics.&rsquo;</p>
+<p>For an overview of various subfields of QML, check out <a href="https://www.nature.com/articles/nature23474">this survey article</a> by Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd from 2017.</p>
+<p>If you are more interested in the complexity-theoretic and learning-theoretic aspects, <a href="https://arxiv.org/abs/1701.06806">this guest article</a> by Arunachalam and Ronald de Wolf serves as a good introduction. Finally, I would like to list Peter Wittek&rsquo;s <a href="https://www.sciencedirect.com/book/9780128009536/quantum-machine-learning">magnum opus</a> as a keystone in the foundation of the entire QML field.</p>
+<blockquote>
+<blockquote>
+<p>“Rome is stately and impressive; Florence is all beauty and enchantment; Genoa is picturesque; Venice is a dream city; but Naples is simply — fascinating.” ~ Lilian Whiting</p>
+</blockquote>
+</blockquote>
+<p>This year was the sixth iteration of the conference, having been hosted earlier in Verona, Italy (2017), Durban, South Africa (2018), and Daejeon, South Korea (2019), with a couple of online fixtures due to the pandemic. The location for this year was at the Centro Congressi University of Naples Federico II in Naples, Italy, which is situated right on the coast across from the majestic Castel dell Ovo (<a href="https://en.wikipedia.org/wiki/Castel_dell%27Ovo">Castle of the Egg</a>). The conference lasted six days (7th-12th of November), with pre-conference and post-conference events and workshops.</p>
+<p>Our paper on &ldquo;Quantum Boosting using Domain-Partitioning Hypotheses&rdquo; (<a href="https://arxiv.org/abs/2110.12793">see preprint here</a>) was selected for a short talk. In this work, we extend the <a href="https://arxiv.org/abs/2002.05056">QAdaBoost</a> paper (which deals with weak learners producing only binary hypotheses) to a more general framework that allows us to adaptively boost weak learners that output the aforementioned &ldquo;Domain-Partitioning Hypotheses&rdquo;. A natural example of these learners would be decision trees or any sort of clustering algorithms.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/talk.jpg" alt="Talk"  />
+</td>
+      </tr>
+      <tr>
+          <td>Me during the talk</td>
+      </tr>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/poster.png" alt="Poster"  />
+</td>
+      </tr>
+      <tr>
+          <td>A poster for our work</td>
+      </tr>
+  </tbody>
+</table>
+<p>Before we go on, enjoy a few pics in and around the conference venue!</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/naples1.jpg" alt="Naples1"  />
+</td>
+          <td><img loading="lazy" src="/posts/qtml/naples2.jpg" alt="Naples2"  />
+</td>
+      </tr>
+      <tr>
+          <td>View from the breakroom 1</td>
+          <td>View from the breakroom 2</td>
+      </tr>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/naples3.jpg" alt="Naples2"  />
+</td>
+          <td><img loading="lazy" src="/posts/qtml/naples4.jpg" alt="Naples2"  />
+</td>
+      </tr>
+      <tr>
+          <td>Me in front of Castel dell&rsquo;Ovo</td>
+          <td>The Conference Hall</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>The conference is happening at CERN next year!</em></p>
+<p>There were about a 100 attendees with participants mainly from Europe, some small groups from the US, South Africa, South Korea, and one Indian (me!). There was a good mix of industry (companies like Zapata, Xanadu, QuNova had sent in talks and representatives) and academia (with faculty, postdocs, PhDs, and a couple of undergrads). I was very excited to connect with a lot of QML folks, most of whom I had only stalked on arXiv thus far.</p>
+<h1 id="qtml-in-tweets">QTML in Tweets<a hidden class="anchor" aria-hidden="true" href="#qtml-in-tweets">#</a></h1>
+<p>In this section I go over a few talks in the form of tweets (mainly because that is what the cool academics do in 2022!).</p>
+<h2 id="the-peter-wittek-session">The Peter Wittek Session<a hidden class="anchor" aria-hidden="true" href="#the-peter-wittek-session">#</a></h2>
+<p>The Peter Wittek session consisted of a number of talks by distinguished speakers all of whom had personal anecdotes to share about Peter and their views on how he contributed to the nascent field of QML.</p>
+<h3 id="jacob-biamontes-tribute">Jacob Biamonte&rsquo;s tribute<a hidden class="anchor" aria-hidden="true" href="#jacob-biamontes-tribute">#</a></h3>
+<blockquote>
+<p>(1/5) I was invited to give a small tribute today to one of the early researchers that entered quantum computing from a machine learning perspective. He is missed. <a href="https://t.co/tH7K1wGXwg">pic.twitter.com/tH7K1wGXwg</a></p>
+<p>— Jacob Biamonte (@JacobBiamonte) <a href="https://twitter.com/JacobBiamonte/status/1590018273533636608?ref_src=twsrc%5Etfw">November 8, 2022</a></p>
+</blockquote>
+<h3 id="seth-lloyd-on-qml">Seth Lloyd on QML<a hidden class="anchor" aria-hidden="true" href="#seth-lloyd-on-qml">#</a></h3>
+<blockquote>
+<p>The Peter Wittek session is underway at <a href="https://twitter.com/hashtag/qtml?src=hash&amp;ref_src=twsrc%5Etfw">#qtml</a> 2022, after Seth Lloyd&rsquo;s overview of quantum machine learning. <a href="https://t.co/SRK65pmi1t">pic.twitter.com/SRK65pmi1t</a></p>
+<p>— Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1589927555595145217?ref_src=twsrc%5Etfw">November 8, 2022</a></p>
+</blockquote>
+<h2 id="gitta-kutynioks-keynote-talk">Gitta Kutyniok&rsquo;s keynote talk<a hidden class="anchor" aria-hidden="true" href="#gitta-kutynioks-keynote-talk">#</a></h2>
+<blockquote>
+<p>A fascinating theoretical perspective into hardness results on explainability and reliability by <a href="https://twitter.com/GittaKutyniok?ref_src=twsrc%5Etfw">@GittaKutyniok</a> at QTML2022 <a href="https://twitter.com/hashtag/qtml2022?src=hash&amp;ref_src=twsrc%5Etfw">#qtml2022</a>. <a href="https://t.co/7oTkpo6Odf">pic.twitter.com/7oTkpo6Odf</a></p>
+<p>— Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1589949245867819014?ref_src=twsrc%5Etfw">November 8, 2022</a></p>
+</blockquote>
+<h2 id="jacob-biamontes-keynote-talk-on-vqa">Jacob Biamonte&rsquo;s keynote talk on VQA<a hidden class="anchor" aria-hidden="true" href="#jacob-biamontes-keynote-talk-on-vqa">#</a></h2>
+<blockquote>
+<p>Today&rsquo;s illuminating keynote speech by <a href="https://twitter.com/JacobBiamonte?ref_src=twsrc%5Etfw">@JacobBiamonte</a> at QTML on a host of topics related to variational quantum algorithms. <a href="https://t.co/j6MAEXnI3l">pic.twitter.com/j6MAEXnI3l</a></p>
+<p>— Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1590303738719531010?ref_src=twsrc%5Etfw">November 9, 2022</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> slides: &ldquo;On parameterisation effects in training variational quantum circuits&rdquo;<br>
+Thanks to <a href="https://twitter.com/Alessdip?ref_src=twsrc%5Etfw">@Alessdip</a> and other organisers. <a href="https://t.co/LNio4y6LT7">https://t.co/LNio4y6LT7</a></p>
+<p>— Jacob Biamonte (@JacobBiamonte) <a href="https://twitter.com/JacobBiamonte/status/1590566837200519169?ref_src=twsrc%5Etfw">November 10, 2022</a></p>
+</blockquote>
+<h2 id="quantum-state-preparation-by-fereshte-mozafari">Quantum State Preparation by Fereshte Mozafari<a hidden class="anchor" aria-hidden="true" href="#quantum-state-preparation-by-fereshte-mozafari">#</a></h2>
+<blockquote>
+<p>Fereshte Mozafari talks about an alternative way for Quantum State Preparation at <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> 2022 today. <a href="https://t.co/Ru5MsrXpXd">pic.twitter.com/Ru5MsrXpXd</a></p>
+<p>— Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1590637060549128192?ref_src=twsrc%5Etfw">November 10, 2022</a></p>
+</blockquote>
+<h2 id="quantum-recurrent-neural-networks-by-michal-siemaszko">Quantum Recurrent Neural Networks by Michal Siemaszko<a hidden class="anchor" aria-hidden="true" href="#quantum-recurrent-neural-networks-by-michal-siemaszko">#</a></h2>
+<blockquote>
+<p>Michal Siemaszko from <a href="https://twitter.com/UniWarszawski?ref_src=twsrc%5Etfw">@UniWarszawski</a> Warsaw (from <a href="https://twitter.com/StobinskaQCAT?ref_src=twsrc%5Etfw">@StobinskaQCAT</a> group) presenting today at <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> 2022 in Naples our work on quantum recurrent networks in collab w/ <a href="https://twitter.com/ESA_EO?ref_src=twsrc%5Etfw">@ESA_EO</a> <a href="https://twitter.com/hashtag/Philab?src=hash&amp;ref_src=twsrc%5Etfw">#Philab</a> (visiting researcher spring 2022).</p>
+<p>Arxiv: <a href="https://t.co/QIjTvPUFxE">https://t.co/QIjTvPUFxE</a><a href="https://twitter.com/hashtag/QC4EO?src=hash&amp;ref_src=twsrc%5Etfw">#QC4EO</a> <a href="https://t.co/LrOUzrfSxN">pic.twitter.com/LrOUzrfSxN</a></p>
+<p>— Bertrand Le Saux (@blesa_ux) <a href="https://twitter.com/blesa_ux/status/1590395028060663808?ref_src=twsrc%5Etfw">November 9, 2022</a></p>
+</blockquote>
+<h2 id="avoiding-barren-plateaus-in-vqas-by-antonio-a-mele">Avoiding barren plateaus in VQAs by Antonio A. Mele<a hidden class="anchor" aria-hidden="true" href="#avoiding-barren-plateaus-in-vqas-by-antonio-a-mele">#</a></h2>
+<blockquote>
+<p>I am thrilled to have presented my talk today at <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> 2022. It was my first scientific talk in front of so many people.<br>
+You can find the slides on my website here: <a href="https://t.co/EPMNKlWtxH">https://t.co/EPMNKlWtxH</a></p>
+<p>— Antonio Anna Mele (@QuAntonioMele) <a href="https://twitter.com/QuAntonioMele/status/1590317381624434689?ref_src=twsrc%5Etfw">November 9, 2022</a></p>
+</blockquote>
+<h2 id="talks-by-quantinuum">Talks by Quantinuum<a hidden class="anchor" aria-hidden="true" href="#talks-by-quantinuum">#</a></h2>
+<blockquote>
+<p>My colleagues <a href="https://twitter.com/LuukCoopmans?ref_src=twsrc%5Etfw">@LuukCoopmans</a> and <a href="https://twitter.com/Sam_Duffield?ref_src=twsrc%5Etfw">@Sam_Duffield</a> will present their research at <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a> in Naples this week.</p>
+<p>1️⃣ Thu: Predicting Gibbs State Expectation Values with Pure Thermal Shadows<br>
+2️⃣ Fri: Bayesian Learning of Parameterised Quantum Circuits</p>
+<p>If you&rsquo;re there, consider attending</p>
+<p>— Matthias Rosenkranz ✨ (@rosenkranz) <a href="https://twitter.com/rosenkranz/status/1590312707852750850?ref_src=twsrc%5Etfw">November 9, 2022</a></p>
+</blockquote>
+<h2 id="final-day">Final Day<a hidden class="anchor" aria-hidden="true" href="#final-day">#</a></h2>
+<blockquote>
+<p>Today&rsquo;s QTML personal highlights so far.<br>
+1. <a href="https://twitter.com/QuantumManuel?ref_src=twsrc%5Etfw">@QuantumManuel</a>&rsquo;s talk on how classical Tensor networks can be useful to simulate shallow quantum circuits.<br>
+2. <a href="https://twitter.com/MartinLaroo?ref_src=twsrc%5Etfw">@MartinLaroo</a> on group-invariant QML motivated by geometric DL.</p>
+<p>I have a talk later in the day so feel free to catch up! <a href="https://t.co/Dgut1Vmxqk">pic.twitter.com/Dgut1Vmxqk</a></p>
+<p>— Sagnik Chatterjee (@chatsagnik) <a href="https://twitter.com/chatsagnik/status/1591020029436649473?ref_src=twsrc%5Etfw">November 11, 2022</a></p>
+</blockquote>
+<h2 id="the-quantum-software-workshop">The Quantum Software Workshop<a hidden class="anchor" aria-hidden="true" href="#the-quantum-software-workshop">#</a></h2>
+<blockquote>
+<p>At today&rsquo;s Workshop on <a href="https://twitter.com/hashtag/QuantumSoftware?src=hash&amp;ref_src=twsrc%5Etfw">#QuantumSoftware</a> (co-located with <a href="https://twitter.com/hashtag/QTML?src=hash&amp;ref_src=twsrc%5Etfw">#QTML</a>), <a href="https://twitter.com/QuantumMato?ref_src=twsrc%5Etfw">@QuantumMato</a> presented our tools for <a href="https://twitter.com/hashtag/QuantumComputing?src=hash&amp;ref_src=twsrc%5Etfw">#QuantumComputing</a>.👍🙂</p>
+<p>👉Overview: <a href="https://t.co/kxZPcaO8V1">https://t.co/kxZPcaO8V1</a><br>
+👉Code/github: <a href="https://t.co/uO7unDWbQh">https://t.co/uO7unDWbQh</a> <a href="https://t.co/KSIZTLPA4C">pic.twitter.com/KSIZTLPA4C</a></p>
+<p>— Robert Wille (@rbrtwll) <a href="https://twitter.com/rbrtwll/status/1591528253415895041?ref_src=twsrc%5Etfw">November 12, 2022</a></p>
+</blockquote>
+<h1 id="non-technical-stuff">Non-technical stuff<a hidden class="anchor" aria-hidden="true" href="#non-technical-stuff">#</a></h1>
+<p>If you have stuck around thus far, the rest of the blog contains stuff about my travel and experiences in Italy.</p>
+<h2 id="visa-struggles">VISA struggles<a hidden class="anchor" aria-hidden="true" href="#visa-struggles">#</a></h2>
+<p>The plight of COVID Ph.D.&rsquo;s in terms of international travel is indescribable. More than just getting your paper accepted at a conference is required. You have to wait for all the threads of fate to align to be able to actually present the paper.</p>
+<p>Italy has a (very weird) residential constraint for VISA applications. You can only be serviced by a VFS center that falls within your residential jurisdiction (i.e., your place of residence for the last six months). This makes the already daunting challenge of finding open slots at VFS centers nearly impossible to overcome. I got a slot for 21st October (purely by luck) at the Delhi center after the usual shenanigans of clicking refresh multiple times a day. The visa was processed quite fast - it took me less than five working days to receive the visa.</p>
+<p>Next came the challenge of procuring Euro bills for the journey since a few seniors suggested that Italy was less digitized than India. What should have been a straightforward endeavor became an adventure in the dusty narrow corridors of the dilapidated buildings of Nehru Place. I set out to find agencies that could arrange cash on short notice (by the time I received the visa, I had less than a week till my flight to Rome.) The entire experience was highly shady, but surprisingly everything turned out alright.</p>
+<h2 id="getting-there">Getting there<a hidden class="anchor" aria-hidden="true" href="#getting-there">#</a></h2>
+<p>I left for Rome on the night of 6th. Due to extremely short transit times (around 1.5 hrs) at Doha, I did not have the time to explore the airport much, but I managed to snag a pic with these two beauties.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/mclaren.jpg" alt="Car"  />
+</td>
+          <td><img loading="lazy" src="/posts/qtml/bike.jpg" alt="Bike"  />
+</td>
+      </tr>
+  </tbody>
+</table>
+<p>After landing in Rome at the Fiumicino airport, I took a train to the Roma Terminus, and then another one to Napoli Centrale. The views of the Italian countryside with its gentle undulating hills and idyllic pastures seemed straight out of Tolkein&rsquo;s description of middle earth.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/country1.jpg" alt="Country"  />
+</td>
+      </tr>
+  </tbody>
+</table>
+<p>A word of advice for anyone travelling to Italy. You will find appropriate (daily/weekly) passes for travelling on the public transport at the local <em>Tabachchi&rsquo;s</em> (cigarette shops). I recommend getting these, since public transit (buses, trams, metro) is good enough in both Rome and Naples to cover almost of all the local hotspots.</p>
+<h2 id="sightseeing-and-food">Sightseeing and Food!<a hidden class="anchor" aria-hidden="true" href="#sightseeing-and-food">#</a></h2>
+<p>Even though Naples is primarily known for its eponymous styled pizza, Naples has a lot more to offer than just pizza! I could not carry out too detailed of an investigative tour of Rome&rsquo;s culinary scene this time, but I think the Trevi fountain cent has me covered for a return trip.</p>
+<p>I also visited a few churches and castles in and around the city center during the evenings after the day&rsquo;s events ended. After the conference, I had a few days in hand before my return flight, which allowed me to visit the ruins of Pompeii (I booked a trip on TripAdvisor along with a group of fellow conference attendees) and carry out a whirlwind checklist tour in Rome. Enjoy the pics!</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/italy-food.jpg" alt="Food"  />
+</td>
+          <td><em>Clockwise from top left</em>: Caprese Salad, Cheese Sandwich with Chocolate Croissant and a double shot of espresso, Fish and Chips, Arancino, Seafood Risotto</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/pizza.jpg" alt="Pizza"  />
+</td>
+      </tr>
+      <tr>
+          <td>Neopolitan Pizza Margherita</td>
+      </tr>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/italy-siteseeing.jpg" alt="Site"  />
+</td>
+      </tr>
+      <tr>
+          <td>Various shots of Pompeii and Rome</td>
+      </tr>
+      <tr>
+          <td><img loading="lazy" src="/posts/qtml/Various.jpg" alt="My pics"  />
+</td>
+      </tr>
+      <tr>
+          <td><em>Clockwise from top left</em>: A theatre in Pompeii (first 2 pics), The Colosseum (next two), Trevi Fountain, The Plaza at Pompeii, Castel Sant&rsquo;Angelo, Vatican City, Inside St. Peter&rsquo;s Basilica.</td>
+      </tr>
+  </tbody>
+</table>
+<p>As they say</p>
+<blockquote>
+<blockquote>
+<p>“Vedi Napoli e poi muori! — See Naples and die!”</p>
+</blockquote>
+</blockquote>
+<p>I am completely enamored with the Amalfi coast&rsquo;s beauty and counting the days until I return!</p>
+<p><em>I will keep adding stuff to this post, as and when I find time.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/travel/">Travel</a></li>
+      <li><a href="http://localhost:1313/tags/conference/">Conference</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">Theoretics</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
