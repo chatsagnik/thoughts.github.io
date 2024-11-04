@@ -17,9 +17,27 @@
     </item>
     
     <item>
+      <title>Conferences</title>
+      <link>http://localhost:1313/categories/conferences/</link>
+      <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
+      
+      <guid>http://localhost:1313/categories/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiences</title>
+      <link>http://localhost:1313/categories/experiences/</link>
+      <pubDate>Sat, 19 Nov 2022 19:47:31 +0530</pubDate>
+      
+      <guid>http://localhost:1313/categories/experiences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Toc</title>
       <link>http://localhost:1313/categories/toc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
       
       <guid>http://localhost:1313/categories/toc/</guid>
       <description></description>
