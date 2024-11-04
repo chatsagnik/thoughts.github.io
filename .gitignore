@@ -1,9 +1,0 @@
-
-*.json
-*.json
-content/posts/.obsidian/app.json
-content/posts/.obsidian/core-plugins.json
-content/posts/.obsidian/workspace.json
-*.json
-.obsidian/
-templates/

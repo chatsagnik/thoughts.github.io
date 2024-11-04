@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>$q$-ary Lattices - Theoretics</title>
+  <meta property="og:title" content="$q$-ary Lattices - Theoretics" />
+  <meta name="twitter:title" content="$q$-ary Lattices - Theoretics" />
+  <meta name="description" content="In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.
+Hardness of problems
+Computational hardness usually revolves around problems with worst-case hardness guarantees since we want to design algorithms that run efficiently even on the worst possible input.
+On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with average-case hardness guarantees.">
+  <meta property="og:description" content="In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.
+Hardness of problems
+Computational hardness usually revolves around problems with worst-case hardness guarantees since we want to design algorithms that run efficiently even on the worst possible input.
+On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with average-case hardness guarantees.">
+  <meta name="twitter:description" content="In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.
+Hardness of problems
+Computational hardness …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="Theoretics" />
+  <meta property="og:url" content="http://localhost:1313/qary/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.136.5">
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/style-dark.css" media="all and (prefers-color-scheme: dark)" />
+
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/fontawesome/all.min.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Theoretics</a></h1>
+    <ul class="site-navi-items">
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">$q$-ary Lattices</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>April 1, 2023</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/cryptography/">
+            <i class="fa-solid fa-folder"></i>
+            cryptography
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/tcs/">
+            <i class="fa-solid fa-tag"></i>
+            tcs
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/lattices/">
+            <i class="fa-solid fa-tag"></i>
+            lattices
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/cryptography/">
+            <i class="fa-solid fa-tag"></i>
+            cryptography
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hardness-of-problems">Hardness of problems</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-is-a-lattice">What is a Lattice?</a></li>
+    <li><a href="#why-lattice-based-cryptography">Why Lattice-based Cryptography?</a></li>
+    <li><a href="#hard-lattice-problems-w-known-worst-case-hardness-guarantees">Hard Lattice problems w/ known worst-case hardness guarantees</a>
+      <ul>
+        <li><a href="#shortest-vector-problem-leftmathrmsvp_gammaright">Shortest Vector Problem $\left(\mathrm{SVP}_\gamma\right)$</a></li>
+        <li><a href="#shortest-independent-vector-problem-leftmathrmsivp_gammaright">Shortest Independent Vector Problem $\left(\mathrm{SIVP}_\gamma\right)$</a></li>
+        <li><a href="#shortest-basis-problem-leftmathrmsbp_gammaright">Shortest Basis Problem $\left(\mathrm{SBP}_\gamma\right)$</a></li>
+      </ul>
+    </li>
+    <li><a href="#constructing-random-instances-of-a-hard-lattice-problem">Constructing random instances of a Hard Lattice problem</a>
+      <ul>
+        <li><a href="#lemma-1-ajtai96">Lemma 1 (Ajtai'96)</a></li>
+        <li><a href="#theorem-2-main-theorem-ajtai99">Theorem 2 (Main Theorem, Ajtai'99)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#short-integer-solution-mathrmsis_nmqbeta">Short Integer Solution ($\mathrm{SIS}_{n,m,q,\beta}$)</a></li>
+        <li><a href="#hardness-of-mathrmsis">Hardness of $\mathrm{SIS}$</a></li>
+        <li><a href="#a-specific-crhf-construction-ggh11">A specific CRHF construction (GGH11)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#lemma-2-ajtai96">Lemma 2 (Ajtai96)</a></li>
+        <li><a href="#properties-of-q-ary-lattices">Properties of $q$-ary Lattices</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+      <p>In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.</p>
+<h2 id="hardness-of-problems">Hardness of problems</h2>
+<p>Computational hardness usually revolves around problems with <strong>worst-case hardness</strong> guarantees since we want to design algorithms that run efficiently even on the worst possible input.</p>
+<p>On the other hand, cryptographic schemes require security guarantees for random keys. Therefore, cryptographic applications require problems with <strong>average-case hardness</strong> guarantees.</p>
+<p>However, it is not immediately apparent <strong>how to create hard instances of problems</strong> with worst-case hardness guarantees. In other words, how to design the most secure keys for cryptographic applications is unclear.</p>
+<p>Any random instance of a problem with <strong>average-case hardness</strong> guarantee <strong>is hard</strong> with a positive probability. Suppose one could show that such a random instance is as hard as the hardest instance (a reduction from average-case hardness to worst-case hardness). In that case, such a reduction immediately lends itself to applications in cryptography. This reduction is precisely the central thesis of the seminal work Ajtai'96 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<h1 id="lattice-based-cryptography">Lattice-based Cryptography</h1>
+<h2 id="what-is-a-lattice">What is a Lattice?</h2>
+<p>A Lattice $\Lambda$ or $\mathcal{L}$ is defined as the set of all integer linear combinations of $n$ linearly independent $m$-dimensional vectors $B=\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\}$.  Formally, we denote lattices as
+$$\mathcal{L}(B)=\{Bx, x\in\mathbb{Z}^{m}\}=\left\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\}.$$
+The set $B\in\mathbb{R}^{n\times m}$ is said to be the basis of the lattice $\Lambda$. We note here that <strong>any lattice $\Lambda$ is characterized by its basis</strong>. Shortly, <em>we will generalize the definition of lattices</em> by showing a different characterization of lattices which will be useful in cryptographic construction schemes.</p>
+<h2 id="why-lattice-based-cryptography">Why Lattice-based Cryptography?</h2>
+<p>Ajtai'96 <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> showed <strong>reductions</strong> from <strong>lattice based problems</strong> with <em>average-case hardness</em> guarantees to lattice problems with <em>worst-case guarantees</em>.  Intuitively, this shows that any randomly sampled instance of a lattice is as hard as the hardest instance.</p>
+<p>Later in this post, we will discuss a few lattice problems with <strong>known worst-case hardness guarantees</strong>. This immediately makes lattices an extremely important tool in cryptography.</p>
+<p>In fact, lattice based cryptographic constructions are invaluable for their many potential advantages as follows:</p>
+<ol>
+<li>Lattice-based schemes usually <strong>only require linear operations on integers</strong> which leads to asymptotic efficiency.</li>
+<li>Lattice-based schemes have been shown to be <strong>resistant to cryptanalysis by quantum algorithms</strong> unlike current classical cryptographic schemes which are based on factoring or discrete log (Shor'95 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>). This makes lattice-based cryptography the cornerstone of post-quantum cryptography.</li>
+<li>As noted earlier, random instances of lattice based constructions are “<em>as hard as possible</em>”, which lends itself to <strong>conceptual simplicity</strong> while designing cryptographic schemes.</li>
+</ol>
+<h2 id="hard-lattice-problems-w-known-worst-case-hardness-guarantees">Hard Lattice problems w/ known worst-case hardness guarantees</h2>
+<p>In this section, we discuss some important worst-case hard problems associated with lattices. As stated earlier, we would like to show a reduction from randomly generated lattices to instances of one of these problems.</p>
+<h3 id="shortest-vector-problem-leftmathrmsvp_gammaright">Shortest Vector Problem $\left(\mathrm{SVP}_\gamma\right)$</h3>
+<p>In the $\gamma$-approximate Shortest Vector Problem, we are asked find the length of the shortest non-zero vector (denoted by $\lambda_1$) in an $n$-dimensional lattice, approximately, up to a polynomial factor $\gamma$.</p>
+<ul>
+<li>It is known that the approximate (and also decision) SVP is <strong>NP-hard</strong> under a randomized reduction.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+</ul>
+<h3 id="shortest-independent-vector-problem-leftmathrmsivp_gammaright">Shortest Independent Vector Problem $\left(\mathrm{SIVP}_\gamma\right)$</h3>
+<p>The goal of the $\gamma$-approximate Shortest Independent Vector problem is to output a set of $n$ linearly independent lattice vectors in an $n$-dimensional lattice, approximately of length$\leq\gamma\lambda_n$.</p>
+<ul>
+<li>SIVP is <strong>NP-hard</strong> to approximate for any constant approximation factor.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
+</ul>
+<h3 id="shortest-basis-problem-leftmathrmsbp_gammaright">Shortest Basis Problem $\left(\mathrm{SBP}_\gamma\right)$</h3>
+<p>The $\gamma$-approximate Shortest Basis Problem asks us to find a basis $B={\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}}$ for an $n$-dimensional lattice $\mathcal{L}(B)$ such that $\mathrm{max}_i \lVert\mathrm{b_i}\rVert$ is the smallest possible upto a factor of $\gamma$.</p>
+<p>Later in this post we will see the connection between the above problems.</p>
+<h2 id="constructing-random-instances-of-a-hard-lattice-problem">Constructing random instances of a Hard Lattice problem</h2>
+<p>We now state some important results from Ajtai'96<sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and Ajtai'99<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> which deal with the construction of random instances of hard lattice problems. The following lemma shows that hardness of SBP by reduction to SVP.</p>
+<h3 id="lemma-1-ajtai96">Lemma 1 (Ajtai'96)</h3>
+<p>If $\mathrm{SBP}_\gamma$ has no polynomial time solution for $\gamma=\mathrm{poly}(n)$, then we can generate a random lattice $\Lambda$ (over some distribution $\mathcal{D}$) together with a &ldquo;short&rdquo; vector $x\in\Lambda$ in polynomial time s.t. there is no algorithm which can find a vector shorter than $\sqrt{n}$ in $\Lambda$ over $\mathcal{D}$ w.p. greater than $n^{-c}$, for sufficiently large $n$ and any $c&gt;0$.</p>
+<p><strong>Note:</strong> Here &ldquo;short&rsquo;&rsquo; refers to $|x|\leq\sqrt{n}$. Later Ajtai'99 <sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> extended <strong>Lemma 1</strong> to the following theorem:</p>
+<h3 id="theorem-2-main-theorem-ajtai99">Theorem 2 (Main Theorem, Ajtai'99)</h3>
+<p>If $\mathrm{SBP}_\gamma$ has no polynomial time solution for $\gamma=\mathrm{poly}(n)$, then we can generate a random lattice $\Lambda$ (from the same distribution $\mathcal{D}$ as in <strong>Lemma 1</strong> together with a &ldquo;short&rdquo; basis $B$ of $\Lambda$ in polynomial time s.t. there is no algorithm which can find a vector shorter than $\sqrt{n}$ in $\Lambda$ over $\mathcal{D}$ w.p. greater than $n^{-c}$, for sufficiently large $n$ and any $c&gt;0$.</p>
+<p>As we see, <strong>Theorem 2</strong> clearly gives us a way to <strong>construct a random instance of a hard problem</strong> ($\mathrm{SBP}_\gamma$). A short basis means $\lVert \mathrm{b_i} \rVert\leq n\sqrt{n},i\in[n]$, where $B=\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\}$. In the next, we concretely define the class of &ldquo;random&rdquo; lattices required by the above results.</p>
+<h1 id="the-sis-problem">The SIS problem</h1>
+<p>In this section, we take a deeper dive into the special class of random lattices given by Ajtai'96<sup id="fnref3:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, where it was shown how to</p>
+<ul>
+<li>Construct a family of one-way functions (based on the earlier family of random lattices as seen in Lemma 1), s.t.,</li>
+<li>If we invert any function from this family of functions with non-negligible probability, it implies that we can solve any instance of the $\mathrm{SVP}_\gamma$ for $\gamma=O({n^c}),c&gt;1$.
+Therefore, by the previous discussion, we see that the above construction implies an <em>average-case to worst-case reduction</em>. <strong>GGH11</strong><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> later extended the analysis of <strong>Ajtai96</strong> to show that the family of one-way functions is also collision-resistant, which is a stronger and more useful property for cryptographic applications.</li>
+</ul>
+<p>We now define the SIS problem and state a lemma (without proof) of its hardness.</p>
+<h3 id="short-integer-solution-mathrmsis_nmqbeta">Short Integer Solution ($\mathrm{SIS}_{n,m,q,\beta}$)</h3>
+<p>Let $A$ be a <strong>uniformly random matrix</strong> , i.e. ,   $A=\{a_0| a_1 | \ldots | a_{m-1}\}$
+consists of $m$ uniformly random  vectors $a_i\in\mathbb{Z}^n_q,i\in[m]$. Find a nontrivial $x\in\mathbb{Z}^m$, s.t. $|x|\leq\beta$ and $Ax\equiv 0\mod{q}$.</p>
+<p>Here $A\sim\mathbb{Z}_{q}^{n\times m}$ where $\mathbb{Z}^n_q$ is the set of all $n$-dimensional integer vectors modulo $q$, i.e., $\mathbb{Z}^n_q={\left\langle x_1,\ldots, x_n \right\rangle}$, where $x_i\in{0,1,\ldots,q-1}$ for all $i\in[n]$.</p>
+<p>We also note here that without the constraint $|x|\leq\beta$, the $\mathrm{SIS}$ is easy to solve using <em>Gaussian elimination</em>.</p>
+<h3 id="hardness-of-mathrmsis">Hardness of $\mathrm{SIS}$</h3>
+<p>For any $m = \mathrm{poly}(n)$, any  $\beta &gt; 0$, and any sufficiently large $q \geq \beta n^c$ (for any constant $c &gt;0$), solving $\mathrm{SIS}({n,m,q,\beta})$ with nonnegligible probability is at least as hard as
+solving $GapSVP_\gamma$ and ${SIVP}_\gamma$ for some $\gamma = \beta \cdot O(\sqrt{n})$ with a high probability in the worst-case scenario.</p>
+<p>Now we turn our attention to the construction of <strong>GGH11</strong><sup id="fnref1:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> based on the hardness of $\mathrm{SIS}$.</p>
+<h3 id="a-specific-crhf-construction-ggh11">A specific CRHF construction (GGH11)</h3>
+<p>We define a <strong>Collision-Resistant Hash function</strong> (CRHF) as follows:</p>
+<ul>
+<li>Set $m&gt;n\frac{\log{q}}{\log{d}}$.</li>
+<li><strong>Key:</strong> A matrix $A$ chosen uniformly at random from $\mathbb{Z}^{m\times n}_q$.</li>
+<li><strong>Hash function:</strong> Define a <strong>Shrinking function</strong> (shrinking since the domain is greater than the range): $f_A:{0,\ldots, d-1}^m\xrightarrow{}\mathbb{Z}^n_q$ s.t. $f_A(x)=Ax\mod q$.</li>
+<li><strong>Goal:</strong> Find $x,x^{\prime}\in{0,1}^m$ s.t. $f_A(x)=f_A(x^{\prime})$.</li>
+</ul>
+<p>Note that finding a solution to the collision problem yields a solution $z=x-x^\prime$ to the $\mathrm{SIS}$ problem as $0=f_A(x)-f_A(x^{\prime})=Ax-Ax^\prime=Az\equiv 0\mod{q}$.</p>
+<blockquote>
+<p>We now define a class of random lattices known as $q$-ary lattices and connect it to the $\mathrm{SIS}$ problem.</p>
+</blockquote>
+<h1 id="q-ary-lattices-at-last">$q$-ary Lattices at last</h1>
+<p>Given $A\sim \mathbb{Z}^{n\times m}_q$, $q$-ary lattices $\Lambda_q^\perp(A)$ are defined as
+$$\Lambda_q^\perp(A)=\{z\in\mathbb{Z}^m:Az=0\mod{q}\}$$
+We note that the randomness of $\Lambda_q^\perp(A)$ stems from the randomness of $A$ itself. $\Lambda_q^\perp(A)$ contains all vectors that are orthogonal modulo $q$ to the rows of $A$, i.e. $\Lambda_q^\perp(A)$ corresponds to the code whose parity check matrix is $A$.</p>
+<p>Here, we see that we have successfully <strong>characterized a lattice in terms of a parity check matrix</strong> $A$ <em>instead of a basis</em>. The class of $q$-ary lattices is  the class of random lattices required in <strong>Lemma 1</strong> and <strong>Theorem 2</strong>. We end this article with another lemma by Ajtai96 and some properties of $q$-ary lattices which connects the average-case hardness guarantees with worst-case guarantees.</p>
+<h3 id="lemma-2-ajtai96">Lemma 2 (Ajtai96)</h3>
+<p>Finding short $z\in\Lambda_q^\perp(A)$ s.t. $\left|{z}\right|\leq \beta &lt; q$, implies solving $\mathrm{GapSVP}_{\beta\sqrt{n}}$ on any n-dimensional lattice.</p>
+<h3 id="properties-of-q-ary-lattices">Properties of $q$-ary Lattices</h3>
+<ul>
+<li>A $q$-ary lattice $L$ satisfies $q\mathbb{Z}^n \subseteq L \subseteq \mathbb{Z}^n$ for $q\in\mathbb{Z}$.</li>
+<li>Any integer lattice $\mathcal{L}\subseteq\mathbb{Z}^n$ is a $q$-ary lattice for some $q$, e.g., whenever q is an integer multiple of the determinant $\mathrm{det}(\mathcal{L})$. We are only interested when $q$ is much smaller than $\left|{\mathrm{det}(L)}\right|$.</li>
+<li>The following two problems are equivalent:
+<ul>
+<li>Finding a short vector in $\Lambda_q^\perp(A)$ s.t. $A\sim \mathbb{Z}^{n\times m}_q$.</li>
+<li>Finding a short solution to a set of $n$ random equations modulo $q$ in $m$ variables.</li>
+</ul>
+</li>
+<li>The dual of any $q$-ary lattice is also a $q$-ary lattice. We represent the dual of a $q$-ary lattice $\Lambda_q^\perp(A)$ using the notation $\Lambda_q(A)$, which is defined as $$\Lambda_q(A)=\{z\in\mathbb{Z}^m:z=A^Ts\mod{q},,s\in\mathbb{Z}^n\}$$
+Here $\Lambda_q(A)$ is the code generated by the rows of $A$, i.e., $A$ itself is the generator matrix of the code. Contrast this with $\Lambda_q^\perp(A)$ where $A$ is the parity check matrix.</li>
+</ul>
+<h1 id="references">References</h1>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><strong>Ajtai96:</strong> M. Ajtai. 1996. Generating hard instances of lattice problems (extended abstract). In Proceedings of the twenty-eighth annual ACM symposium on Theory of Computing (STOC &lsquo;96). Association for Computing Machinery, New York, NY, USA, 99–108. <a href="https://doi.org/10.1145/237814.237838">https://doi.org/10.1145/237814.237838</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><strong>Shor95:</strong> Peter W. Shor. 1997. Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer. SIAM J. Comput. 26, 5 (Oct. 1997), 1484–1509. <a href="https://doi.org/10.1137/S0097539795293172">https://doi.org/10.1137/S0097539795293172</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><strong>BP23:</strong> Huck Bennett and Chris Peikert. Hardness of the (Approximate) Shortest Vector Problem: A Simple Proof via Reed-Solomon Codes. In Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques (APPROX/RANDOM 2023). Leibniz International Proceedings in Informatics (LIPIcs), Volume 275, pp. 37:1-37:20, Schloss Dagstuhl - Leibniz-Zentrum für Informatik (2023). <a href="https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2023.37">https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2023.37</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><strong>BS99:</strong> Johannes Blömer and Jean-Pierre Seifert. On the complexity of computing short linearly independent vectors and short bases in a lattice. In Proceedings of the Thirty-first Annual ACM Symposium on Theory of Computing, STOC ’99, pages 711–720, New York, NY, USA, 1999. ACM.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><strong>Ajtai99:</strong> Miklós Ajtai. 1999. Generating Hard Instances of the Short Basis Problem. In Proceedings of the 26th International Colloquium on Automata, Languages and Programming (ICAL &lsquo;99). Springer-Verlag, Berlin, Heidelberg, 1–9.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><strong>GGH11:</strong> O. Goldreich, S. Goldwasser, and S. Halevi. Collision-free hashing from lattice  problems. Studies in Complexity and Cryptography. Miscellanea on the Interplay between Randomness and Computation: In Collaboration with Lidor Avigad, Mihir Bellare, Zvika Brakerski, Shafi Goldwasser, Shai Halevi,  Tali Kaufman, Leonid Levin, Noam Nisan, Dana Ron, Madhu Sudan, Luca  Trevisan, Salil Vadhan, Avi Wigderson, David Zuckerman, pages 30–39,  2011&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </article>
+
+    
+<ul class="article-share">
+  
+  <li>
+    <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/qary/" target="_blank" rel="noopener" aria-label="Facebook">
+      <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <i class="fa-brands fa-facebook-f"></i></div>Facebook</div>
+    </a>
+  </li>
+
+  
+  
+
+  
+  <li>
+    <a class="resp-sharing-button__link" href="https://x.com/intent/tweet/?text=$q$-ary%20Lattices%20-%20Theoretics&amp;url=http://localhost:1313/qary/" target="_blank" rel="noopener" aria-label="Twitter">
+      <div class="resp-sharing-button resp-sharing-button--x resp-sharing-button--medium"><i class="fa-brands fa-x-twitter"></i></div>
+    </a>
+  </li>
+
+  
+  
+ 
+</ul>
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer pager-noitem">&lt; Newer</li>
+      <li class="pager-older">
+        <a href="/reductions/" data-toggle="tooltip" data-placement="top" title="An Introduction to Reductions">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright"></div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>

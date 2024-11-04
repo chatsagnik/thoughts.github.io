@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tcs on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/tags/tcs/</link>
-    <description>Recent content in tcs on Theoreticles</description>
-    <image>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Tcs on Theoretics</title>
+    <link>http://localhost:1313/tags/tcs/</link>
+    <description>Recent content in Tcs on Theoretics</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 11:51:18 +0530</lastBuildDate><atom:link href="https://theoreticles.netlify.app/tags/tcs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 11:51:18 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tcs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Introduction to Reductions</title>
-      <link>https://theoreticles.netlify.app/posts/reductions/</link>
+      <link>http://localhost:1313/reductions/</link>
       <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      
-      <guid>https://theoreticles.netlify.app/posts/reductions/</guid>
-      <description>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.
-Introduction Why do we need reductions? From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &amp;lsquo;Eureka!&amp;rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.</description>
+      <guid>http://localhost:1313/reductions/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;h2 id=&#34;why-do-we-need-reductions&#34;&gt;Why do we need reductions?&lt;/h2&gt;&#xA;&lt;p&gt;From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &amp;lsquo;Eureka!&amp;rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
