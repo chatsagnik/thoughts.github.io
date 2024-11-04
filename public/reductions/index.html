@@ -1,139 +1,135 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>An Introduction to Reductions - Theoretics</title>
-  <meta property="og:title" content="An Introduction to Reductions - Theoretics" />
-  <meta name="twitter:title" content="An Introduction to Reductions - Theoretics" />
-  <meta name="description" content="This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&rsquo;s dive in.
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>An Introduction to Reductions | Theoretics</title>
+<meta name="keywords" content="tcs, p-np, truth-table, reductions">
+<meta name="description" content="This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&rsquo;s dive in.
 Introduction
 Why do we need reductions?
 From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &lsquo;Eureka!&rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.">
-  <meta property="og:description" content="This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&rsquo;s dive in.
-Introduction
-Why do we need reductions?
-From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &lsquo;Eureka!&rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.">
-  <meta name="twitter:description" content="This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. …">
-  <meta name="author" content=""/>
-  <meta property="og:site_name" content="Theoretics" />
-  <meta property="og:url" content="http://localhost:1313/reductions/" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.136.5">
-  <link rel="stylesheet" href="/css/style.css" media="all" />
-  <link rel="stylesheet" href="/css/style-dark.css" media="all and (prefers-color-scheme: dark)" />
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/reductions/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3299c596a7007118365635c056dd427dace22b7b8c1341fdef6fa6c31359ba10.css" integrity="sha256-MpnFlqcAcRg2VjXAVt1CfaziK3uME0H972&#43;mwxNZuhA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/reductions/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <link rel="stylesheet" href="/css/syntax.css" media="all" />
-  <link rel="stylesheet" href="/css/custom.css" media="all" />
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
-  <script src="/js/script.js"></script>
-  <script src="/js/custom.js"></script>
-  <script defer src="/fontawesome/all.min.js"></script>
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
 </head>
 
-<body>
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header class="site-header">
-  <nav class="site-navi">
-    <h1 class="site-title"><a href="/">Theoretics</a></h1>
-    <ul class="site-navi-items">
-    </ul>
-  </nav>
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Theoretics (Alt + H)">Theoretics</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
 </header>
-<hr class="site-header-bottom">
+<main class="main">
 
-  <div class="main" role="main">
-    <article class="article">
-      
-      
-      <h1 class="article-title">An Introduction to Reductions</h1>
-      
-      <hr class="article-title-bottom">
-      <ul class="article-meta">
-        <li class="article-meta-date"><time>July 17, 2022</time></li>
-        <li class="article-meta-categories">
-          <a href="/categories/toc/">
-            <i class="fa-solid fa-folder"></i>
-            toc
-          </a>&nbsp;
-        </li>
-        <li class="article-meta-tags">
-          <a href="/tags/tcs/">
-            <i class="fa-solid fa-tag"></i>
-            tcs
-          </a>&nbsp;
-        </li>
-        <li class="article-meta-tags">
-          <a href="/tags/p-np/">
-            <i class="fa-solid fa-tag"></i>
-            p-np
-          </a>&nbsp;
-        </li>
-        <li class="article-meta-tags">
-          <a href="/tags/truth-table/">
-            <i class="fa-solid fa-tag"></i>
-            truth-table
-          </a>&nbsp;
-        </li>
-        <li class="article-meta-tags">
-          <a href="/tags/reductions/">
-            <i class="fa-solid fa-tag"></i>
-            reductions
-          </a>&nbsp;
-        </li>
-      </ul>
-      
-<aside class="toc">
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#why-do-we-need-reductions">Why do we need reductions?</a></li>
-    <li><a href="#when-can-we-use-reduction-techniques">When can we use reduction techniques?</a>
-      <ul>
-        <li><a href="#case-1-o-is-easy-to-solve">Case 1: $O$ is easy to solve</a></li>
-        <li><a href="#case-2-o-is-hard-to-solve">Case 2: $O$ is hard to solve</a></li>
-      </ul>
-    </li>
-    <li><a href="#remarks-on-reductions">Remarks on reductions</a>
-      <ul>
-        <li><a href="#relative-hardness">Relative Hardness</a></li>
-        <li><a href="#reductions-as-relations">Reductions as relations</a></li>
-      </ul>
-    </li>
-  </ul>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      An Introduction to Reductions
+    </h1>
+    <div class="post-meta">&lt;span title=&#39;2022-07-17 11:51:18 &#43;0530 IST&#39;&gt;July 17, 2022&lt;/span&gt;
 
-  <ul>
-    <li><a href="#reducing-sat-to-the-halting-problem">Reducing SAT to the Halting Problem</a>
-      <ul>
-        <li><a href="#the-halting-problem">The Halting Problem</a></li>
-        <li><a href="#the-sat-problem">The SAT Problem</a></li>
-        <li><a href="#the-reduction">The Reduction</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#karp-reductions--poly-time-many-one-reductions">Karp Reductions / poly-time Many-one reductions</a></li>
-    <li><a href="#truth-table-reductions">Truth Table Reductions</a></li>
-    <li><a href="#cook-reductions--poly-time-turing-reductions">Cook Reductions / poly-time Turing Reductions</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#completeness">Completeness</a></li>
-    <li><a href="#self-reducibility">Self reducibility</a></li>
-  </ul>
-</nav>
-</aside>
-      <p><em>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&rsquo;s dive in.</em></p>
-<h1 id="introduction">Introduction</h1>
-<h2 id="why-do-we-need-reductions">Why do we need reductions?</h2>
+</div>
+  </header> 
+  <div class="post-content"><p><em>This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&rsquo;s dive in.</em></p>
+<h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
+<h2 id="why-do-we-need-reductions">Why do we need reductions?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-need-reductions">#</a></h2>
 <p>From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one &lsquo;Eureka!&rsquo; at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.</p>
 <p>Therefore, we must develop principled approaches and techniques to solve new and unseen problems. Here is the good part:</p>
 <blockquote>
 <p>Most unsolved problems we encounter are already related to some existing problem we know about.</p>
 </blockquote>
 <p>This relation to solved problems is something that we can now prod and prick incessantly and eventually use to arrive at a conclusion about new problems. While hardly elegant in its conception, this approach is highly sophisticated in its execution. This is the basis for the mathematical technique known as reduction.</p>
-<h2 id="when-can-we-use-reduction-techniques">When can we use reduction techniques?</h2>
+<h2 id="when-can-we-use-reduction-techniques">When can we use reduction techniques?<a hidden class="anchor" aria-hidden="true" href="#when-can-we-use-reduction-techniques">#</a></h2>
 <p>First we start by describing two types of problems: hard and easy! <strong>Hard problems</strong> are typically those that the problem solver <em>does not know how to solve</em> or <em>knows are very hard to solve</em>, while easy problems are simply <em>easy</em> to solve.</p>
 <p>Since the notion of hardness as described above is quite subjective and non-rigorous, we formalize it below by quantifying the capabilities of the problem solver.</p>
 <blockquote>
@@ -145,18 +141,18 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 <li>We know that $O$ is easy to solve, and we notice that the underlying mathematical structure of $N$ is similar to $O$.</li>
 <li>We know that $O$ is hard to solve, and once again, $N$ is similar to $O$.</li>
 </ul>
-<h3 id="case-1-o-is-easy-to-solve">Case 1: $O$ is easy to solve</h3>
+<h3 id="case-1-o-is-easy-to-solve">Case 1: $O$ is easy to solve<a hidden class="anchor" aria-hidden="true" href="#case-1-o-is-easy-to-solve">#</a></h3>
 <p>In the first case, our primary approach is to transform instances of $N$ into instances of $O$ and then use the algorithm for $O$ to solve for $N$. In other words, using our existing knowledge of $O$, we solve $N$ and demonstrate that $N$ is a special case of $O$.</p>
 <blockquote>
 <p>Mathematically, we say that $N\subseteq O$ or $N$ reduces to $O$.</p>
 </blockquote>
-<h3 id="case-2-o-is-hard-to-solve">Case 2: $O$ is hard to solve</h3>
+<h3 id="case-2-o-is-hard-to-solve">Case 2: $O$ is hard to solve<a hidden class="anchor" aria-hidden="true" href="#case-2-o-is-hard-to-solve">#</a></h3>
 <p>In the second case, we can again exploit the structural similarities, but this time to a different end. Without prior context, it is difficult to show that $N$ is hard to solve. Therefore, we start with the assumption that $N$ is easy to solve. Now exploiting the similarities between $O$ and $N$, we transform all instances of $O$ to some instance of $N$. This gives rise to a contradiction. We have apparently shown that $O$ reduces to $N$, but we can prove that $O$ is hard to solve. Therefore $N$ has to be hard to solve as well. Otherwise, we could use the algorithm for $N$ to solve for $O$.</p>
 <p>Let us explore a few properties of reductions now.</p>
-<h2 id="remarks-on-reductions">Remarks on reductions</h2>
-<h3 id="relative-hardness">Relative Hardness</h3>
+<h2 id="remarks-on-reductions">Remarks on reductions<a hidden class="anchor" aria-hidden="true" href="#remarks-on-reductions">#</a></h2>
+<h3 id="relative-hardness">Relative Hardness<a hidden class="anchor" aria-hidden="true" href="#relative-hardness">#</a></h3>
 <p>If $A\subseteq B$, then $B$ is at least as hard as $A$ to solve, i.e., $A$ <em>cannot be harder to solve than</em> $B$.</p>
-<h3 id="reductions-as-relations">Reductions as relations</h3>
+<h3 id="reductions-as-relations">Reductions as relations<a hidden class="anchor" aria-hidden="true" href="#reductions-as-relations">#</a></h3>
 <ul>
 <li>Trivially $A\subseteq A$ by using identity transformations. Therefore reductions are reflexive relations.</li>
 <li>If $A\subseteq B$ and $B\subseteq C$ then we can prove that $A\subseteq C$ by composing the transformations. Therefore reductions are transitive relations.</li>
@@ -167,7 +163,7 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 <li>$A\subseteq B$ does not imply $B\subseteq A$.</li>
 </ul>
 <p>A concrete example of this will be discussed later in detail: We can reduce <code>SAT</code>, which is a decidable problem, to the <code>Halting problem</code>, which is an undecidable problem, but the converse is not true (by definition of decidability).</p>
-<h1 id="formalizing-reductions">Formalizing reductions</h1>
+<h1 id="formalizing-reductions">Formalizing reductions<a hidden class="anchor" aria-hidden="true" href="#formalizing-reductions">#</a></h1>
 <p>The observant reader will notice that until this point, we have not provided an actual mathematical definition of reductions. The reason for this is simple. Reductions are a highly general family of techniques, and to provide a rigorous formalization of reductions, we consider some specific variants.</p>
 <p>A formal way of looking at reductions is as follows:</p>
 <blockquote>
@@ -180,7 +176,8 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 <li>Now we perform invocation(s) to the oracle for $B$ to solve for these transformed instances $R(x)$ or $y$.</li>
 </ul>
 <p>Depending on the output of the $B$ oracle, we decide our output for the $A$ oracle. We denote this mathematically as $x\in A \iff R(x) \in B$.</p>
-<p><img src="/posts/reductions.png" alt="Reductions"></p>
+<p><img loading="lazy" src="/posts/reductions.png" alt="Reductions"  />
+</p>
 <p>The notion of efficiency is twofold.</p>
 <ul>
 <li>Firstly, we look at how <strong>efficient the transformation/reduction</strong> from $x$ to $R(x)$ is.</li>
@@ -196,11 +193,11 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x; <span style="color:#75715e">// This is R(x)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><p>Writing this piece of code took finite time, and was certainly efficient. However, depending on the value of the input the <code>for</code> loop will never terminate for values of $x&gt;11$. Therefore, this program may become <em>inefficient during runtime</em>. The notion of efficiency we consider during reductions (<strong>unlike computational scenarios</strong>) is how efficiently we can write the code for function <code>A</code>, and not how efficiently <code>A</code> transforms $x$ into $R(x)$.</p>
-<h2 id="reducing-sat-to-the-halting-problem">Reducing SAT to the Halting Problem</h2>
+<h2 id="reducing-sat-to-the-halting-problem">Reducing SAT to the Halting Problem<a hidden class="anchor" aria-hidden="true" href="#reducing-sat-to-the-halting-problem">#</a></h2>
 <blockquote>
 <p><strong>Note:</strong> This is a highly technical section, and would need familiarity to the satisfiability problem and the Halting problem. We encourage the reader to familiarize themselves with the formal definitions of these problems first before going through this section. We give an intuitive description of the problems below.</p>
 </blockquote>
-<h3 id="the-halting-problem">The Halting Problem</h3>
+<h3 id="the-halting-problem">The Halting Problem<a hidden class="anchor" aria-hidden="true" href="#the-halting-problem">#</a></h3>
 <p>Recall the earlier piece of pseudocode with a slight modification.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">A1</span>(<span style="color:#66d9ef">int</span> x){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(;x<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">12</span>;x<span style="color:#f92672">++</span>);
@@ -216,14 +213,14 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 <p><strong>The Halting problem:</strong> Given a Turing Machine $A$ and an arbitrary input $x$, does $A(x)$ halt?</p>
 </blockquote>
 <p>This in effect describes the Halting problem, where $B$ is a universal Turing machine and $A$ can be any Turing Machine. It has been shown that there does not exist any such $B$ which solves this problem. Therefore the Halting problem cannot be decided, and is formally referred to as an <strong>undecidable</strong> problem.</p>
-<h3 id="the-sat-problem">The SAT Problem</h3>
+<h3 id="the-sat-problem">The SAT Problem<a hidden class="anchor" aria-hidden="true" href="#the-sat-problem">#</a></h3>
 <p>A Boolean formula $f$ accepts as input an $n$-bit string and outputs a $1$ (if it accepts the string), or a $0$ (if it rejects the string). Mathematically, $f:{0,1}^{n}\xrightarrow{}{0,1}$.</p>
 <blockquote>
 <p><strong>The satisfiability(SAT) problem:</strong> Given a formula $f$ and an arbitrary $n$ bit string $x\in{0,1}^{n}$, is $f(x)=1$?</p>
 </blockquote>
 <p>Note that the structure of SAT is subsumed by the structure of the Halting problem. If the decider to <code>Halting problem</code> ever halts, we can find out whether $f(x)=1$.</p>
 <p>Even though <code>SAT</code> can be quite hard to solve computationally (may have exponential runtime depending on the structure of the formula), we can construct an algorithm to solve it. Therefore, right off the bat, we observe that <code>SAT</code> is easier to solve (it is decidable) than the <code>Halting problem</code>.</p>
-<h3 id="the-reduction">The Reduction</h3>
+<h3 id="the-reduction">The Reduction<a hidden class="anchor" aria-hidden="true" href="#the-reduction">#</a></h3>
 <p>Let us finally have a look at how we would reduce SAT to the Halting problem.</p>
 <ol>
 <li>
@@ -249,19 +246,19 @@ From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching
 </li>
 </ol>
 <p>In step 2, we are simply constructing the TM $T$, not executing it. The reduction is the transformation of the SAT formula $x$ to an encoding of both the Turing Machine and the SAT formula, which is an instance of the Halting problem (HALT$_{TM}$ requires an arbitrary TM and an input string to the TM).</p>
-<h1 id="taxonomy-of-polynomial-time-reductions">Taxonomy of Polynomial-time reductions</h1>
+<h1 id="taxonomy-of-polynomial-time-reductions">Taxonomy of Polynomial-time reductions<a hidden class="anchor" aria-hidden="true" href="#taxonomy-of-polynomial-time-reductions">#</a></h1>
 <p>Here we only consider polynomial-time reductions, i.e.</p>
 <ul>
 <li>the time taken to transform $x$ to $R(x)$, and</li>
 <li>the number of calls to $O_B$
 are both polynomial. These are the most commonly studied types of reductions, and we look at three kinds of polynomial-time reductions.</li>
 </ul>
-<h2 id="karp-reductions--poly-time-many-one-reductions">Karp Reductions / poly-time Many-one reductions</h2>
+<h2 id="karp-reductions--poly-time-many-one-reductions">Karp Reductions / poly-time Many-one reductions<a hidden class="anchor" aria-hidden="true" href="#karp-reductions--poly-time-many-one-reductions">#</a></h2>
 <p>These are the <strong>most restrictive type</strong> of polynomial reductions.
 Given a single input $x$, $R(x)$ produces a single instance $y$ such that $x\in A\iff y\in B$. Therefore, we have to perform only one oracle call to $O_B$. The earlier reduction from <code>SAT</code> to <code>HALT</code> was a Karp reduction.</p>
 <p>We can choose to strengthen the notion of Karp reductions to include weaker forms of reductions.
 For example, in logspace many-one reductions, we can compute $R(x)$ using just logarithmic space instead of polynomial time. Even more restrictive notions of reductions consider reductions computable by constant depth circuit classes.</p>
-<h2 id="truth-table-reductions">Truth Table Reductions</h2>
+<h2 id="truth-table-reductions">Truth Table Reductions<a hidden class="anchor" aria-hidden="true" href="#truth-table-reductions">#</a></h2>
 <p>These are reductions in which given a single input $x$, $R(x)$ produces a constant number of outputs $y_1,y_2,\ldots, y_k$ to $B$. The output $O_A(x)$ can be expressed in terms of a function $f$ that combines the outputs $O_B(y_i)$ for $i\in[1,\ldots,k]$.</p>
 <blockquote>
 <p>Let us assume that $f$ outputs $1$ for the desired combination and $0$ otherwise.
@@ -274,14 +271,14 @@ Here, $f$ is efficiently computable, and there are a constant ($k$) number of or
 $B$: Does $G$ have an independent set of size $k$?</p>
 </blockquote>
 <p>The reduction $A\subseteq B$ would involve looping from $1$ to $\ell$ and querying $B$ each time. The combination function would be an OR function. At the first yes instance of $B$, we return the value as the answer for $A$. If there is no independent set in $G$, the worst number of calls to $O_B$ is $\ell$.</p>
-<h2 id="cook-reductions--poly-time-turing-reductions">Cook Reductions / poly-time Turing Reductions</h2>
+<h2 id="cook-reductions--poly-time-turing-reductions">Cook Reductions / poly-time Turing Reductions<a hidden class="anchor" aria-hidden="true" href="#cook-reductions--poly-time-turing-reductions">#</a></h2>
 <p>Here, we are allowed a polynomial number of oracle calls and polynomial time for transforming the inputs. These are the most general form of reductions, and the other forms of reductions are restrictions of Cook reductions. In the example graph $G$ used for TT reductions, if we assume the number of vertices of $G$ to be a polynomial, then the reduction $A\subseteq B$ using the same exact process would be a Cook reduction.</p>
 <blockquote>
 <p>$A\subseteq_{m} B \implies A\subseteq_{t} B \implies A\subseteq_{T} B$
 where, $\subseteq_{m}$ denotes Karp reductions, $\subseteq_{t}$ denotes Truth Table reductions, and $\subseteq_{T}$ denotes Cook reductions.</p>
 </blockquote>
 <p><em>Aside:</em> From the nature of the examples, we can see that Karp reductions only extend to decision problems (problems with yes/no outputs). In contrast, Cook reductions can accommodate search/relation/optimization problems (problems with a set of outputs).</p>
-<h1 id="basic-reductions-in-computability-theory">Basic reductions in Computability Theory</h1>
+<h1 id="basic-reductions-in-computability-theory">Basic reductions in Computability Theory<a hidden class="anchor" aria-hidden="true" href="#basic-reductions-in-computability-theory">#</a></h1>
 <p>In this section, the reader is assumed to have familiarity with concepts of decidability and undecidability. Let us now proceed with some instances of reductions in computability theory.</p>
 <p>Let $A\subseteq B$, and they are decision problems.</p>
 <ul>
@@ -305,12 +302,12 @@ where, $\subseteq_{m}$ denotes Karp reductions, $\subseteq_{t}$ denotes Truth Ta
 <p>$x\in \bar{A} \iff x\notin A \iff R(x)\notin B \iff R(x)\in\bar{B}$. Therefore, $x\in \bar{A} \iff R(x)\in\bar{B}$.</p>
 </blockquote>
 <p>Immediately we see the power of formalizing the notion of reductions.</p>
-<h1 id="notions-of-reductions-in-complexity-theory">Notions of reductions in Complexity Theory</h1>
+<h1 id="notions-of-reductions-in-complexity-theory">Notions of reductions in Complexity Theory<a hidden class="anchor" aria-hidden="true" href="#notions-of-reductions-in-complexity-theory">#</a></h1>
 <p><strong>This section is for advanced readers only due to the number of prerequisites involved.</strong></p>
 <p>A complexity class is a set of computational problems that can be solved using similar amounts of bounded resources (time, space, circuit depth, number of gates, etc.) on a given computational model (Turing machines, cellular automaton, etc.).</p>
 <p>The complexity classes P, NP, and PSPACE are closed under Karp and logspace reductions. The complexity classes $L$ and $NL$ are closed only under logspace reductions. Closure has the following semantics - given a problem $A$ in a complexity class C, any problem $B$ such that $B\subseteq A$ is also in C.</p>
 <p>We now explore two interesting notions in complexity theory that arise from reductions.</p>
-<h2 id="completeness">Completeness</h2>
+<h2 id="completeness">Completeness<a hidden class="anchor" aria-hidden="true" href="#completeness">#</a></h2>
 <p>For a bounded complexity class,</p>
 <blockquote>
 <p>Complete problems are the hardest problems inside their respective complexity class.</p>
@@ -325,58 +322,94 @@ where, $\subseteq_{m}$ denotes Karp reductions, $\subseteq_{t}$ denotes Truth Ta
 <p>Under Karp-reductions, the notion of P-completeness is <em>semantically useless</em>.</p>
 </blockquote>
 <p>Therefore, we use weaker forms of reductions such as logspace reductions or reductions using constant depth circuit computable functions to achieve a more meaningful notion of P-completeness.</p>
-<h2 id="self-reducibility">Self reducibility</h2>
+<h2 id="self-reducibility">Self reducibility<a hidden class="anchor" aria-hidden="true" href="#self-reducibility">#</a></h2>
 <p>Decision problems are yes/no problems where we ask if a solution exists. However, sometimes we also want to solve the corresponding search problem to find a solution (if one exists).</p>
 <p>In the context of languages in NP, self-reducibility essentially states that if we can efficiently solve the decision version of a problem, we can also efficiently solve the search/optimization version of the problem. A more formal definition would be as follows - the search version of a problem Cook-reduces (polynomial-time Turing-reduces) to the decision version of the problem. Every NP-complete problem is self-reducible and downward self-reducible.</p>
-<h1 id="conclusion">Conclusion</h1>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
 <p>This write-up aims to demystify a core technique used in theoretical computer science and provide a few contexts for its usage. For a more rigorous and formal introduction to this topic, please check out Michael Sipser&rsquo;s excellent book &ldquo;An Introduction to the Theory of Computation.&rdquo; There are many more things to say about reductions, and this article barely scratches the surface on any of the topics it touches. However, I feel it would be prudent to stop at this point before it becomes any more of a rambling mess than it already is.</p>
 
-    </article>
 
-    
-<ul class="article-share">
-  
-  <li>
-    <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/reductions/" target="_blank" rel="noopener" aria-label="Facebook">
-      <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-        <i class="fa-brands fa-facebook-f"></i></div>Facebook</div>
-    </a>
-  </li>
+  </div>
 
-  
-  
-
-  
-  <li>
-    <a class="resp-sharing-button__link" href="https://x.com/intent/tweet/?text=An%20Introduction%20to%20Reductions%20-%20Theoretics&amp;url=http://localhost:1313/reductions/" target="_blank" rel="noopener" aria-label="Twitter">
-      <div class="resp-sharing-button resp-sharing-button--x resp-sharing-button--medium"><i class="fa-brands fa-x-twitter"></i></div>
-    </a>
-  </li>
-
-  
-  
- 
-</ul>
-
-
-    <ul class="pager article-pager">
-      <li class="pager-newer">
-          <a href="/qary/" data-toggle="tooltip" data-placement="top" title="$q$-ary Lattices">&lt; Newer</a>
-      </li>
-      <li class="pager-older pager-noitem">Older &gt;</li>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/tcs/">Tcs</a></li>
+      <li><a href="http://localhost:1313/tags/p-np/">P-Np</a></li>
+      <li><a href="http://localhost:1313/tags/truth-table/">Truth-Table</a></li>
+      <li><a href="http://localhost:1313/tags/reductions/">Reductions</a></li>
     </ul>
-  </div>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">Theoretics</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-<div class="site-footer">
-  <div class="copyright"></div>
-  <ul class="site-footer-items">
-  </ul>
-  <div class="powerdby">
-    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
-  </div>
-</div>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>
