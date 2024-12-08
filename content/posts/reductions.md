@@ -2,100 +2,98 @@
 title: "An Introduction to Reductions"
 date: 2022-07-17T11:51:18+05:30
 draft: false
-tags: [reductions]
-categories: [theorytoolkit]
+tags: [reductions,p-np,SAT,halting problem, undecidability]
+categories: [toolkit,toc]
 ---
 
-_This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don't hesitate to contact me via email if you need further clarification. Without further ado, let's dive in._
+> _This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don't hesitate to contact me via email if you need further clarification. Without further ado, let's dive in._
 
-# Introduction
+----
 
-## Why do we need reductions?
+## Introduction
+
+### The What and Why of reductions?
 
 From Archimedes terrorizing the good folk of ancient Syracuse to Newton watching apples fall during a medieval plague, science has always progressed one 'Eureka!' at a time. Romantic as these anecdotes may be, for mathematics, we can hardly look to Mother Nature for providing us the key insight to our proofs.
-
-Therefore, we must develop principled approaches and techniques to solve new and unseen problems. Here is the good part: 
+Therefore, we must develop principled approaches and techniques to solve new and unseen problems. Here is the good part:
 
 > Most unsolved problems we encounter are already related to some existing problem we know about. 
 
 This relation to solved problems is something that we can now prod and prick incessantly and eventually use to arrive at a conclusion about new problems. While hardly elegant in its conception, this approach is highly sophisticated in its execution. This is the basis for the mathematical technique known as reduction.
 
-## When can we use reduction techniques?
+### When can we use reduction techniques?
 
-First we start by describing two types of problems: hard and easy! **Hard problems** are typically those that the problem solver *does not know how to solve* or *knows are very hard to solve*, while easy problems are simply *easy* to solve. 
+First we start by describing two types of problems: hard and easy! **Hard problems** are typically those that the problem solver _does not know how to solve_ or _knows are very hard to solve_, while easy problems are simply _easy_ to solve.
 
 Since the notion of hardness as described above is quite subjective and non-rigorous, we formalize it below by quantifying the capabilities of the problem solver.
 
-> Throughout this post, we assume that the notion of *hard* and *easy* depends only on the computational resources available to the problem solver.
- 
+> Throughout this post, we assume that the notion of _hard_ and _easy_ depends only on the computational resources available to the problem solver.
+
 Access to powerful computational models might allow us (the problem solver) to efficiently find solutions to previously **hard-to-solve** problems. For example, `SAT` can be easily solved if we have know how to solve the `Halting problem`. We shall expand on this example [later in this post](#reducing-sat-to-the-halting-problem).
 
-Take two problems, $O$ (*an old problem*) and $N$ (*a new problem*). Consider the two following situations that might arise where we would ideally like to avoid reinventing the wheel.
+Take two problems, $O$ (_an old problem_) and $N$ (_a new problem_). Suppose we make the astute observation that the underlying mathematical structure of $N$ is similar to $O$. Therefore, instead of trying to solve $N$ from scratch, we can hope to somehow use $O$ to solve $N$. Consider the following situations of interest that might arise where we would ideally like to avoid reinventing the wheel.
 
-- We know that $O$ is easy to solve, and we notice that the underlying mathematical structure of $N$ is similar to $O$.
-- We know that $O$ is hard to solve, and once again, $N$ is similar to $O$.
+#### Case 1: $O$ is harder to solve than $N$, but $O$ is actually easy to solve
 
-### Case 1: $O$ is easy to solve
-In the first case, our primary approach is to transform instances of $N$ into instances of $O$ and then use the algorithm for $O$ to solve for $N$. In other words, using our existing knowledge of $O$, we solve $N$ and demonstrate that $N$ is a special case of $O$. 
+In this case, mathematically, we say that $N\subseteq O$^[Here, we consider $O$ and $N$ to be _languages_ or sets of strings c
+orresponding to decision problems, i.e., YES/NO problems.]. In this case, our primary approach is to transform instances of $N$ into instances of $O$ and then use the algorithm for $O$ to solve for $N$. In other words, if we can demonstrate that $N$ is a special case of $O$, we solve $N$ using our existing knowledge of $O$.
 
->Mathematically, we say that $N\subseteq O$ or $N$ reduces to $O$. 
+> Reducing problem $A$ to $B$ is the process of transforming instances of $A$ into instances of $B$. Note that this is only possible if $A\subseteq B$.
 
-### Case 2: $O$ is hard to solve
-In the second case, we can again exploit the structural similarities, but this time to a different end. Without prior context, it is difficult to show that $N$ is hard to solve. Therefore, we start with the assumption that $N$ is easy to solve. Now exploiting the similarities between $O$ and $N$, we transform all instances of $O$ to some instance of $N$. This gives rise to a contradiction. We have apparently shown that $O$ reduces to $N$, but we can prove that $O$ is hard to solve. Therefore $N$ has to be hard to solve as well. Otherwise, we could use the algorithm for $N$ to solve for $O$.
+#### Case 2: $O$ is easier to solve than $N$, but $O$ is actually hard to solve
+
+In this case, we can again exploit the structural similarities between $O$ and $N$, but this time to a different end. Without prior context, it is difficult to show that $N$ is hard to solve. However, using the hardness of $O$, it is easy to show that $N$ is hard to solve as well.
+
+We start with the assumption that $N$ is easy to solve, i.e., there exists some algorithm to efficiently decide membership in the set $N$. We use this assumption to arrive at a contradiction. Now exploiting the similarities between $O$ and $N$, we transform all instances of $O$ to some instance of $N$. 
+
+Since $O$ reduces to $N$, i.e., there is a way to efficiently decide membership in $O$ using the algorithm for $N$. However, we **know for sure** that $O$ is hard to solve. This leads us to a contradiction, which is resolved by removing our assumption that $N$ is easy to solve. Therefore $N$ has to be hard to solve as well.
 
 Let us explore a few properties of reductions now.
 
-## Remarks on reductions
+#### Relative Hardness
 
-### Relative Hardness
+For any pair of languages / decision problems $A$ and $B$, if $A\subseteq B$, then $B$ is at least as hard as $A$ to solve, i.e., $A$ _cannot be harder to solve than_ $B$.
 
-If $A\subseteq B$, then $B$ is at least as hard as $A$ to solve, i.e., $A$ *cannot be harder to solve than* $B$.
+#### Reductions as relations
 
-### Reductions as relations
-
-- Trivially $A\subseteq A$ by using identity transformations. Therefore reductions are reflexive relations.
-- If $A\subseteq B$ and $B\subseteq C$ then we can prove that $A\subseteq C$ by composing the transformations. Therefore reductions are transitive relations.
-- Reductions are, however, **not symmetric relations** (and, therefore, by extension, not equivalence relations).
-
-As stated earlier, if $A\subseteq B$, then $B$ is at least as hard or harder to solve than $A$. Therefore, 
-- $A\subseteq B$ does not imply $B\subseteq A$. 
+- **Reflexivity of reductions:** Trivially $A\subseteq A$ by using identity transformations.
+- **Transitivity of reductions:**  If $A\subseteq B$ and $B\subseteq C$ then we can prove that $A\subseteq C$ by composing the transformations.
+- Reductions are, however, **not symmetric relations** (and, therefore, by extension, not equivalence relations). $A\subseteq B$ does not imply $B\subseteq A$.
 
 A concrete example of this will be discussed later in detail: We can reduce `SAT`, which is a decidable problem, to the `Halting problem`, which is an undecidable problem, but the converse is not true (by definition of decidability).
 
-# Formalizing reductions
+----
 
-The observant reader will notice that until this point, we have not provided an actual mathematical definition of reductions. The reason for this is simple. Reductions are a highly general family of techniques, and to provide a rigorous formalization of reductions, we consider some specific variants.
+## An alternate view of reductions
 
-A formal way of looking at reductions is as follows: 
+Reductions are a highly general family of techniques, and to provide a rigorous formalization of reductions, we consider some specific variants. An interesting way of looking at reductions is as follows:
+
 >Given an **oracle** for a problem $B$, can we solve $A$ efficiently by making oracle calls to $B$? If yes, then $A\subseteq B$. 
 
-Here, an oracle is nothing but a *black-box subroutine* for efficiently solving a problem. We do not need to bother about the internal mechanisms of the oracle itself - **we just have to use the oracle's existence**.
+Here, an oracle is nothing but a _black-box subroutine_ for efficiently solving a problem. The beauty of reductions lie in the fact that we do not need to bother about the internal mechanisms of the oracle itself. Nor do we have to worry about construct the oracle itself. **We simply have to use the oracle's existence**. Implicitly, reduction is a two-step process. Suppose $A\subseteq B$.
 
-Implicitly this is a two-step process. 
-- First, instances of $A$ are reduced/transformed into instances of $B$. Therefore $x\in A$ is transformed into $y\in B$. Since $x$ is "reduced/transformed" into $y$, we shall use $R(x)$ to denote instances of $B$.
-- Now we perform invocation(s) to the oracle for $B$ to solve for these transformed instances $R(x)$ or $y$.
-
-Depending on the output of the $B$ oracle, we decide our output for the $A$ oracle. We denote this mathematically as $x\in A \iff R(x) \in B$.
+- Suppose there exists a subroutine $R$ that transforms **yes instances** of $A$ into **yes instances** of $B$, and **no instances** of $A$ into **no instances** of $B$. First, input instances $x$ (that may/may not belong to $A$) are reduced/transformed into _possible instances_ of $B$ using the subroutine $R$.
+- Next, we perform invocation(s) to the oracle for $B$ to decide the membership of $R(x)$ in $B$. Explicitly, we perform the following computation: $O_B(R(x))$. If $O_B(R(x))=1$, then we decide that $x\in A$. Otherwise, we decide that $x\notin A$. $$x\in A \iff R(x) \in B.$$
 
 ![Reductions](/posts/reductions.png)
 
 The notion of efficiency is twofold. 
-- Firstly, we look at how **efficient the transformation/reduction** from $x$ to $R(x)$ is. 
-- Secondly, for the oracle $O_B$, we are concerned with **how many times the oracle is invoked**. 
 
-The notion of efficiency in transforming $x$ to $R(x)$ has a small caveat, which we explore via an example. 
-> Only the construction of the reduction method $R$ needs to be efficient, and solving $O_B(R(x))$ does not need to be efficient.
+- Firstly, we are concerned with **how efficient the transformation/reduction** from $x$ to $R(x)$ is. The notion of efficiency in transforming $x$ to $R(x)$ has a small caveat, which we explore via an example. 
+  - Only the construction of the reduction method $R$ needs to be efficient, and solving $O_B(R(x))$ does not need to be efficient.
+  - Consider the following C pseudocode:
+	```C
+	int A(int x){
+		for(;x>12;x++);
+		return x; // This is R(x)
+	}
+	```
+  - Writing this piece of code took finite time, and was certainly efficient. However, depending on the value of the input the `for` loop will never terminate for values of $x>11$. Therefore, this program may become *inefficient during runtime*. The notion of efficiency we consider during reductions (**unlike computational scenarios**) is how  efficiently we can write the code for function `A`, and not how efficiently `A` transforms $x$ into $R(x)$.
+- Sometimes, we might require more than one call to the oracle $O_B$, depending on the problems at hand. In this case, we are concerned with **how many times the oracle is invoked**.
 
-For example consider the following C pseudocode:
-```C
-int A(int x){
-	for(;x>12;x++);
-	return x; // This is R(x)
-}
-```
-Writing this piece of code took finite time, and was certainly efficient. However, depending on the value of the input the `for` loop will never terminate for values of $x>11$. Therefore, this program may become *inefficient during runtime*. The notion of efficiency we consider during reductions (**unlike computational scenarios**) is how  efficiently we can write the code for function `A`, and not how efficiently `A` transforms $x$ into $R(x)$.
+----
 
-## Reducing SAT to the Halting Problem
+## A Prototypical Reduction: SAT to the Halting Problem
 
 > **Note:** This is a highly technical section, and would need familiarity to the satisfiability problem and the Halting problem. We encourage the reader to familiarize themselves with the formal definitions of these problems first before going through this section. We give an intuitive description of the problems below.
 
@@ -115,45 +113,58 @@ Note `A2` will always halt no matter the input, while `A1` may never halt depend
 
 Imagine you would like to design a function $B$ that takes the binary description of any single parameter function $A$ and any arbitrary input $x$, and find out whether $A$ will halt on input $x$. 
 
->**The Halting problem:** Given a Turing Machine $A$ and an arbitrary input $x$, does $A(x)$ halt?
+>**The Halting problem (HALT):** Given (the binary encoding of) any arbitrary Turing Machine $A$ and an arbitrary input $x$ to $A$, does $A(x)$ halt?
 
 This in effect describes the Halting problem, where $B$ is a universal Turing machine and $A$ can be any Turing Machine. It has been shown that there does not exist any such $B$ which solves this problem. Therefore the Halting problem cannot be decided, and is formally referred to as an **undecidable** problem.
 
 ### The SAT Problem
 A Boolean formula $f$ accepts as input an $n$-bit string and outputs a $1$ (if it accepts the string), or a $0$ (if it rejects the string). Mathematically, $f:\{0,1\}^{n}\xrightarrow{}\{0,1\}$. 
 
-> **The satisfiability(SAT) problem:** Given a formula $f$ and an arbitrary $n$ bit string $x\in\{0,1\}^{n}$, is $f(x)=1$?
+> **The satisfiability(SAT) problem:** Given a Boolean formula $f$ and an arbitrary $n$ bit string $x\in\{0,1\}^{n}$, is $f(x)=1$?
 
 Note that the structure of SAT is subsumed by the structure of the Halting problem. If the decider to `Halting problem` ever halts, we can find out whether $f(x)=1$.
 
-Even though `SAT` can be quite hard to solve computationally (may have exponential runtime depending on the structure of the formula), we can construct an algorithm to solve it. Therefore, right off the bat, we observe that `SAT` is easier to solve (it is decidable) than the `Halting problem`.
+Even though `SAT` can be quite hard to solve computationally (may have exponential runtime depending on the structure of the formula), we can **always** construct an algorithm to solve it. Therefore, right off the bat, we observe that `SAT` is easier to solve (it is decidable) than the `Halting problem`.
 
-### The Reduction
+### Reducing SAT to HALT
 
 Let us finally have a look at how we would reduce SAT to the Halting problem.
 
-1. Our input $x$ is a `SAT` formula.
+1. Our input $x$ is a Boolean formula. We want to output if this formula is satisfiable.
 2. We construct a TM (Turing Machine) $T$ which accepts $x$ and does the following:
-   - $T$ iterates over all possible assignments to find a satisfying assignment. `This may require exponential runtime in the size of the formula.`
-   - If $T$ finds a satisfying assignment, it will halt.
-   - Otherwise, we put $T$ into an infinite loop.
+   - $T$ iterates over all possible assignments to find a satisfying assignment. 
+  ```🔴 This may require exponential runtime in the size of the formula.```
+     - If $T$ finds a satisfying assignment, halt and return 1. 
+		 ```🟣 Hence, if x is satisfiable, T halts.```
+   - Otherwise, we put $T$ into an infinite loop. 
+	 ```🟣 Hence, T halts iff if x is satisfiable.```
 
-3. Our reduction $R(x)$ takes the SAT formula $x$ and returns an **encoding** of the above Turing machine $T$ with $x$. More precisely, we have something like $R(x)=\left<\lfloor T\rfloor,x\right>$. Note that $R(x)$ at this point can be compared to a compiled binary which has not yet been executed.
+3. Our reduction $R(x)=\langle\langle T\rangle,x\rangle$ takes the SAT formula $x$ and returns an **encoding** of the above Turing machine $T$ coupled with $x$, s.t., yes instances of SAT map to yes instances of HALT, and no instances of SAT map to no instances of HALT. ```🟣 Note that $R(x)$ at this point can be compared to a compiled binary which has not yet been executed.```
    
-4. We pass $R(x)$ to $O_{\text{halt}}$.
-   - If $O_{\text{halt}}$ returns yes, this implies $T$ halts on input $x$, which in turn implies $x$ has a satisfying assignment. Therefore $R(x)\in\text{HALT}\implies x\in\text{SAT}$.
-   - If $O_{\text{halt}}$ returns no, then $T$ does not halt on input $x$, which implies that $x$ does not have a satisfying assignment. Therefore $R(x)\notin\text{HALT}\implies x\notin\text{SAT}$. We can take the contrapositive of this expression to obtain $x\in\text{SAT}\implies R(x)\in\text{HALT}$.
+4. We pass $R(x)$ to $O_{\text{HALT}}$.
+   - If $O_{\text{HALT}}(R(x))$ returns yes, this implies $T$ halts on input $x$, which in turn implies $x$ has a satisfying assignment. Therefore $R(x)\in\text{HALT}\implies x\in\text{SAT}$.
+   - If $O_{\text{HALT}}(R(x))$ returns no, then $T$ does not halt on input $x$, which implies that $x$ does not have a satisfying assignment. Therefore $R(x)\notin\text{HALT}\implies x\notin\text{SAT}$. We can take the contrapositive of this expression to obtain $x\in\text{SAT}\implies R(x)\in\text{HALT}$.
 
-In step 2, we are simply constructing the TM $T$, not executing it. The reduction is the transformation of the SAT formula $x$ to an encoding of both the Turing Machine and the SAT formula, which is an instance of the Halting problem (HALT$_{TM}$ requires an arbitrary TM and an input string to the TM).
+Once again we note the following.
 
-# Taxonomy of Polynomial-time reductions
+> In step 2, we are simply constructing the TM $T$, not executing it. 
 
-Here we only consider polynomial-time reductions, i.e. 
-- the time taken to transform $x$ to $R(x)$, and 
-- the number of calls to $O_B$ 
+The reduction is the transformation of the SAT formula $x$ to an encoding of both the Turing Machine and the SAT formula, which is an instance of the Halting problem (HALT$_{TM}$ requires an arbitrary TM and an input string to the TM).
+
+----
+
+## Taxonomy of Polynomial-time reductions
+
+In this post, we only consider polynomial-time reductions, i.e.,
+
+- the time taken to transform $x$ to $R(x)$, and
+- the number of calls to $O_B$
+
 are both polynomial. These are the most commonly studied types of reductions, and we look at three kinds of polynomial-time reductions.
 
-## Karp Reductions / poly-time Many-one reductions
+---
+
+### Karp Reductions / Many-one reductions
 
 These are the **most restrictive type** of polynomial reductions. 
 Given a single input $x$, $R(x)$ produces a single instance $y$ such that $x\in A\iff y\in B$. Therefore, we have to perform only one oracle call to $O_B$. The earlier reduction from `SAT` to `HALT` was a Karp reduction.
@@ -161,7 +172,9 @@ Given a single input $x$, $R(x)$ produces a single instance $y$ such that $x\in 
 We can choose to strengthen the notion of Karp reductions to include weaker forms of reductions.
 For example, in logspace many-one reductions, we can compute $R(x)$ using just logarithmic space instead of polynomial time. Even more restrictive notions of reductions consider reductions computable by constant depth circuit classes.
 
-## Truth Table Reductions
+----
+
+### Truth Table Reductions
 
 These are reductions in which given a single input $x$, $R(x)$ produces a constant number of outputs $y_1,y_2,\ldots, y_k$ to $B$. The output $O_A(x)$ can be expressed in terms of a function $f$ that combines the outputs $O_B(y_i)$ for $i\in[1,\ldots,k]$. 
 
@@ -175,7 +188,9 @@ Let us consider an example. Consider two problems on a graph $G$ with a constant
 
 The reduction $A\subseteq B$ would involve looping from $1$ to $\ell$ and querying $B$ each time. The combination function would be an OR function. At the first yes instance of $B$, we return the value as the answer for $A$. If there is no independent set in $G$, the worst number of calls to $O_B$ is $\ell$.
 
-## Cook Reductions / poly-time Turing Reductions
+----
+
+### Cook Reductions / Poly-time Turing Reductions
 
 Here, we are allowed a polynomial number of oracle calls and polynomial time for transforming the inputs. These are the most general form of reductions, and the other forms of reductions are restrictions of Cook reductions. In the example graph $G$ used for TT reductions, if we assume the number of vertices of $G$ to be a polynomial, then the reduction $A\subseteq B$ using the same exact process would be a Cook reduction.
 
@@ -184,7 +199,9 @@ Here, we are allowed a polynomial number of oracle calls and polynomial time for
 
 _Aside:_ From the nature of the examples, we can see that Karp reductions only extend to decision problems (problems with yes/no outputs). In contrast, Cook reductions can accommodate search/relation/optimization problems (problems with a set of outputs).
 
-# Basic reductions in Computability Theory
+----
+
+## Basic reductions in Computability Theory
 
 In this section, the reader is assumed to have familiarity with concepts of decidability and undecidability. Let us now proceed with some instances of reductions in computability theory.
 
@@ -210,13 +227,15 @@ The first two statements are true, as discussed above, while 3 is the contraposi
 
 Immediately we see the power of formalizing the notion of reductions.
 
-# Notions of reductions in Complexity Theory 
+----
 
-**This section is for advanced readers only due to the number of prerequisites involved.**
+## Complexity-Theoretic notions
 
-A complexity class is a set of computational problems that can be solved using similar amounts of bounded resources (time, space, circuit depth, number of gates, etc.) on a given computational model (Turing machines, cellular automaton, etc.).
+> **This section is for advanced readers only due to the number of prerequisites involved.**
 
-The complexity classes P, NP, and PSPACE are closed under Karp and logspace reductions. The complexity classes $L$ and $NL$ are closed only under logspace reductions. Closure has the following semantics - given a problem $A$ in a complexity class C, any problem $B$ such that $B\subseteq A$ is also in C.
+A complexity class is a set of computational problems that can be solved using similar amounts of bounded resources (time, space, circuit depth, number of gates, etc.) on a given computational model (Turing machines, circuits, cellular automaton, etc.).
+
+The complexity classes $\mathrm{P}$, $\mathrm{NP}$, and $\mathrm{PSPACE}$ are closed under Karp and logspace reductions. The complexity classes $\mathrm{L}$ and $\mathrm{NL}$ are closed only under logspace reductions. Closure has the following semantics - given a decision problem $A$ in a complexity class $C$, any problem $B$ such that $B\subseteq A$ is also in $C$.
 
 We now explore two interesting notions in complexity theory that arise from reductions.
 
