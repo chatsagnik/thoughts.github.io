@@ -25,7 +25,7 @@ Any random instance of a problem with **average-case hardness** guarantee **is h
 > A Lattice $\Lambda$ or $\mathcal{L}$ is defined as the set of all integer linear combinations of $n$ linearly independent $m$-dimensional vectors $B=\\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\\}$.
 
 Formally, we denote lattices as
-$$\mathcal{L}(B)=\left\{Bx, x\in\mathbb{Z}^{m}\right\}=\left\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\}.$$
+$$\mathcal{L}(B)=\left\\{Bx, x\in\mathbb{Z}^{m}\right\\}=\left\\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\\}.$$
 
 The set $B\in\mathbb{R}^{n\times m}$ is said to be the basis of the lattice $\Lambda$. We note here that **any lattice $\Lambda$ is characterized by its basis**. Shortly, we will _generalize the definition of lattices_ by showing a different characterization of lattices which will be useful in cryptographic construction schemes.
 
