@@ -1,7 +1,7 @@
 ---
 title: "$q$-ary Lattices"
 date: 2023-04-01T12:03:46+05:30
-draft: false
+draft: true
 tags: [lattices, coding theory, cryptography]
 categories: [cryptography]
 ---
@@ -23,19 +23,18 @@ Any random instance of a problem with **average-case hardness** guarantee **is h
 ## What is a Lattice?
 
 > A Lattice $\Lambda$ or $\mathcal{L}$ is defined as the set of all integer linear combinations of $n$ linearly independent $m$-dimensional vectors $B=\\{\mathrm{b_1},\mathrm{b_2},\ldots,\mathrm{b_n}\\}$.
-
-Formally, we denote lattices as
-$$\mathcal{L}(B)=\left\\{Bx, x\in\mathbb{Z}^{m}\right\\}=\left\\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\\}.$$
+> Formally, we denote lattices as
+> $$\mathcal{L}(B)=\left\\{Bx, x\in\mathbb{Z}^{m}\right\\}=\left\\{\sum_{i=1}^{n}x_i\mathrm{b_i} : x_i\in\mathbb{Z}\right\\}.$$
 
 The set $B\in\mathbb{R}^{n\times m}$ is said to be the basis of the lattice $\Lambda$. We note here that **any lattice $\Lambda$ is characterized by its basis**. Shortly, we will _generalize the definition of lattices_ by showing a different characterization of lattices which will be useful in cryptographic construction schemes.
 
 ## Why do we need Lattice-based Cryptography?
 
-Ajtai'96 [^ajtai96] showed **reductions** from **lattice based problems** with _average-case hardness_ guarantees to lattice problems with _worst-case guarantees_. Intuitively, this shows that any randomly sampled instance of a lattice is as hard as the hardest instance.
+Ajtai'96 [^ajtai96] showed **reductions** from **lattice based problems** with _average-case hardness_ guarantees to lattice problems with _worst-case guarantees_.
 
-Later in this post, we will discuss a few lattice problems with **known worst-case hardness guarantees**. This immediately makes lattices an extremely important tool in cryptography.
+> Let $P$ be the class of lattice based problems defined in Ajtai'96 [^ajtai96]. Then, the above reduction implies that any randomly sampled instance of $P$ is as computationally hard to solve as the hardest instance in $P$.
 
-In fact, lattice based cryptographic constructions are invaluable for their many potential advantages as follows:
+For reasons discussed above, this immediately makes lattices an extremely important tool in cryptography. In fact, lattice based cryptographic constructions are invaluable for their many potential advantages as follows:
 
 1. Lattice-based schemes usually **only require linear operations on integers** which leads to asymptotic efficiency.
 2. Lattice-based schemes have been shown to be **resistant to cryptanalysis by quantum algorithms** unlike current classical cryptographic schemes which are based on factoring or discrete log (Shor'95 [^shor95]). This makes lattice-based cryptography the cornerstone of post-quantum cryptography.
@@ -43,7 +42,7 @@ In fact, lattice based cryptographic constructions are invaluable for their many
 
 ## Hard Lattice problems w/ known worst-case hardness guarantees
 
-In this section, we discuss some important worst-case hard problems associated with lattices. As stated earlier, we would like to show a reduction from randomly generated lattices to instances of one of these problems.
+In this section, we discuss a few lattice problems with **known worst-case hardness guarantees**.
 
 ### Shortest Vector Problem $\left(\mathrm{SVP}_\gamma\right)$
 
@@ -65,6 +64,7 @@ Later in this post we will see the connection between the above problems.
 
 ## Constructing random instances of a Hard Lattice problem
 
+In this section, we show a reduction from randomly generated lattices to instances of one of these problems.
 We now state some important results from Ajtai'96[^ajtai96] and Ajtai'99[^ajtai99] which deal with the construction of random instances of hard lattice problems. The following lemma shows that hardness of SBP by reduction to SVP.
 
 ### Lemma 1 (Ajtai'96)
