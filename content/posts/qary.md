@@ -1,7 +1,7 @@
 ---
 title: "$q$-ary Lattices"
-date: 2023-04-01T12:03:46+05:30
-draft: true
+date: 2025-04-01T12:03:46+05:30
+draft: false
 tags: [lattices, coding theory, cryptography]
 categories: [cryptography]
 ---

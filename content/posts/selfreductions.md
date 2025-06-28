@@ -26,6 +26,8 @@ In an earlier post, we familiarised ourselves with the [notion of reductions](./
 
 ## Preliminaries
 
+_Readers familiar with concepts such as Decision problems, Search Problems, and complexity classes TFNP, PPAD, PLS, etc. can skip this section._
+
 - **Languages:** In the world of complexity and computability, a language is a set of strings formed out of some alphabet. Formally, $L\subseteq\Sigma^*$, where the alphabet $\Sigma$ is a finite set of symbols, and $\Sigma^*$ refers to the [Kleene closure](https://en.wikipedia.org/wiki/Kleene_star#Definition) of $\Sigma$.
 
 In the world of complexity, Properties and Problems are _computable_ functions/ relations defined w.r.t. languages.
@@ -38,17 +40,32 @@ Every language $L\subseteq\Sigma^*$ can be uniquely associated with a unique dec
 
 > Complexity classes **P** and **NP** are defined w.r.t. decision problems.
 
-- **Search Problems:** A search problem is a relation $R\subset\Sigma_{in}^*\times\Sigma_{out}^*$, i.e., $(x,y)\in R$, where $x\in\Sigma_{in},y\in\Sigma_{out}$ are strings belonging to the input and output alphabets respectively.
+- **Search Problems:** A search problem is a relation $R\subset\Sigma_{in}^*\times\Sigma_{out}^*$, i.e., $(x,y)\in R$, where $x\in\Sigma_{in},y\in\Sigma_{out}$ are strings belonging to the input and output alphabets respectively. Search problems are also known as relational problems / optimization problems.
+  - $R\subset\Sigma_{in}^*\times\Sigma_{out}^*$ is a polynomially-balanced relation if $(x,y)\in R\iff|y|=\text{poly}(|x|)$.
+  - A Turing machine $T$ computes/solves $R$, if for any input $x\in\Sigma_{in}$, $T(x)$ halts and produces $y\in\Sigma_{out}$ s.t. $(x,y)\in R$.
 
-A Turing machine $T$ computes/solves $R$, if for any input $x\in\Sigma_{in}$, $T(x)$ halts and produces $y\in\Sigma_{out}$ s.t. $(x,y)\in R$.
+Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP**^[A polynomially-balanced relation $R$ defines a NP search problem if $R$ is polynomial-time computable.] or Function **NP**.
 
-Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** or Function **NP**, i.e., the set of all function problems for which the validity of an (input, output) pair can be verified in polynomial time (by some algorithm).
+- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in\,$**TFNP**$\,\iff R\in\,$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP**$\, = \,$**FNP**$\,\cap\,$**co-FNP**.
 
-- **Complexity class FNP (NP search problem):** A search problem $R$ is in **FNP** if
-  1. The size of the witness/certificate set is polynomial, and the size of the witnesses are themselves polynomial in the size of the input. For every $x\in\Sigma_{in}^{*}$, the set $Y_x = \\{y\in{\Sigma_{out}}^{poly(|x|)}\;|(x,y)\in R\;\\}\subseteq{\\{\Sigma_{out}\\}}^{poly(|x|)}$.
-  2. The verifier runs in polynomial time. There exists a polynomial time DTM $M$ s.t. for all $x\in\Sigma_{in},y\in\Sigma_{out}$, $M(x,y)=1\iff (x,y)\in R$.
+> It is not believed that **TFNP** has complete problems since it is a semantic class^[A complexity class is called a semantic class if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.], and various syntactic subclasses have been used to classify the many diverse problems that belong to **TFNP**. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**.^[Each subclass of TFNP has a corresponding existence proof principle (for example, an instance of a circuit or graph), one that when applied in a general context, does not yield a polynomial-time algorithm.]
 
-> If $R\in$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$, then $R$ belongs to the class **TFNP**.
+### Subclasses of TFNP
+
+- **Complexity class PLS:** Also known as Polynomial Local Search, this is a subclass of TFNP function problems which contains problems that are guaranteed to have a solution because of the lemma that "every finite directed acyclic graph has a sink."
+
+> **PLS** captures problems of finding a local minimum of an objective function $f$, in contexts where any candidate solution $x$ has a local neighbourhood within which we can readily check for the existence of some other point having a lower value of $f$. One of the motivations behind defining PLS was to capture the notion of local optimum in **NP-hard problems** like TSP.
+
+- **Complexity class PPA:** Also known as Polynomial Parity Argument, this class captures computational problems whose totality is rooted in the handshaking lemma for undirected graph: "all graphs of maximum degree 2 have an even number of leaves."
+
+> More precisely, **PPA** captures search problems for which there is a polynomial-time algorithm that, given any string, computes its 'neighbor' strings (of which there are at most two). Then given a leaf string (i.e. one with only one neighbor), the problem is to output another leaf string.
+
+- **Complexity class PPAD:** PPAD is contained in **PPA**$\,\cap\,$**PPP**^[The existence of solutions for problems in **complexity class PPP:** (also known as Polynomial Pigeonhole Principle) is guaranteed by the pigeonhole principle: if $n$ balls are placed in $m < n$ bins then at least one bin must contain more than one ball.] and could be regarded as the directed version of the class PPA.
+
+> > - The problem of finding a Nash equilibrium (NASH) in a normal form game of two or more players with specified utilities, is in **PPAD**. NASH with three players is **PPAD-complete**.
+> > - Brouwer's fixed-point theorem states that for any continuous function $f$ mapping a nonempty compact convex set to itself, there is a point $x_0$ such that $f(x_0)=x_0$. Computing fixed-points in Brouwer functions is in **PPAD**.
+> > - Computing a Karush-Kuhn-Tucker (KKT) point of a continuously differentiable function over the domain $[0, 1]^2$ is **PPAD**$\,\cap\,$**PLS-complete**.
+> > - Gradient Descent is in **PPAD**$\,\cap\,$**PLS**.
 
 ## Search to Decision Reductions
 
@@ -63,7 +80,7 @@ On the other hand, Search Problems answer the following flavour of questions:
 We use the satisfiability problem (SAT) as an example to further illustrate the two notions:
 
 - **Decision problem:** Given a propositional formula $\phi$, decide if $\phi$ is satisfiable.
-- **Search problem:** Given a propositional formula $\phi$, find a satisfying assignment for $\phi$.
+- **Search problem:** Given a propositional formula $\phi$, find a satisfying assignment for $\phi$.^[Note that SATSearch$\in\,$**FNP** but SATSearch$\notin\,$**TFNP**, since a formula may be unsatisfiable,]
 
 As we see above, if it is easy to solve the Search version of a problem $P$, it is straightforward to solve the Decision version of $P$. The more challenging question is:
 
@@ -133,29 +150,50 @@ SATSearchToDecision(L,DCLIQUE()){
 }
 ```
 
-Above we saw examples of problems where both search and decision verions are hard. There exist problems where both the search and decision versions are easy, for example, Maximum Matching, Shortest Path, etc. A typical example of a problem the decision version is easy and while the search version is supposedly hard is as follows:
+Above we saw examples of problems where both search and decision verions are hard. There exist problems where both the search and decision versions are easy, for example, Maximum Matching, Shortest Path, etc. A typical example of a problem where the decision version is easy and while the search version is supposedly hard is as follows:
 
-- **The Factoring Decision problem:** Given a natural number $n$, decide if $n$ is prime.
-- **The Factoring Search problem:** Given (the binary representation of) a natural number $n$, produce all of its factors.
+- **The Decision problem (Primality testing):** Given a natural number $n$, decide if $n$ is prime.
+- **The Search problem (Factoring):** Given (the binary representation of) a natural number $n$, produce all of its factors.^[Unlike SATSearch and CliqueSearch, Factoring$\in\,$**TFNP** since any natural number will always have at least two factors.]
 
 Many important classes of cryptosystems such as [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem)^[**The RSA problem:** Find $M$ given the public key $(n,e)$ and a cipher text $C\equiv M^e\mod n$.] depend on the hardness of the Factoring Search problem.^[If we can solve the factoring problem then we can solve the RSA problem by factoring the modulus n. Hence, Factoring $\implies$ RSA.] The Factoring Decision problem is also known as the Primality testing problem.^[The seminal result of Agarwal, Kayal, and Saxena showed that this problem is in **P**. See [this writeup](https://www.tcs.tifr.res.in/~jaikumar/Papers/AKS-revised.pdf) for more details on the result.]
 
-## Self-reducibility
+### Formal notion of Self-reducibility
 
-We now move on to the main topic of this post - the notion of self-reducibility^[Self-reducibility is also known as Auto-reducibility.].
+We now move on to the main topic of this post - the notion of self-reducibility^[Self-reducibility is also known as Auto-reducibility.]. A problem is self-reducible if it admits an efficient search-to-decision reduction, i.e., any efficient solution to the decision version of the problem implies an efficient solution to the search version of the problem.
 
-> PSPACE, TFNP, PLS, PPAD, PPP, PPA, CLS etc.
-
-> Every downward self-reducible problem in TFNP is in PLS.
+> Note: Not every problem in NP is necessarily self-reducible. If EE$\neq$NEE, then there exists a language in NP that is not self-reducible (Bellare and Goldwasser'94).^[ **EE** equals DTIME($2^{2^{O(n)}}$).]
 
 ### Downward self-reducibility
 
-A search problem R is downward self-reducible (d.s.r) if there is a
-polynomial time oracle algorithm for R that on input x ∈ {0, 1}n makes queries to an
-R-oracle of size strictly less than n = |x|
+A search problem $R$ is downward self-reducible (d.s.r) if there is a polynomial time oracle algorithm for $R$ that on input $x \in \Sigma^*$ makes queries to an $R$-oracle of size strictly less than $|x|$.
 
-> conjecture on Factoring
+In other words, a language $L$ is d.s.r. if there exists a polynomial time algorithm $A^O$ deciding $x\overset{?}{\in} L$ with a membership oracle $O$ for $L$ that can handle subqueries for strings $z\overset{?}{\in} L$ s.t. $|z|<|x|$.
 
+It is easy to see that SAT is d.s.r. since given any formula $\phi$ on $n$-variables, one can consider only querying on restrictions of $\phi$ to figure out if $\phi$ is satisfiable.
+
+> All **NP-complete** problems are downward self-reducible.
+
+This is straightforward to show using the fact that there exists a Karp-reduction from SAT to $L$ for any $NP-complete$ problem $L$.
+
+> Every downward self-reducible problem is in **PSPACE**.
+
+_Proof._ Let the input to a d.s.r. search problem $R$ be $x$. Then any algorithm $A$ that solves $R$ will make queries to some oracle and recursively compute the answer to each query. The depth of the recursion is at most |x|, and at each level of recursion, the algorithm needs to remember the state which requires space at most poly(|x|). This last point holds because the basic computation runs in polynomial time, and hence polynomial space.
+
+**Note:** We also recall that **PSPACE** is closed^[We recall the notion of [notion of complete problems](./reductions.md#completeness) here.] under Karp-reductions. Since, all d.s.r. languages belong to **PSPACE**, we can conclude that **PSPACE** is **hard** (worst-case or average-case) iff a d.s.r. language is **hard** (in the same sense.)
+
+> Every downward self-reducible problem in TFNP is in PLS. [^harsha23]
+
+Hence **PLS** is in some senses the functional analogue of **PSPACE**. Harsha et al. (2023) [^harsha23] also show that most natural **PLS-complete** problems are downward self-reducible. We end with an important open question by Harsha et al. (2023) [^harsha23]:
+
+> Is Factoring downward self reducible?
+
+If Factoring is downward self-reducible, then Factoring$\in\,$**UEOPL**$\,\subseteq\,$**PPAD**$\,\cap\,$**PLS**[^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost. From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
+
+## What's Next?
+
+We have looked at self-reducibility and downward self-reducibility. In follow-up posts, we will introduce the notions of randomized reductions, random self-reducibility, and pseudorandom self-reducibility.
+
+<!--
 ### (Pseudo)Random self-reducibility
 
 > Discrete logarithm
@@ -166,6 +204,6 @@ https://blog.computationalcomplexity.org/2019/01/search-versus-decision.html
 
 https://blog.computationalcomplexity.org/2006/09/favorite-theorems-unique-witnesses.html
 
-https://blog.computationalcomplexity.org/2006/07/full-derandomization.html
+https://blog.computationalcomplexity.org/2006/07/full-derandomization.html -->
 
----
+[^harsha23]: Prahladh Harsha, Daniel Mitropolsky, and Alon Rosen. Downward Self-Reducibility in TFNP. In 14th Innovations in Theoretical Computer Science Conference (ITCS 2023). Leibniz International Proceedings in Informatics (LIPIcs), Volume 251, pp. 67:1-67:17, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2023) https://doi.org/10.4230/LIPIcs.ITCS.2023.67
