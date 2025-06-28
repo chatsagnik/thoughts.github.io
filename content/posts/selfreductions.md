@@ -46,7 +46,7 @@ Every language $L\subseteq\Sigma^{\*}$ can be uniquely associated with a unique 
 
 Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). Formally, a polynomially-balanced relation $R$ defines a NP search problem if $R$ is polynomial-time computable.
 
-- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP** $=$ **FNP**$ \cap $**co-FNP**.
+- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP** = **FNP** $\cap$ **co-FNP**.
 
 > It is not believed that **TFNP** has complete problems since it is a semantic class [^semantic], and various syntactic subclasses have been used to classify the many diverse problems that belong to **TFNP**. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**.
 
