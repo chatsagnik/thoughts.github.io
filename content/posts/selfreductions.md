@@ -46,7 +46,7 @@ Every language $L\subseteq\Sigma^{\*}$ can be uniquely associated with a unique 
 
 Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). Formally, a polynomially-balanced relation $R$ defines a NP search problem if $R$ is polynomial-time computable.
 
-- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in\\,$**TFNP**$\\,\iff R\in\\,$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP**$\\, = \\,$**FNP**$\\,\cap\\,$**co-FNP**.
+- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP** $=$ **FNP**$ \cap $**co-FNP**.
 
 > It is not believed that **TFNP** has complete problems since it is a semantic class [^semantic], and various syntactic subclasses have been used to classify the many diverse problems that belong to **TFNP**. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**.
 
@@ -62,12 +62,12 @@ Each subclass of TFNP has a corresponding existence proof principle (for example
 
 > More precisely, **PPA** captures search problems for which there is a polynomial-time algorithm that, given any string, computes its 'neighbor' strings (of which there are at most two). Then given a leaf string (i.e. one with only one neighbor), the problem is to output another leaf string.
 
-- **Complexity class PPAD:** PPAD is contained in **PPA**$\\,\cap\\,$**PPP**[^PPP] and could be regarded as the directed version of the class PPA.
+- **Complexity class PPAD:** PPAD is contained in **PPA** $\cap$ **PPP**[^PPP] and could be regarded as the directed version of the class PPA.
 
 > > - The problem of finding a Nash equilibrium (NASH) in a normal form game of two or more players with specified utilities, is in **PPAD**. NASH with three players is **PPAD-complete**.
 > > - Brouwer's fixed-point theorem states that for any continuous function $f$ mapping a nonempty compact convex set to itself, there is a point $x_0$ such that $f(x_0)=x_0$. Computing fixed-points in Brouwer functions is in **PPAD**.
-> > - Computing a Karush-Kuhn-Tucker (KKT) point of a continuously differentiable function over the domain $[0, 1]^2$ is **PPAD**$\\,\cap\\,$**PLS-complete**.
-> > - Gradient Descent is in **PPAD**$\\,\cap\\,$**PLS**.
+> > - Computing a Karush-Kuhn-Tucker (KKT) point of a continuously differentiable function over the domain $[0, 1]^2$ is **PPAD** $\cap$ **PLS-complete**.
+> > - Gradient Descent is in **PPAD** $\cap$ **PLS**.
 
 ## Search to Decision Reductions
 
@@ -84,13 +84,13 @@ We use the satisfiability problem (SAT) as an example to further illustrate the 
 - **Decision problem:** Given a propositional formula $\phi$, decide if $\phi$ is satisfiable.
 - **Search problem:** Given a propositional formula $\phi$, find a satisfying assignment for $\phi$.
 
-Note that SATSearch$\in\\,$**FNP** but SATSearch$\notin\\,$**TFNP**, since a formula may be unsatisfiable.
+Note that SATSearch $\in$ **FNP** but SATSearch $\notin$ **TFNP**, since a formula may be unsatisfiable.
 
 As we see above, if it is easy to solve the Search version of a problem $P$, it is straightforward to solve the Decision version of $P$. The more challenging question is:
 
 > Can we efficiently solve the Search version of a problem $P$, if we know how to solve the Decision version of $P$ efficiently?
 
-Formally, let $O_D^p$ be a decision oracle for a search problem $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ s.t. querying $O_D^p$ produces $\mathbb{I}[ \exists x\in\Sigma_{in} \\;|\\; x \text{ has property } p]$; i.e., querying $O_D$ with an appropriate parameter for a _property_ $p$ outputs a <span style="color:blue">yes</span> or a <span style="color:red">no</span> indicating if there exists any input that satisfies the property $p$ (usually taken to be some bound on the input size). Our goal now is to produce $y\in\Sigma_{out}$ s.t. $(x,y)\in R$, using oracle calls to $O_D^p$.
+Formally, let $O_D^p$ be a decision oracle for a search problem $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ s.t. querying $O_D^p$ produces $\mathbb{I}[ \exists x\in\Sigma_{in}\;|\; x \text{ has property } p]$; i.e., querying $O_D$ with an appropriate parameter for a _property_ $p$ outputs a <span style="color:blue">yes</span> or a <span style="color:red">no</span> indicating if there exists any input that satisfies the property $p$ (usually taken to be some bound on the input size). Our goal now is to produce $y\in\Sigma_{out}$ s.t. $(x,y)\in R$, using oracle calls to $O_D^p$.
 
 ### Examples of Search-to-Decision reduction
 
@@ -159,7 +159,7 @@ Above we saw examples of problems where both search and decision verions are har
 - **The Decision problem (Primality testing):** Given a natural number $n$, decide if $n$ is prime.
 - **The Search problem (Factoring):** Given (the binary representation of) a natural number $n$, produce all of its factors.
 
-Note that unlike SATSearch and CliqueSearch, Factoring$\in\\,$**TFNP** since any natural number will always have at least two factors.
+Note that unlike SATSearch and CliqueSearch, Factoring$\in$**TFNP** since any natural number will always have at least two factors.
 
 Many important classes of cryptosystems such as [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) [^R1] depend on the hardness of the Factoring Search problem.[^R2] The Factoring Decision problem is also known as the Primality testing problem.[^primality]
 
@@ -193,7 +193,7 @@ Hence **PLS** is in some senses the functional analogue of **PSPACE**. Harsha et
 
 > Is Factoring downward self reducible?
 
-If Factoring is downward self-reducible, then Factoring$\in\\,$**UEOPL**$\\,\subseteq\\,$**PPAD**$\\,\cap\\,$**PLS** [^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost. From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
+If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$**PPAD**$\cap$**PLS** [^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost. From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
 
 ## What's Next?
 
