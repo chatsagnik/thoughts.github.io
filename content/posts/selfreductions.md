@@ -22,7 +22,7 @@ categories: [toc, complexity]
 
 # Introduction
 
-In an earlier post, we familiarised ourselves with the [notion of reductions](https://theoreticles.netlify.app/posts/reductions). Towards the end, we introduced the notion of **self-reducibility** which is our main topic of focus today. We start by familiarising ourselves with a few concepts.
+In an earlier post, we familiarised ourselves with the [notion of reductions](https://theoretickles.netlify.app/posts/reductions). Towards the end, we introduced the notion of **self-reducibility** which is our main topic of focus today. We start by familiarising ourselves with a few concepts.
 
 ## Preliminaries
 
@@ -215,6 +215,6 @@ We have looked at self-reducibility and downward self-reducibility. In follow-up
 [^R2]: If we can solve the factoring problem then we can solve the RSA problem by factoring the modulus n. Hence, Factoring $\implies$ RSA.
 [^primality]: The seminal result of Agarwal, Kayal, and Saxena showed that this problem is in **P**. See [this writeup](https://www.tcs.tifr.res.in/~jaikumar/Papers/AKS-revised.pdf) for more details on the result.
 [^EE]: **EE** equals DTIME($2^{2^{O(n)}}$).
-[^complete]: We recall the notion of [notion of complete problems](https://theoreticles.netlify.app/posts/reductions#completeness) here.
+[^complete]: We recall the notion of [notion of complete problems](https://theoretickles.netlify.app/posts/reductions#completeness) here.
 [^harsha23]: Prahladh Harsha, Daniel Mitropolsky, and Alon Rosen. Downward Self-Reducibility in TFNP. ITCS 2023. [DOI](https://doi.org/10.4230/LIPIcs.ITCS.2023.67).
 [^grochow]: (See this preprint)[https://arxiv.org/pdf/1610.05825].

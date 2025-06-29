@@ -88,7 +88,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "\U0001F44B Welcome to Theoretickles"
-    Content: This blog will contain a collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!
+    Content: A collection of essays on various topics in Theoretical CS that tickle my fancy!!
 
   socialIcons:
     - name: twitter
@@ -101,8 +101,8 @@ params:
       url: "https://theoretickles.netlify.app/index.xml"
     - name: "Personal website"
       url: "https://chatsagnik.github.io/"
-    - name: mastodon
-      url: "https://qubit-social.xyz/web/@chatsagnik"
+    - name: "Bluesky"
+      url: "https://bsky.app/profile/chatsagnik.bsky.social"
 
   cover:
     hidden: true # hide everywhere but not in structured data
