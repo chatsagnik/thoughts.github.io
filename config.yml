@@ -1,4 +1,4 @@
-baseURL: "https://theoreticles.netlify.app/"
+baseURL: "https://theoretickles.netlify.app/"
 languageCode: en-us
 title: Theoreticles
 theme: "PaperMod"
@@ -64,7 +64,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Theoreticles"
+    text: "Theoretickles"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -72,7 +72,7 @@ params:
   profileMode:
     enabled: false # needs to be explicitly set
     title: Welcome to Theoreticles
-    subtitle: "A collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!"
+    subtitle: "A collection of essays on various topics in Theoretical CS that tickle my fancy!"
     imageUrl: "dp.jpg"
     imageWidth: 400
     imageHeight: 400
@@ -87,7 +87,7 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "\U0001F44B Welcome to Theoreticles"
+    Title: "\U0001F44B Welcome to Theoretickles"
     Content: This blog will contain a collection of essays on various topics in Theoretical CS, Quantum Computing, Learning Theory, and more!
 
   socialIcons:
@@ -98,7 +98,7 @@ params:
     - name: github
       url: "https://github.com/chatsagnik"
     - name: "rss"
-      url: "https://theoreticles.netlify.app/index.xml"
+      url: "https://theoretickles.netlify.app/index.xml"
     - name: "Personal website"
       url: "https://chatsagnik.github.io/"
     - name: mastodon
