@@ -1,8 +1,8 @@
 baseURL: "https://theoretickles.netlify.app/"
 languageCode: en-us
-title: Theoreticles
+title: Theoretickles
 theme: "PaperMod"
-pagerSize: 5
+pagerSize: 10
 
 enableRobotsTXT: true
 buildDrafts: false
