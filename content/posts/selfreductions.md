@@ -6,14 +6,14 @@ tags:
   [
     reductions,
     p-np,
+    eth,
     self-reducibility,
     search-to-decision,
     factoring,
     primality,
-    cryptography,
     TFNP,
   ]
-categories: [toolkit, toc]
+categories: [toc, complexity]
 ---
 
 > _This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let's dive in._
@@ -30,7 +30,7 @@ _Readers familiar with concepts such as Decision problems, Search Problems, and 
 
 - **Languages:** In the world of complexity and computability, a language is a set of strings formed out of some alphabet. Formally, $L\subseteq\Sigma^{\*}$, where the alphabet $\Sigma$ is a finite set of symbols, and $\Sigma^{\*}$ refers to the [Kleene closure](https://en.wikipedia.org/wiki/Kleene_star#Definition) of $\Sigma$.
 
-In the world of complexity, Properties and Problems are _computable_ functions/ relations defined w.r.t. languages.
+> Last time we formalized reductions in terms of Turing Machines. We now explicitly define mapping reductions (equivalent to Karp reductions for TMs) in terms of languages. Let $L_1 \subseteq \Sigma_1^{\*}$ and $L_2 \subseteq \Sigma_2^{\*}$ be languages. Recall that $L_1\leq_m L_2$ (or, $L_1$ reduces to $L_2$), if there exists a computable function $f: \Sigma_1^{\*}\mapsto\Sigma_2^{\*}$ s.t. for every $w\in\Sigma_1^{\*}$, $w\in L_1\iff f(w)\in L_2$. We sometimes use the notation $A\leq^p_m B$ to denote that the function $f$ is polynomial time constructible.
 
 - **Decision Problems:** A decision problem is a Boolean-valued function $f:\Sigma^{\*}\mapsto\\{0,1\\}$.
 
@@ -169,25 +169,25 @@ We now move on to the main topic of this post - the notion of self-reducibility 
 
 > Note: Not every problem in NP is necessarily self-reducible. If EE$\neq$NEE, then there exists a language in NP that is not self-reducible (Bellare and Goldwasser'94).[^EE]
 
-### Downward self-reducibility
+## Downward self-reducibility
 
-A search problem $R$ is downward self-reducible (d.s.r) if there is a polynomial time oracle algorithm for $R$ that on input $x \in \Sigma^{\*}$ makes queries to an $R$-oracle of size strictly less than $|x|$.
+A search problem $R$ is downward self-reducible (d.s.r) if there is a polynomial time oracle algorithm for $R$ that on input $x \in \Sigma^{\*}$ makes queries to an $R$-oracle of size strictly less than $|x|$. In other words, a language $L$ is d.s.r. if there exists a polynomial time algorithm $A^O$ deciding $x\overset{?}{\in} L$ with a membership oracle $O$ for $L$ that can handle subqueries for strings $z\overset{?}{\in} L$ s.t. $|z|<|x|$.
 
-In other words, a language $L$ is d.s.r. if there exists a polynomial time algorithm $A^O$ deciding $x\overset{?}{\in} L$ with a membership oracle $O$ for $L$ that can handle subqueries for strings $z\overset{?}{\in} L$ s.t. $|z|<|x|$.
+> We can extend the notion of downward self-reducibility to _functions_ or decision problems as follows: A function $f:\Sigma^{\*}\mapsto \\{0,1\\}$ is downward self-reducible if there exists a polynomial time algorithm $A^{O_f}$ s.t. on any input of length $n$, $A$ only makes queries of length $<n$ to the membership oracle ${O_f}$, and for every input $x$, $A^{O_f}(x)=f(x)$.
 
 It is easy to see that SAT is d.s.r. since given any formula $\phi$ on $n$-variables, one can consider only querying on restrictions of $\phi$ to figure out if $\phi$ is satisfiable.
 
-> All **NP-complete** problems are downward self-reducible.
+> All **NP-complete** decision problems are downward self-reducible.
 
 This is straightforward to show using the fact that there exists a Karp-reduction from SAT to $L$ for any $NP-complete$ problem $L$.
 
-> Every downward self-reducible problem is in **PSPACE**.
+> Every downward self-reducible decision problem is in **PSPACE**.
 
-_Proof._ Let the input to a d.s.r. search problem $R$ be $x$. Then any algorithm $A$ that solves $R$ will make queries to some oracle and recursively compute the answer to each query. The depth of the recursion is at most |x|, and at each level of recursion, the algorithm needs to remember the state which requires space at most poly(|x|). This last point holds because the basic computation runs in polynomial time, and hence polynomial space.
+_Proof._ Let the input to a d.s.r. problem $f$ be $x$. Then any algorithm $A$ that solves $f$ will make queries to some oracle and recursively compute the answer to each query. The depth of the recursion is at most |x|, and at each level of recursion, the algorithm needs to remember the state which requires space at most poly(|x|). This last point holds because the basic computation runs in polynomial time, and hence polynomial space.
 
 **Note:** We also recall that **PSPACE** is closed [^complete] under Karp-reductions. Since, all d.s.r. languages belong to **PSPACE**, we can conclude that **PSPACE** is **hard** (worst-case or average-case) iff a d.s.r. language is **hard** (in the same sense.)
 
-> Every downward self-reducible problem in TFNP is in PLS. [^harsha23]
+> Every downward self-reducible search problem in TFNP is in PLS. [^harsha23]
 
 Hence **PLS** is in some senses the functional analogue of **PSPACE**. Harsha et al. (2023) [^harsha23] also show that most natural **PLS-complete** problems are downward self-reducible. We end with an important open question by Harsha et al. (2023) [^harsha23]:
 
@@ -195,22 +195,19 @@ Hence **PLS** is in some senses the functional analogue of **PSPACE**. Harsha et
 
 If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$**PPAD**$\cap$**PLS** [^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost. From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
 
+### An application of Downward Self-Reductions: Mahaney's Theorem
+
+A language $L$ is (polynomially) **sparse** if it the number of strings of length $n$ in $L$ is bounded by a polynomial in $n$.
+
+> **[Mahaney's Theorem]** Assuming **P** $\neq$ **NP**, there are no sparse **NP-complete** languages.
+
+_Proof Sketch:_ Recall the d.s.r tree of SAT. Given a SAT formula $\phi[x_1,\ldots,x_n]$ at the first level we can restrict the formula to $\phi_0[0,\ldots,x_n]$ and $\phi_1[1,\ldots,x_n]$. If $\phi$ is satisfiable, then at least one of $\phi_0$ or $\phi_1$ is satisfiable. Hence, at the $\ell$th level, at least one of the $2^{\ell}$ formulas have to be satisfiable for the original formula to be satisifable. If $L$ is a sparse NP-complete language, we have $SAT\leq^p_m L$. Hence, using a mapping reduction from SAT to $L$, we can prune the d.s.r. tree s.t. at the $\ell$th level to only contend with $\text{poly}(\ell)$ formulas. This straightforwarly yields a polynomial time SAT algorithm, since there are only $n$ levels. This violates the [Exponential Time Hypothesis](https://en.wikipedia.org/wiki/Exponential_time_hypothesis), and therefore there does not exist any $L$ that is both sparse and **NP-complete**.
+
+The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra Agrawal for the original idea.
+
 ## What's Next?
 
 We have looked at self-reducibility and downward self-reducibility. In follow-up posts, we will introduce the notions of randomized reductions, random self-reducibility, and pseudorandom self-reducibility.
-
-<!--
-### (Pseudo)Random self-reducibility
-
-> Discrete logarithm
-
-> Matrix Permanent
-
-https://blog.computationalcomplexity.org/2019/01/search-versus-decision.html
-
-https://blog.computationalcomplexity.org/2006/09/favorite-theorems-unique-witnesses.html
-
-https://blog.computationalcomplexity.org/2006/07/full-derandomization.html -->
 
 [^semantic]: A complexity class is called a semantic class if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.
 [^PPP]: The existence of solutions for problems in **complexity class PPP:** (also known as Polynomial Pigeonhole Principle) is guaranteed by the pigeonhole principle: if $n$ balls are placed in $m < n$ bins then at least one bin must contain more than one ball.
@@ -219,4 +216,5 @@ https://blog.computationalcomplexity.org/2006/07/full-derandomization.html -->
 [^primality]: The seminal result of Agarwal, Kayal, and Saxena showed that this problem is in **P**. See [this writeup](https://www.tcs.tifr.res.in/~jaikumar/Papers/AKS-revised.pdf) for more details on the result.
 [^EE]: **EE** equals DTIME($2^{2^{O(n)}}$).
 [^complete]: We recall the notion of [notion of complete problems](https://theoreticles.netlify.app/posts/reductions#completeness) here.
-[^harsha23]: Prahladh Harsha, Daniel Mitropolsky, and Alon Rosen. Downward Self-Reducibility in TFNP. In 14th Innovations in Theoretical Computer Science Conference (ITCS 2023). Leibniz International Proceedings in Informatics (LIPIcs), Volume 251, pp. 67:1-67:17, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2023) https://doi.org/10.4230/LIPIcs.ITCS.2023.67
+[^harsha23]: Prahladh Harsha, Daniel Mitropolsky, and Alon Rosen. Downward Self-Reducibility in TFNP. ITCS 2023. [DOI](https://doi.org/10.4230/LIPIcs.ITCS.2023.67).
+[^grochow]: (See this preprint)[https://arxiv.org/pdf/1610.05825].
