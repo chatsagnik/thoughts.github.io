@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Toc on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/categories/toc/</link>
-    <description>Recent content in Toc on Theoreticles</description>
+    <title>Toc on Theoretickles</title>
+    <link>https://theoretickles.netlify.app/categories/toc/</link>
+    <description>Recent content in Toc on Theoretickles</description>
     <image>
-      <title>Theoreticles</title>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Theoretickles</title>
+      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 11:51:18 +0530</lastBuildDate>
-    <atom:link href="https://theoreticles.netlify.app/categories/toc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Feb 2025 11:51:18 +0530</lastBuildDate>
+    <atom:link href="https://theoretickles.netlify.app/categories/toc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Reducibility</title>
+      <link>https://theoretickles.netlify.app/posts/selfreductions/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/posts/selfreductions/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In an earlier post, we familiarised ourselves with the &lt;a href=&#34;https://theoretickles.netlify.app/posts/reductions&#34;&gt;notion of reductions&lt;/a&gt;. Towards the end, we introduced the notion of &lt;strong&gt;self-reducibility&lt;/strong&gt; which is our main topic of focus today. We start by familiarising ourselves with a few concepts.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>An Introduction to Reductions</title>
-      <link>https://theoreticles.netlify.app/posts/reductions/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/posts/reductions/</guid>
+      <link>https://theoretickles.netlify.app/posts/reductions/</link>
+      <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/posts/reductions/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. Don&amp;rsquo;t hesitate to contact me via email if you need further clarification. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;h3 id=&#34;the-what-and-why-of-reductions&#34;&gt;The What and Why of reductions?&lt;/h3&gt;

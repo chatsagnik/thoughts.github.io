@@ -2,59 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://theoreticles.netlify.app/posts/qary/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/posts/qary/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/categories/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/coding-theory/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/coding-theory/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/cryptography/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/categories/cryptography/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/cryptography/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/cryptography/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/lattices/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/lattices/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/posts/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/posts/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/</loc>
-    <lastmod>2023-04-01T12:03:46+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/</loc>
+    <lastmod>2025-04-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/posts/reductions/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/categories/complexity/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/halting-problem/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/eth/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/p-np/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/factoring/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/reductions/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/p-np/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/sat/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/primality/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/toc/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/reductions/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/categories/toolkit/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/tags/search-to-decision/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/tags/undecidability/</loc>
-    <lastmod>2022-07-17T11:51:18+05:30</lastmod>
+    <loc>https://theoretickles.netlify.app/posts/selfreductions/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/archives/</loc>
+    <loc>https://theoretickles.netlify.app/tags/self-reducibility/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>https://theoreticles.netlify.app/archive/</loc>
+    <loc>https://theoretickles.netlify.app/tags/tfnp/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/categories/toc/</loc>
+    <lastmod>2025-02-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/posts/reductions/</loc>
+    <lastmod>2025-01-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/tags/halting-problem/</loc>
+    <lastmod>2025-01-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/tags/sat/</loc>
+    <lastmod>2025-01-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/tags/undecidability/</loc>
+    <lastmod>2025-01-01T11:51:18+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/archives/</loc>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/search/</loc>
   </url>
 </urlset>

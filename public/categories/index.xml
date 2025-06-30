@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/categories/</link>
-    <description>Recent content in Categories on Theoreticles</description>
+    <title>Categories on Theoretickles</title>
+    <link>https://theoretickles.netlify.app/categories/</link>
+    <description>Recent content in Categories on Theoretickles</description>
     <image>
-      <title>Theoreticles</title>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Theoretickles</title>
+      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
-    <atom:link href="https://theoreticles.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 12:03:46 +0530</lastBuildDate>
+    <atom:link href="https://theoretickles.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cryptography</title>
-      <link>https://theoreticles.netlify.app/categories/cryptography/</link>
-      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/categories/cryptography/</guid>
+      <link>https://theoretickles.netlify.app/categories/cryptography/</link>
+      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/categories/cryptography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Complexity</title>
+      <link>https://theoretickles.netlify.app/categories/complexity/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/categories/complexity/</guid>
       <description></description>
     </item>
     <item>
       <title>Toc</title>
-      <link>https://theoreticles.netlify.app/categories/toc/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/categories/toc/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Toolkit</title>
-      <link>https://theoreticles.netlify.app/categories/toolkit/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/categories/toolkit/</guid>
+      <link>https://theoretickles.netlify.app/categories/toc/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/categories/toc/</guid>
       <description></description>
     </item>
   </channel>

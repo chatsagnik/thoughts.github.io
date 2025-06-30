@@ -1,72 +1,114 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/tags/</link>
-    <description>Recent content in Tags on Theoreticles</description>
+    <title>Tags on Theoretickles</title>
+    <link>https://theoretickles.netlify.app/tags/</link>
+    <description>Recent content in Tags on Theoretickles</description>
     <image>
-      <title>Theoreticles</title>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Theoretickles</title>
+      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
-    <atom:link href="https://theoreticles.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 12:03:46 +0530</lastBuildDate>
+    <atom:link href="https://theoretickles.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding Theory</title>
-      <link>https://theoreticles.netlify.app/tags/coding-theory/</link>
-      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/coding-theory/</guid>
+      <link>https://theoretickles.netlify.app/tags/coding-theory/</link>
+      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/coding-theory/</guid>
       <description></description>
     </item>
     <item>
       <title>Cryptography</title>
-      <link>https://theoreticles.netlify.app/tags/cryptography/</link>
-      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/cryptography/</guid>
+      <link>https://theoretickles.netlify.app/tags/cryptography/</link>
+      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/cryptography/</guid>
       <description></description>
     </item>
     <item>
       <title>Lattices</title>
-      <link>https://theoreticles.netlify.app/tags/lattices/</link>
-      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/lattices/</guid>
+      <link>https://theoretickles.netlify.app/tags/lattices/</link>
+      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/lattices/</guid>
       <description></description>
     </item>
     <item>
-      <title>Halting Problem</title>
-      <link>https://theoreticles.netlify.app/tags/halting-problem/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/halting-problem/</guid>
+      <title>Eth</title>
+      <link>https://theoretickles.netlify.app/tags/eth/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/eth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Factoring</title>
+      <link>https://theoretickles.netlify.app/tags/factoring/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/factoring/</guid>
       <description></description>
     </item>
     <item>
       <title>P-Np</title>
-      <link>https://theoreticles.netlify.app/tags/p-np/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/p-np/</guid>
+      <link>https://theoretickles.netlify.app/tags/p-np/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/p-np/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Primality</title>
+      <link>https://theoretickles.netlify.app/tags/primality/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/primality/</guid>
       <description></description>
     </item>
     <item>
       <title>Reductions</title>
-      <link>https://theoreticles.netlify.app/tags/reductions/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/reductions/</guid>
+      <link>https://theoretickles.netlify.app/tags/reductions/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/reductions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search-to-Decision</title>
+      <link>https://theoretickles.netlify.app/tags/search-to-decision/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/search-to-decision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Reducibility</title>
+      <link>https://theoretickles.netlify.app/tags/self-reducibility/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/self-reducibility/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TFNP</title>
+      <link>https://theoretickles.netlify.app/tags/tfnp/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/tfnp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Halting Problem</title>
+      <link>https://theoretickles.netlify.app/tags/halting-problem/</link>
+      <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/halting-problem/</guid>
       <description></description>
     </item>
     <item>
       <title>SAT</title>
-      <link>https://theoreticles.netlify.app/tags/sat/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/sat/</guid>
+      <link>https://theoretickles.netlify.app/tags/sat/</link>
+      <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/sat/</guid>
       <description></description>
     </item>
     <item>
       <title>Undecidability</title>
-      <link>https://theoreticles.netlify.app/tags/undecidability/</link>
-      <pubDate>Sun, 17 Jul 2022 11:51:18 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/tags/undecidability/</guid>
+      <link>https://theoretickles.netlify.app/tags/undecidability/</link>
+      <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/undecidability/</guid>
       <description></description>
     </item>
   </channel>

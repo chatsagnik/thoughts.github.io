@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Cryptography on Theoreticles</title>
-    <link>https://theoreticles.netlify.app/tags/cryptography/</link>
-    <description>Recent content in Cryptography on Theoreticles</description>
+    <title>Cryptography on Theoretickles</title>
+    <link>https://theoretickles.netlify.app/tags/cryptography/</link>
+    <description>Recent content in Cryptography on Theoretickles</description>
     <image>
-      <title>Theoreticles</title>
-      <url>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoreticles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Theoretickles</title>
+      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Apr 2023 12:03:46 +0530</lastBuildDate>
-    <atom:link href="https://theoreticles.netlify.app/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 12:03:46 +0530</lastBuildDate>
+    <atom:link href="https://theoretickles.netlify.app/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>$q$-ary Lattices</title>
-      <link>https://theoreticles.netlify.app/posts/qary/</link>
-      <pubDate>Sat, 01 Apr 2023 12:03:46 +0530</pubDate>
-      <guid>https://theoreticles.netlify.app/posts/qary/</guid>
+      <link>https://theoretickles.netlify.app/posts/qary/</link>
+      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/posts/qary/</guid>
       <description>&lt;p&gt;In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.&lt;/p&gt;
 &lt;h2 id=&#34;hardness-of-problems&#34;&gt;Hardness of problems&lt;/h2&gt;
 &lt;p&gt;Computational hardness usually revolves around problems with &lt;strong&gt;worst-case hardness&lt;/strong&gt; guarantees since we want to design algorithms that run efficiently even on the worst possible input.&lt;/p&gt;

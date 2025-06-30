@@ -21,8 +21,8 @@ build:
 outputs:
   home:
     - HTML
-    - RSS
-    - JSON # is necessary
+    - RSS # is necessary for rss
+    - JSON # is necessary for search
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
