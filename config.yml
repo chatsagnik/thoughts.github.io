@@ -144,6 +144,14 @@ menu:
       name: chatsagnik
       url: https://chatsagnik.github.io
       weight: 30
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 40
+    - identifier: archives
+      name: archives
+      url: /archives/
+      weight: 50
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
