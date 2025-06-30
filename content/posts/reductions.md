@@ -74,7 +74,7 @@ Here, an oracle is nothing but a _black-box subroutine_ for efficiently solving 
 - Suppose there exists a subroutine $R$ that transforms **yes instances** of $A$ into **yes instances** of $B$, and **no instances** of $A$ into **no instances** of $B$. First, input instances $x$ (that may/may not belong to $A$) are reduced/transformed into _possible instances_ of $B$ using the subroutine $R$.
 - Next, we perform invocation(s) to the oracle for $B$ to decide the membership of $R(x)$ in $B$. Explicitly, we perform the following computation: $O_B(R(x))$. If $O_B(R(x))=1$, then we decide that $x\in A$. Otherwise, we decide that $x\notin A$. $$x\in A \iff R(x) \in B.$$
 
-![Reductions](/posts/reductions.png)
+![Reductions](/posts/reductions.png){ width="300" height="300" style="display: block; margin: 0 auto" }
 
 The notion of efficiency is twofold.
 
