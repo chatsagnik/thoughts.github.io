@@ -41,12 +41,12 @@ Every language $L\subseteq\Sigma^{\*}$ can be uniquely associated with a unique 
 > Complexity classes **P** and **NP** are defined w.r.t. decision problems.
 
 - **Search Problems:** A search problem is a relation $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$, i.e., $(x,y)\in R$, where $x\in\Sigma_{in},y\in\Sigma_{out}$ are strings belonging to the input and output alphabets respectively. Search problems are also known as relational problems / optimization problems.
+
   - $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ is a polynomially-balanced relation if for any $(x,y)\in R$, $|y|=\text{poly}(|x|)$.
   - A Turing machine $T$ computes/solves $R$, if for any input $x\in\Sigma_{in}$, $T(x)$ halts and produces $y\in\Sigma_{out}$ s.t. $(x,y)\in R$.
+  - Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). Formally, a polynomially-balanced relation $R\in$ **FNP** (i.e., $R$ is an NP search problem) if $R$ is polynomial-time computable.
 
-Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). Formally, a polynomially-balanced relation $R$ defines a NP search problem if $R$ is polynomial-time computable.
-
-- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\in\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. It is straightforward to show that **TFNP** = **FNP** $\cap$ **co-FNP**.
+- **Complexity class TFNP:** The complexity class TFNP consists of all search problems in FNP that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\in\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. Using the totality of **TFNP**, it is straightforward to show that **TFNP** $=$ **FNP** $\cap$ **coFNP**.
 
 > It is not believed that **TFNP** has complete problems since it is a semantic class [^semantic], and various syntactic subclasses have been used to classify the many diverse problems that belong to **TFNP**. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**.
 
@@ -199,11 +199,14 @@ A language $L$ is (polynomially) **sparse** if it the number of strings of lengt
 
 _Proof Sketch:_ Recall the d.s.r tree of SAT. Given a SAT formula $\phi[x_1,\ldots,x_n]$ at the first level we can restrict the formula to $\phi_0[0,\ldots,x_n]$ and $\phi_1[1,\ldots,x_n]$. If $\phi$ is satisfiable, then at least one of $\phi_0$ or $\phi_1$ is satisfiable. Hence, at the $\ell$th level, at least one of the $2^{\ell}$ formulas have to be satisfiable for the original formula to be satisifable. If $L$ is a sparse NP-complete language, we have $SAT\leq^p_m L$. Hence, using a mapping reduction from SAT to $L$, we can prune the d.s.r. tree s.t. at the $\ell$th level to only contend with $\text{poly}(\ell)$ formulas. This straightforwarly yields a polynomial time SAT algorithm, since there are only $n$ levels. This violates the [Exponential Time Hypothesis](https://en.wikipedia.org/wiki/Exponential_time_hypothesis), and therefore there does not exist any $L$ that is both sparse and NP-complete.
 
-The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra Agrawal for the original idea.
+The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra Agrawal for the original idea. See [Oded Goldreich's comments here](https://www.wisdom.weizmann.ac.il/~oded/MC/208.html). Due to the lack of formatting in the above linked blog (and for my own archival purposes), I reproduce his comments _as-is_ below.
 
-## What's Next?
-
-We have looked at self-reducibility and downward self-reducibility. In follow-up posts, we will introduce the notions of randomized reductions, random self-reducibility, and pseudorandom self-reducibility.
+> **Oded's comments:**
+> The proof is indeed simple, not any harder than the proof that assumes that the sparse set is a subset of a set in P (see Exercise 3.12 in my computational complexity book).
+>
+> The first idea is to scan the downwards self-reducibility tree of SAT and extend at most polynomially many viable vertices at each level of the tree, where this polynomial is determined by the polynomials of the sparseness bound and the stretch of the Karp-reduction (of SAT to the sparse set). The crucial idea is the following: Rather than testing the the residual formulae at the current level by applying the Karp-reduction to each of them, one applies the Karp-reduction to the disjunction of the first formula (i.e., $\phi_1$) and each of the remaining formulae (i.e, the $\phi_i$'s for $i>1$).
+>
+> The point is that if all reduction values are distinct, then one of these values is not in the sparse set, and it follows that the first formula is not in SAT, and so the first formula can be discarded. Otherewise, if the reduction maps $\phi_1\vee\phi_i$ and $\phi_1\vee\phi_i$ to the same value, then we can discard (say) $\phi_i$, since either $\phi_1$ is in SAT (and remains viable) or $\phi_1$ is not in SAT and so $\phi_i$ and $\phi_j$ have the same SAT-value (and so it suffices to keep either of them).
 
 [^semantic]: A complexity class is called a semantic class if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.
 [^PPP]: The existence of solutions for problems in **complexity class PPP:** (also known as Polynomial Pigeonhole Principle) is guaranteed by the pigeonhole principle: if $n$ balls are placed in $m < n$ bins then at least one bin must contain more than one ball.
