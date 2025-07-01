@@ -28,7 +28,7 @@ In an earlier post, we familiarised ourselves with the [notion of reductions](ht
 
 In the world of complexity and computability, a _language_ is a set of strings formed out of some alphabet. Formally, $L\subseteq\Sigma^{\*}$, where the alphabet $\Sigma$ is a finite set of symbols, and $\Sigma^{\*}$ refers to the [Kleene closure](https://en.wikipedia.org/wiki/Kleene_star#Definition) of $\Sigma$.
 
-> Last time we formalized reductions in terms of Turing Machines. We now explicitly define mapping reductions (equivalent to Karp reductions for TMs) in terms of languages. Let $L_1 \subseteq \Sigma_1^{\*}$ and $L_2 \subseteq \Sigma_2^{\*}$ be languages. Recall that $L_1\leq_m L_2$ (or, $L_1$ reduces to $L_2$), if there exists a computable function $f: \Sigma_1^{\*}\mapsto\Sigma_2^{\*}$ s.t. for every $w\in\Sigma_1^{\*}$, $w\in L_1\iff f(w)\in L_2$. We sometimes use the notation $A\leq^p_m B$ to denote that the function $f$ is polynomial time constructible.
+[Last time we formalized reductions in terms of Turing Machines](https://theoretickles.netlify.app/posts/reductions). We now explicitly define mapping reductions (equivalent to Karp reductions for TMs) in terms of languages. Let $L_1 \subseteq \Sigma_1^{\*}$ and $L_2 \subseteq \Sigma_2^{\*}$ be languages. Recall that $L_1\leq_m L_2$ (or, $L_1$ reduces to $L_2$), if there exists a computable function $f: \Sigma_1^{\*}\mapsto\Sigma_2^{\*}$ s.t. for every $w\in\Sigma_1^{\*}$, $w\in L_1\iff f(w)\in L_2$. We sometimes use the notation $A\leq^p_m B$ to denote that the function $f$ is polynomial time constructible.
 
 A **decision problem** is a Boolean-valued function $D:\Sigma^{\*}\mapsto\\{0,1\\}$. We can view $D$ as a language $L_D = \\{ x\in\Sigma^{\*} : D(x)=1\\}$. Conversely, every language $L\subseteq\Sigma^{\*}$ can be uniquely associated with a unique decision problem $D_L$ called the **membership problem**. Here, $x\in L\iff D_L(x)=1$. A Turing machine $T$ computes/solves the decision problem $D$ if for any input $x\in\Sigma^{\*}$, $T$ halts on any input $x$ and produces output $T(x)=D(x)$.
 
@@ -114,7 +114,7 @@ As seen above, there are two inputs to the `CliqueSearchToDecision()` reduction:
 
 > Recall that an adjacency list is a collection of unordered lists used to represent a finite graph. We use the following definition of adjacency lists (this is a modification of the definition given in CLRS): An adjacency list is a singly linked list where each element in the list corresponds to a particular vertex, and each element in the list itself points to a singly linked list of the neighboring vertices of that vertex. See the diagram below.
 
-![Adjacency List](/posts/adjacency_list.png){ width="300" height="300" style="display: block; margin: 0 auto" }
+![Adjacency List](/posts/adjacency_list.png)
 
 ```C
 SATSearchToDecision(L,DCLIQUE()){
@@ -145,7 +145,7 @@ A problem is **self-reducible** or **auto-reducibile** if it admits an efficient
 
 A search problem $R$ is **downward self-reducible** (d.s.r) if there is a polynomial time oracle algorithm for $R$ that on input $x \in \Sigma^{\*}$ makes queries to an $R$-oracle of size strictly less than $|x|$. In other words, a language $L$ is d.s.r. if there exists a polynomial time algorithm $A^O$ deciding $x\overset{?}{\in} L$ with a membership oracle $O$ for $L$ that can handle subqueries for strings $z\overset{?}{\in} L$ s.t. $|z|<|x|$.
 
-> We can extend the notion of downward self-reducibility to _functions_ or decision problems as follows: A function $f:\Sigma^{\*}\mapsto \\{0,1\\}$ is downward self-reducible if there exists a polynomial time algorithm $A^{O_f}$ s.t. on any input of length $n$, $A$ only makes queries of length $<n$ to the membership oracle ${O_f}$, and for every input $x$, $A^{O_f}(x)=f(x)$.
+We can extend the notion of downward self-reducibility to _functions_ or decision problems as follows: A function $f:\Sigma^{\*}\mapsto \\{0,1\\}$ is downward self-reducible if there exists a polynomial time algorithm $A^{O_f}$ s.t. on any input of length $n$, $A$ only makes queries of length $<n$ to the membership oracle ${O_f}$, and for every input $x$, $A^{O_f}(x)=f(x)$.
 
 It is easy to see that SAT is d.s.r. since given any formula $\phi$ on $n$-variables, one can consider only querying on restrictions of $\phi$ to figure out if $\phi$ is satisfiable.
 
@@ -185,13 +185,13 @@ Recall that self-reducibility is precluded in cases where the decision version i
 - **The Factoring Decision problem:** Given a natural number $n$, decide if $n$ is prime.
 - **The Factoring Search problem:** Given (the binary representation of) a natural number $n$, produce all of its factors.
 
-Many important classes of cryptosystems such as [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) [^R1] are based on the hardness of the Factoring Search problem.[^R2] On the other hand, the Factoring Decision problem (also known as the Primality testing problem) has long been known to computationally tractable.[^primality] Hence, `Factoring` does not appear to be straightforwardly self-reducible.
+Many important classes of cryptosystems such as [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) [^R1] are based on the hardness of the `Factoring Search problem`.[^R2] On the other hand, the `Factoring Decision problem` (also known as the `Primality testing problem`) has long been known to computationally tractable.[^primality] Hence, `Factoring` does not appear to be straightforwardly self-reducible.
 
-This leans into the conjecture that not every problem in NP is necessarily self-reducible (for example, Factoring). Bellare and Goldwasser'94 formally proved that if EE$\neq$NEE, then there exists a language in NP that is not self-reducible.[^EE]
+This leans into the conjecture that not every problem in **NP** is necessarily self-reducible (for example, Factoring). Bellare and Goldwasser'94 formally proved that if **EE** $\neq$ **NEE**, then there exists a language in **NP** that is not self-reducible.[^EE]
 
 Following the above result, Beame et al. (1998)[^beame98] showed the existence of various search problems in **FNP** that are not computationally equivalent to their decision versions. This is particularly important when a solution for the search problem is **guaranteed to exist** (but hard to find).
 
-One of the research directions on the notion of self-reducible problems is to characterise their complexity. Even though decisional complexity is well understood at an undergraduate level, the complexity of search problems is strictly a graduate level topic due to the sheer amount of prerequisites involved. In the remainder of this post, I will attempt to provide an introduction to the complexity landscape of NP-search problems and state a few connected results related to self-reducibility.
+One of the research directions on the notion of self-reducible problems is to characterise their complexity. Even though decisional complexity is well understood at an undergraduate level, the complexity of search problems is strictly a graduate level topic due to the sheer amount of prerequisites involved. In the remainder of this post, I will attempt to provide an introduction to the complexity landscape of **NP**-search problems and state a few connected results related to self-reducibility.
 
 ### Taxonomy of NP search problems
 
@@ -205,46 +205,48 @@ Since we consider a **P** $\neq$ **NP** to be a reasonable assumption, it is ver
 
 How do we then characterize the hardness of efficiently verifiable search problems? In other words, can we formally provide examples of search problems that are (for some notion of hardness) the hardest in **TFNP**? At this point, we list some interesting candidate computational problems known to be in **TFNP** that are not known to have polynomial time algorithms:
 
-- $\text{NASH}_x$: Finding a mixed Nash equilibrium of a game with $x$ players.
-- **Brouwer/Kakutani:** Finding Brouwer/Kakutani fixed points for continuous functions.[^Brouwer][^Kakutani]
-- **Factoring:** Finding a (or all) prime factors of a number $n\geq 2$.
-- **SetCover:** Finding a minimum Set Cover.
+- `NASHx`: Finding a mixed Nash equilibrium of a game with $x$ players.
+- `Brouwer`/`Kakutani`: Finding Brouwer/Kakutani fixed points for continuous functions.[^Brouwer][^Kakutani]
+- `Factoring`: Finding a (or all) prime factors of a number $n\geq 2$.
+- `SetCover`: Finding a minimum Set Cover.
 
 Unfortunately, it is believed that **TFNP** has [no complete problems](https://theoretickles.netlify.app/posts/reductions/#completeness) since it is a **semantic class**![^semantic]
 
 Hence, in order to characterize the notion of hardness in search problems, various syntactic subclasses have been defined in an attempt to classify the many diverse problems that belong to **TFNP**.
 
-Recall that TFNP problems have the following two characteristics - **(a)** any solution can be checked efficiently _(the NP property)_, and **(b)** there always exists at least one solution _(the totality property)_. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**.
+Recall that TFNP problems have the following two characteristics - **(a)** any solution can be checked efficiently _(the NP property)_, and **(b)** there always exists at least one solution _(the totality property)_. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**. In other words, each subclass of **TFNP** has a corresponding existence proof principle (for example, an instance of a circuit or graph), _one that when applied in a general context, does not yield a polynomial-time algorithm_.
 
-In other words, each subclass of **TFNP** has a corresponding existence proof principle (for example, an instance of a circuit or graph), _one that when applied in a general context, does not yield a polynomial-time algorithm_. We define two important subclasses of TFNP in this post - **PLS** and **PPAD** (along with a whole host of others in the footnotes section).
+#### Important subclasses of TFNP
+
+We define two important subclasses of TFNP in this post - **PLS** and **PPAD** (along with a whole host of others in the footnotes section).
 
 The complexity class **PLS** (also known as **Polynomial Local Search**), is a subclass of TFNP function problems which contains problems that are guaranteed to have a solution because of the lemma that "every finite directed acyclic graph has a sink."
 
-_Remark:_ The graph instance above may be exponentially large. For a finer intuition see the description of **EOL**[^EOL] in the footnotes.
+> _Remark:_ The graph instance above may be exponentially large. For a finer intuition see the description of **EOL**[^EOL] in the footnotes.
 
-**PLS** captures problems of finding a local minimum of an objective function $f$, in contexts where any candidate solution $x$ has a local neighbourhood within which we can readily check for the existence of some other point having a lower value of $f$. One of the motivations behind defining PLS was to capture the notion of problems with existing local optimum in **NP-hard problems** like TSP. Since a **PLS** problem always has a local optimum, it therefore always a solution (as the set of solutions is finite). Hence, using the above definitions, we have:
+**PLS** captures problems of finding a local minimum of an objective function $f$, in contexts where any candidate solution $x$ has a local neighbourhood within which we can readily check for the existence of some other point having a lower value of $f$. One of the motivations behind defining **PLS** was to capture the notion of problems with existing local optimum in **NP-hard problems** like `TSP`. Since a **PLS** problem always has a local optimum, it therefore always a solution (as the set of solutions is finite). Hence, using the above definitions, we have:
 
-> **FP** $\subseteq$ **PLS** $\subseteq$ **TFNP** $\subseteq$ **FNP**.
+> **FP** $\subseteq$ **PLS** $\subseteq$ **TFNP** $\subseteq$ **FNP**.[^FP]
 
 Examples of **PLS-complete problems** include search versions of `Set-Cover`, `Metric-TSP`, and `Weighted Independent-Set` (among many many others).
 
 Another subclass of **TFNP** is the complexity class **PPAD**. **PPAD** is defined as the set of functions in **TFNP** that reduce in polynomial time to the `End-Of-Line (EOL)` problem.[^EOL] In other words, a problem is complete for **PPAD** if it belongs to **PPAD** and if **EOL** reduces in polynomial time to that problem. **PPAD** is contained in **PPA** $\cap$ **PPP** [^PPA][^PPP] and could be regarded as the directed version of the class **PPA**.[^PPA]
 
-$\text{NASH}_2\in$ **PPAD**, and $\text{NASH}_3$ is **PPAD-complete**. The `Brouwer` and `Kakutani` problems are also in **PPAD**.
+`NASH2` $\in$ **PPAD**, and `NASH3` is **PPAD-complete**. The `Brouwer` and `Kakutani` problems are also in **PPAD**.
 
-Problems in **PLS** can be solved with local improvement algorithms. Problems in **PPAD** admit "optimality equations" that characterize solutions as fixed points.
+Problems in **PLS** can be solved with local improvement algorithms, while problems in **PPAD** admit "optimality equations" that characterize solutions as fixed points.
 
-> PPAD and PLS are believed to be strictly incomparable.[^beame98]
+> PPAD and PLS are believed to be strictly incomparable.[^beame98][^oppenheim]
 
-The complexity class Continuous Local Search **CLS** = **PPAD** $\cap$ **PLS**.[^KKT][^CLS] `Gradient Descent` is in **CLS**.
+The complexity class Continuous Local Search **CLS** = **PPAD** $\cap$ **PLS**.[^KKT][^CLS][^EOL] `Gradient Descent` is in **CLS**.
 
 The following diagram ([appropriated from this talk](https://www.youtube.com/watch?v=as720_SRpY0)) captures the above discussion in a nutshell.
 
-![TFNP problem landscape](/posts/TFNP.jpg){ width="300" height="300" style="display: block; margin: 0 auto" }
+![TFNP problem landscape](/posts/TFNP.jpg)
 
 ### Complexity of self-reducibile problems
 
-Earlier we saw that every downward self-reducible decision problem is in **PSPACE**. The following result was recently shown, as an analogue
+Earlier we saw that every downward self-reducible decision problem is in **PSPACE**. The following result was recently shown, as an analogue for search problems.
 
 > Every downward self-reducible search problem in TFNP is in PLS. [^harsha23]
 
@@ -252,16 +254,24 @@ Hence **PLS** is in some senses the functional analogue of **PSPACE**. Harsha et
 
 > Is Factoring downward self reducible?
 
-If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$**PPAD**$\cap$**PLS** [^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost.[^EOPL] From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
+If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$**PPAD**$\cap$**PLS** [^harsha23]. The complexity class **UniqueEOPL** (Unique End of Potential Line) captures search problems with the property that their solution space forms an _exponentially_ large line with increasing cost.[^EOPL][^UEOPL] From one candidate solution we can calculate another candidate solution in polynomial time. The end of that line is the (unique) solution of the search problem. This implies that no efficient factoring algorithm exists using the factorization of smaller numbers.
 
-[^semantic]: A complexity class is called a semantic class if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.
+---
+
+## Footnotes
+
+[^semantic]: A complexity class is called a **semantic class** if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.
 [^PPP]: The existence of solutions for problems in **complexity class PPP:** (also known as Polynomial Pigeonhole Principle) is guaranteed by the pigeonhole principle: if $n$ balls are placed in $m < n$ bins then at least one bin must contain more than one ball.
-[^EOL]: **EOL** is the class of problems which can be reduced to the EOL problem instance: Given a exponentially large directed graph consisting of lines and cycles on the vertex set $[2^𝑛]$, find any sink of the graph assuming vertex 1 is the source and every vertex has in and out degree at most 1.
+[^EOL]: **EOL** is the class of problems which can be reduced to the `EOL` problem instance: Given a exponentially large directed graph consisting of lines and cycles on the vertex set $[2^𝑛]$, find any sink of the graph assuming vertex 1 is the source and every vertex has in and out degree at most 1. Note that we overload the notation **EOL** to refer to both the problem and the complexity class.
 [^CLS]: The **EOL** class is a combinatorially defined alternative to the complexity class **CLS** (Continuous Local Search), which contains Gradient Descent and various fixed point problems. **CLS** is the smallest known subclass of **TFNP** not known to be in **P**, and hardness results for it imply hardness results for **PPAD** and **PLS** simultaneously.
-[^EOPL]: One interesting subclass of **EOL** is **End-Of-Potential-Line** (**EOPL**) where in addition to the **EOL** problem setup, we are also given a potential function that increases along each edge. It is known that **EOPL** = **PPAD** $\cap$ **PLS-complete**. If this graph has a unique sink, then the complexity class is known as **UEOPL**. It is an open question if **UEOPL** $\overset{?}{=}$ **PPAD** $\cap$ **PLS-complete**.
+[^EOPL]: One interesting subclass of **EOL** is **End-Of-Potential-Line** (**EOPL**) where we add the following constraint addition to the `EOL` problem instance: we are also given a potential function that increases along each edge. It is known that the `EOPL` problem is complete for **PPAD** $\cap$ **PLS**. Hence **EOPL** = **CLS**, suggesting an equivalence between purely combinatorially defined search problems and real-valued continuous optimisation problems. [See this thesis](https://ora.ox.ac.uk/objects/uuid:67e2d80b-76bf-4b49-9b7d-8bbd91633dd7) for a detailed perspective on this equivalence.
+[^UEOPL]:
+    If the graph instance in the `EOPL` problem has a unique sink, then the problem (and the related complexity class) is known as **UEOPL**. It is an open question if the `UEOPL` is complete for **PPAD** $\cap$ **PLS**.[^harsha23]
+    Once again, we note that we overload the notations **EOPL** and **UEOPL** to refer to both the problems and their corresponding complexity class.
+
 [^Brouwer]: **Brouwer's fixed-point theorem** states that for any continuous function $f$ mapping a nonempty compact convex set to itself, there is a point $x_0$ such that $f(x_0)=x_0$.
 [^Kakutani]: The **Kakutani fixed point theorem** is a generalization of the Brouwer fixed point theorem to set-valued functions. By [Weller's Theorem](https://en.wikipedia.org/wiki/Weller%27s_theorem), Kakutani's fixed-point theorem is used in proving the existence of cake allocations that are both envy-free and Pareto efficient.
-[^KKT]: Finding a point where Gradient Descent terminates is equivalent to finding a KKT point—when the domain is bounded. Computing a KKT point of a continuously differentiable function over $[0, 1]^2$ is **PPAD** $\cap$ **PLS-complete**.
+[^KKT]: Finding a point where Gradient Descent terminates is equivalent to finding a KKT point—when the domain is bounded. Computing a KKT point of a continuously differentiable function over $[0, 1]^2$ is complete for **PPAD** $\cap$ **PLS**.
 [^R1]: **The RSA problem:** Find $M$ given the public key $(n,e)$ and a cipher text $C\equiv M^e\mod n$.
 [^R2]: If we can solve the factoring problem then we can solve the RSA problem by factoring the modulus n. Hence, Factoring $\implies$ RSA.
 [^primality]: The seminal result of Agarwal, Kayal, and Saxena showed that this problem is in **P**. See [this writeup](https://www.tcs.tifr.res.in/~jaikumar/Papers/AKS-revised.pdf) for more details on the result.
@@ -269,8 +279,14 @@ If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$
 [^complete]: We recall the notion of [notion of complete problems](https://theoretickles.netlify.app/posts/reductions#completeness) here.
 [^harsha23]: Prahladh Harsha, Daniel Mitropolsky, and Alon Rosen. Downward Self-Reducibility in TFNP. ITCS 2023. [DOI](https://doi.org/10.4230/LIPIcs.ITCS.2023.67).
 [^grochow]: [See this preprint](https://arxiv.org/pdf/1610.05825).
-[^PPA]: **Complexity class PPA:** Also known as Polynomial Parity Argument, this class captures computational problems whose totality is rooted in the handshaking lemma for undirected graph: "all graphs of maximum degree 2 have an even number of leaves." More precisely, **PPA** captures search problems for which there is a polynomial-time algorithm that, given any string, computes its 'neighbor' strings (of which there are at most two). Then given a leaf string (i.e. one with only one neighbor), the problem is to output another leaf string.
+[^PPA]:
+    The **Complexity class PPA** (also known as **Polynomial Parity Argument**) captures computational search problems whose totality is rooted in the handshaking lemma for undirected graphs: "all graphs of maximum degree 2 have an even number of leaves."
+    More precisely, **PPA** captures search problems for which there is a polynomial-time algorithm that, given any string, computes its 'neighbor' strings (of which there are at most two). Then given a leaf string (i.e. one with only one neighbor), the problem is to output another leaf string.
+
 [^beame98]:
     Paul Beame, Stephen Cook, Jeff Edmonds, Russell Impagliazzo, and Toniann
     Pitassi. 1998. The Relative Complexity of NP Search Problems. J. Comput. System
     Sci. 57, 1 (1998), 3–19. https://doi.org/10.1145/225058.225147
+
+[^oppenheim]: Josh Buresh-Oppenheim, Tsuyoshi Morioka: **Relativized NP Search Problems and Propositional Proof Systems**. CCC 2004: 54-67.
+[^FP]: From our discussions above, it may be unclear why search problems in **FP** have to be _total_. To see why, consider $R\in$ **FP** and fix a special string $y_0$ s.t. $\forall x\in\Sigma_{in}^{\*}$ s.t. $(x,y_0)\notin R$. An easy way to construct $y_0$ is to append every $y\in\Sigma_{out}^{\*}$ with a $1$, and set $y_0$ as the all zero string.
