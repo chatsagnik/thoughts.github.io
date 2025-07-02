@@ -24,7 +24,7 @@ categories: [toc, complexity]
 
 In an earlier post, we familiarised ourselves with the [notion of reductions](https://theoretickles.netlify.app/posts/reductions). Towards the end, we introduced the notion of **self-reducibility** which is our main topic of focus today. We start by familiarising ourselves with a few concepts.
 
-## Search-to-Decision Reductions
+# Search-to-Decision Reductions
 
 In the world of complexity and computability, a _language_ is a set of strings formed out of some alphabet. Formally, $L\subseteq\Sigma^{\*}$, where the alphabet $\Sigma$ is a finite set of symbols, and $\Sigma^{\*}$ refers to the [Kleene closure](https://en.wikipedia.org/wiki/Kleene_star#Definition) of $\Sigma$.
 
@@ -46,7 +46,7 @@ Since the complexity class **NP** is defined w.r.t. decision problems, we need t
 
 > **FP** = **FNP** iff **P** = **NP**.
 
-### Examples of Search-to-Decision reductions
+## Examples of Search-to-Decision reductions
 
 In this section, we see some examples of search-to-decision reductions. Let us start with designing a search-to-decision reduction for SAT, which is an **NP-complete** problem. Recall that decision problems answer the following flavour of questions:
 
@@ -67,7 +67,7 @@ As we see above, if it is easy to solve the Search version of a problem $P$, it 
 
 > Can we efficiently solve the Search version of a problem $P$, if we know how to solve the Decision version of $P$ efficiently?
 
-#### Search-to-Decision Reduction for SAT
+### Search-to-Decision Reduction for SAT
 
 Formally, let $O_D^p$ be a decision oracle for a search problem $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ s.t. querying $O_D^p$ produces $\mathbb{I}[ \exists x\in\Sigma_{in}\;|\; x \text{ has property } p]$; i.e., querying $O_D$ with an appropriate parameter for a _property_ $p$ outputs a <span style="color:blue">yes</span> or a <span style="color:red">no</span> indicating if there exists any input that satisfies the property $p$ (usually taken to be some bound on the input size). Our goal now is to produce $y\in\Sigma_{out}$ s.t. $(x,y)\in R$, using oracle calls to $O_D^p$.
 
@@ -100,7 +100,7 @@ SATSearchToDecision(f,DSAT()){
 }
 ```
 
-#### Search-to-Decision Reduction for CLIQUE
+### Search-to-Decision Reduction for CLIQUE
 
 Earlier we saw that the property used by the decision oracle was a restricted assignment. We list another example of a search-to-decision reduction for the Clique problem (another one of Karp's original 21 **NP-complete** problems), to give a flavour of a different decision oracle property - based on size.
 
@@ -133,7 +133,7 @@ SATSearchToDecision(L,DCLIQUE()){
 
 ---
 
-## Formal notion of Self-reducibility
+# Formal notion of Self-reducibility
 
 Above we saw examples of problems admitting efficient search-to-decision reductions where both the search and decision verions are computationally hard. `Maximum Matching` and `Shortest Path` are problems where both the search and decision versions are computationally easy, and hence admit efficiently constructible search-to-decision reductions by definition. This is interesting since these two categories of problems are very different from a computational perspective.
 
@@ -141,7 +141,7 @@ However, in the context of the existence of efficient search-to-decision reducti
 
 A problem is **self-reducible** or **auto-reducibile** if it admits an efficient search-to-decision reduction, i.e., any efficient solution to the decision version of the problem implies an efficient solution to the search version of the problem.
 
-### Downward self-reducibility
+## Downward self-reducibility
 
 A search problem $R$ is **downward self-reducible** (d.s.r) if there is a polynomial time oracle algorithm for $R$ that on input $x \in \Sigma^{\*}$ makes queries to an $R$-oracle of size strictly less than $|x|$. In other words, a language $L$ is d.s.r. if there exists a polynomial time algorithm $A^O$ deciding $x\overset{?}{\in} L$ with a membership oracle $O$ for $L$ that can handle subqueries for strings $z\overset{?}{\in} L$ s.t. $|z|<|x|$.
 
@@ -159,7 +159,7 @@ _Proof._ Let the input to a d.s.r. problem $f$ be $x$. Then any algorithm $A$ th
 
 **Note:** We also recall that **PSPACE** is closed [^complete] under Karp-reductions. Since, all d.s.r. languages belong to **PSPACE**, we can conclude that **PSPACE** is **hard** (worst-case or average-case) iff a d.s.r. language is **hard** (in the same sense.)
 
-#### An application of Downward Self-Reductions: Mahaney's Theorem
+### An application of Downward Self-Reductions: Mahaney's Theorem
 
 A language $L$ is (polynomially) **sparse** if it the number of strings of length $n$ in $L$ is bounded by a polynomial in $n$.
 
@@ -178,7 +178,7 @@ The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra 
 
 ---
 
-## Which problems are (not) known to be self-reducible?
+# Which problems are (not) known to be self-reducible?
 
 Recall that self-reducibility is precluded in cases where the decision version is easy and while the search version is hard. For example, consider the `Factoring` problem:
 
@@ -193,7 +193,7 @@ Following the above result, Beame et al. (1998)[^beame98] showed the existence o
 
 One of the research directions on the notion of self-reducible problems is to characterise their complexity. Even though decisional complexity is well understood at an undergraduate level, the complexity of search problems is strictly a graduate level topic due to the sheer amount of prerequisites involved. In the remainder of this post, I will attempt to provide an introduction to the complexity landscape of **NP**-search problems and state a few connected results related to self-reducibility.
 
-### Taxonomy of NP search problems
+## Taxonomy of NP search problems
 
 The complexity class **TFNP** consists of all search problems in **FNP** that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\in\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. Using the totality of **TFNP**, it is straightforward to show that **TFNP** $=$ **FNP** $\cap$ **coFNP**.
 
@@ -216,7 +216,7 @@ Hence, in order to characterize the notion of hardness in search problems, vario
 
 Recall that TFNP problems have the following two characteristics - **(a)** any solution can be checked efficiently _(the NP property)_, and **(b)** there always exists at least one solution _(the totality property)_. The syntactic subclasses are defined based on the combinatorial principle used to argue totality in **TFNP**. In other words, each subclass of **TFNP** has a corresponding existence proof principle (for example, an instance of a circuit or graph), _one that when applied in a general context, does not yield a polynomial-time algorithm_.
 
-#### Important subclasses of TFNP
+### Important subclasses of TFNP
 
 We define two important subclasses of TFNP in this post - **PLS** and **PPAD** (along with a whole host of others in the footnotes section).
 
@@ -244,7 +244,7 @@ The following diagram ([appropriated from this talk](https://www.youtube.com/wat
 
 ![TFNP problem landscape](/posts/TFNP.jpg)
 
-### Complexity of self-reducibile problems
+## Complexity of self-reducibile problems
 
 Earlier we saw that every downward self-reducible decision problem is in **PSPACE**. The following result was recently shown, as an analogue for search problems.
 
@@ -258,7 +258,7 @@ If Factoring is downward self-reducible, then Factoring$\in$**UEOPL**$\subseteq$
 
 ---
 
-## Footnotes
+# Footnotes
 
 [^semantic]: A complexity class is called a **semantic class** if the Turing Machine (TM) defining this class has a property that is undecidable. See [Papadimitrou's original paper](https://www.karlin.mff.cuni.cz/~krajicek/papadim1.pdf) and [this Stackexchange link](https://cstheory.stackexchange.com/questions/1233/semantic-vs-syntactic-complexity-classes) for a more formal discussion on this topic. In a nutshell, promise classes such as **RP**, **ZPP**, **BPP** are semantic.
 [^PPP]: The existence of solutions for problems in **complexity class PPP:** (also known as Polynomial Pigeonhole Principle) is guaranteed by the pigeonhole principle: if $n$ balls are placed in $m < n$ bins then at least one bin must contain more than one ball.
