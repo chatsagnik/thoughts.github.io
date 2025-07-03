@@ -167,7 +167,7 @@ A language $L$ is (polynomially) **sparse** if it the number of strings of lengt
 
 _Proof Sketch:_ Recall the d.s.r tree of SAT. Given a SAT formula $\phi[x_1,\ldots,x_n]$ at the first level we can restrict the formula to $\phi_0[0,\ldots,x_n]$ and $\phi_1[1,\ldots,x_n]$. If $\phi$ is satisfiable, then at least one of $\phi_0$ or $\phi_1$ is satisfiable. Hence, at the $\ell$th level, at least one of the $2^{\ell}$ formulas have to be satisfiable for the original formula to be satisifable. If $L$ is a sparse NP-complete language, we have $SAT\leq^p_m L$. Hence, using a mapping reduction from SAT to $L$, we can prune the d.s.r. tree s.t. at the $\ell$th level to only contend with $\text{poly}(\ell)$ formulas. This straightforwarly yields a polynomial time SAT algorithm, since there are only $n$ levels. This violates the [Exponential Time Hypothesis](https://en.wikipedia.org/wiki/Exponential_time_hypothesis), and therefore there does not exist any $L$ that is both sparse and NP-complete.
 
-The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra Agrawal for the original idea. See [Oded Goldreich's comments here](https://www.wisdom.weizmann.ac.il/~oded/MC/208.html). Due to the lack of formatting in the above linked blog (and for my own archival purposes), I reproduce his comments _as-is_ below.
+The above proof sketch is due to Joshua Grochow[^grochow], who credits Manindra Agrawal for the original idea. See Oded Goldreich's [comments here](https://www.wisdom.weizmann.ac.il/~oded/MC/208.html). Due to the lack of formatting in the above linked blog (and for my own archival purposes), I reproduce his comments _as-is_ below.
 
 > **Oded's comments:**
 > The proof is indeed simple, not any harder than the proof that assumes that the sparse set is a subset of a set in P (see Exercise 3.12 in my computational complexity book).
@@ -195,11 +195,13 @@ One of the research directions on the notion of self-reducible problems is to ch
 
 ## Taxonomy of NP search problems
 
-The complexity class **TFNP** consists of all search problems in **FNP** that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\in\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$. Using the totality of **TFNP**, it is straightforward to show that **TFNP** $=$ **FNP** $\cap$ **coFNP**.
+The complexity class **TFNP** consists of all search problems in **FNP** that are total in the sense that a solution is guaranteed to exist. In other words, $R\in$**TFNP**$\iff R\in$**FNP** and $R$ is total, i.e., $\forall x\in\Sigma_{in}, \exists y\in\Sigma_{out}$ s.t. $(x,y)\in R$.
 
-In the case of decision problems, the notion of **NP-completeness** plays a huge role in establishing relative hardness results among many problems of interests, and has a beautiful relationship with the concept of reductions.
+Using the totality of **TFNP**, it is straightforward to show that **TFNP** $=$ **FNP** $\cap$ **coFNP**.
 
-> There is an **FNP-complete** problem in **TFNP** if **NP** = **coNP**.
+As we have seen in the case of decision problems, the notion of **NP-completeness** plays a huge role in establishing relative hardness results among many problems of interests, and has a beautiful relationship with the concept of reductions. One might naturally ask whether a similar connection might be made w.r.t. **FNP-complete** problems and self-reductions!
+
+> If **NP** $\neq$ **coNP** there is no **FNP-complete** problem in **TFNP**.
 
 Since we consider a **P** $\neq$ **NP** to be a reasonable assumption, it is very likely that **NP** $\neq$ **coNP**. Does this imply that there is no notion of a _hard_ search problem? That also seems unlikely, because common sense dictates that search versions of problems in **NP** would be in some sense reducible to search versions of **NP-complete** problems!
 
