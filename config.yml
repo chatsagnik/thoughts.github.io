@@ -44,6 +44,8 @@ params:
   ShowRelatedContent: true
   ShowCodeCopyButtons: false
   ShowWordCount: true
+  ExternalLinksIcon: true
+  ExternalLinksNewTab: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: false
   disableSpecial1stPost: false
