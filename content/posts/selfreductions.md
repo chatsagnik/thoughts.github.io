@@ -40,7 +40,7 @@ In complexity theory, many problems can be naturally expressed as **search probl
 
 A Turing machine $T$ decides/computes/solves $R$, if for any input $x\in\Sigma_{in}$, $T(x)$ halts and produces $y\in\Sigma_{out}$ s.t. $(x,y)\in R$, or correctly states that no such $y$ exists.
 
-- $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ is a **polynomially-balanced relation** if for any $(x,y)\in R$, $|y|=\text{poly}(|x|)$.
+- A relation $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$ is a **polynomially-balanced** if for any $(x,y)\in R$, $|y|=\text{poly}(|x|)$.
 
 Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). Formally, a polynomially-balanced relation $R\in$ **FNP** (i.e., $R$ is an NP search problem) if $R$ is polynomial-time computable. Note that if $R$ is polynomially balanced, any $y$ s.t. $(x,y)\in R$ serves as the certificate/witness for $x$. A search problem $R$ is in **FP** if $R\in$ **FNP** and if there exists an efficient decider for $R$.
 
