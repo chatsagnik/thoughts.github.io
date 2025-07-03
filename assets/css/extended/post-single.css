@@ -3,10 +3,10 @@
   align-items: center;
   gap: 5px;
 }
-
+/* 
 .post-content a.external-link:any-link {
   text-decoration: underline;
-}
+} */
 
 /* the following code adds an external link marker */
 .post-content a.external-link::after {
