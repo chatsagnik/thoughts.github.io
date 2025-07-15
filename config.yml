@@ -41,7 +41,6 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowRelatedContent: true
   ShowCodeCopyButtons: false
   ShowWordCount: true
   ExternalLinksIcon: true

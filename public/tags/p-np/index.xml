@@ -14,7 +14,7 @@
     <lastBuildDate>Sat, 01 Feb 2025 11:51:18 +0530</lastBuildDate>
     <atom:link href="https://theoretickles.netlify.app/tags/p-np/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Self-Reducibility</title>
+      <title>Self-Reducibility (Part 1)</title>
       <link>https://theoretickles.netlify.app/posts/selfreductions/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
       <guid>https://theoretickles.netlify.app/posts/selfreductions/</guid>
@@ -22,6 +22,7 @@
 &lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;preliminaries-search-and-decision-problems&#34;&gt;Preliminaries: Search and Decision Problems&lt;/h2&gt;
 &lt;p&gt;In an earlier post, we familiarised ourselves with the &lt;a href=&#34;https://theoretickles.netlify.app/posts/reductions&#34;   rel=&#34;noopener&#34;   class=&#34;external-link&#34;   target=&#34;_blank&#34; &gt;notion of reductions
 &lt;/a&gt;. Towards the end, we introduced the notion of &lt;strong&gt;self-reducibility&lt;/strong&gt; which is our main topic of focus today. We start by familiarising ourselves with a few concepts.&lt;/p&gt;</description>
     </item>

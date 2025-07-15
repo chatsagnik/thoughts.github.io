@@ -35,17 +35,10 @@
       <description></description>
     </item>
     <item>
-      <title>Eth</title>
-      <link>https://theoretickles.netlify.app/tags/eth/</link>
+      <title>CLIQUE</title>
+      <link>https://theoretickles.netlify.app/tags/clique/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/tags/eth/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Factoring</title>
-      <link>https://theoretickles.netlify.app/tags/factoring/</link>
-      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/tags/factoring/</guid>
+      <guid>https://theoretickles.netlify.app/tags/clique/</guid>
       <description></description>
     </item>
     <item>
@@ -56,17 +49,17 @@
       <description></description>
     </item>
     <item>
-      <title>Primality</title>
-      <link>https://theoretickles.netlify.app/tags/primality/</link>
-      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/tags/primality/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Reductions</title>
       <link>https://theoretickles.netlify.app/tags/reductions/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
       <guid>https://theoretickles.netlify.app/tags/reductions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAT</title>
+      <link>https://theoretickles.netlify.app/tags/sat/</link>
+      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/tags/sat/</guid>
       <description></description>
     </item>
     <item>
@@ -84,24 +77,10 @@
       <description></description>
     </item>
     <item>
-      <title>TFNP</title>
-      <link>https://theoretickles.netlify.app/tags/tfnp/</link>
-      <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/tags/tfnp/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Halting Problem</title>
       <link>https://theoretickles.netlify.app/tags/halting-problem/</link>
       <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
       <guid>https://theoretickles.netlify.app/tags/halting-problem/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SAT</title>
-      <link>https://theoretickles.netlify.app/tags/sat/</link>
-      <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/tags/sat/</guid>
       <description></description>
     </item>
     <item>

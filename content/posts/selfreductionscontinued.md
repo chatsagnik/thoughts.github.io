@@ -3,18 +3,17 @@ title: "Self-Reducibility (Part 2)"
 date: 2025-09-01T11:51:18+05:30
 draft: false
 tags:
-[
-reductions,
-p-np,
-eth,
-self-reducibility,
-search-to-decision,
-factoring,
-primality,
-TFNP,
-]
+  [
+    reductions,
+    p-np,
+    eth,
+    self-reducibility,
+    search-to-decision,
+    factoring,
+    primality,
+    TFNP,
+  ]
 categories: [toc, complexity]
-
 ---
 
 > _This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let's dive in._
