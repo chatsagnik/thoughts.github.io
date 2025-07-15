@@ -36,7 +36,7 @@ http://cs-www.cs.yale.edu/homes/jf/FF.pdf
 
 ## Worst-Case to Average-Case Reductions
 
-### Randomized Reductions
+## Randomized Reductions
 
 ## Random-self-reducibility
 
