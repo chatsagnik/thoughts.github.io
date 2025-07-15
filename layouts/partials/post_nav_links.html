@@ -1,4 +1,4 @@
-<!-- {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- if and (gt (len $pages) 1) (in $pages . ) }}
 <nav class="paginav">
     {{- with $pages.Prev . }}
@@ -16,4 +16,4 @@
     </a>
     {{- end }}
 </nav>
-{{- end }} -->
+{{- end }}

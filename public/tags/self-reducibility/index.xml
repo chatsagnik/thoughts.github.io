@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Feb 2025 11:51:18 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 11:51:18 +0530</lastBuildDate>
     <atom:link href="https://theoretickles.netlify.app/tags/self-reducibility/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Reducibility (Part 2)</title>
+      <link>https://theoretickles.netlify.app/posts/srcontinued/</link>
+      <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
+      <guid>https://theoretickles.netlify.app/posts/srcontinued/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the second part of an earlier post on &lt;a href=&#34;https://theoretickles.netlify.app/posts/selfreductions&#34;   rel=&#34;noopener&#34;   class=&#34;external-link&#34;   target=&#34;_blank&#34; &gt;Self Reductions
+&lt;/a&gt;. Since the two posts are meant to be perused in order, please check out the earlier post for any definitions/concepts not covered in this post.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Self-Reducibility (Part 1)</title>
       <link>https://theoretickles.netlify.app/posts/selfreductions/</link>
