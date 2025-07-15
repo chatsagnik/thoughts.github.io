@@ -1,7 +1,7 @@
 baseURL: "https://theoretickles.netlify.app/"
 languageCode: en-us
 title: Theoretickles
-theme: "PaperMod"
+theme: "PaperModX"
 pagerSize: 10
 
 enableRobotsTXT: true

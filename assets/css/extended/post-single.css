@@ -1,4 +1,4 @@
-.post-content a.external-link {
+/* .post-content a.external-link {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -9,7 +9,7 @@
 } */
 
 /* the following code adds an external link marker */
-.post-content a.external-link::after {
+/* .post-content a.external-link::after {
   content: "";
   display: inline-block;
   clip-path: polygon(
@@ -41,4 +41,4 @@
   background-color: var(--primary);
   width: 10px;
   height: 10px;
-}
+} */
