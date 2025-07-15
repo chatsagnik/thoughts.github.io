@@ -181,7 +181,7 @@ Again, suprisingly the answer to this question is not known to be true!! While t
 
 In fact, any answer to this question seems to have deep connections with [Ladner's Theorem](https://www.cs.ucdavis.edu/~rogaway/classes/220/winter06/ladner-theorem.pdf) which posits the existence of the **NPI** (**NP**-intermediate) class if **P**$\neq$**NP**.
 
-We shall dwell on this question in more detail in the [next post](https://theoretickles.netlify.app/posts/selfreductionscontinued). For now, we briefly turn our attention _away_ from the **P**-**NP** hierarchy and onto larger complexity classes. We know that the polynomial hierarchy is not known to have complete problems (this would have serious complexity theoretic implications[^PHcollapse]), but we know that every level in PH admits complete problems.
+We shall dwell on this question in more detail in the [next post](https://theoretickles.netlify.app/posts/srcontinued). For now, we briefly turn our attention _away_ from the **P**-**NP** hierarchy and onto larger complexity classes. We know that the polynomial hierarchy is not known to have complete problems (this would have serious complexity theoretic implications[^PHcollapse]), but we know that every level in PH admits complete problems.
 
 > For any arbitrary $k$, consider any problem $L$ that is complete for the $k$th level of the Polynomial Hierarchy. Is $L$ is downward-self-reducible?
 
@@ -224,7 +224,7 @@ Surprisingly, the answer to this question is not straightforward unlike its deci
 
 Consider any $(x,y)\in R$, where $R\in$**FNP**. Unlike the decision version where $y$ is either $0$ or $1$, here the output string $y$ may not necessarily have a structure that lends itself to _variable fixing_ or _structural recursion_, **even if $x$ does!**.
 
-> On this note, one might ask for a characterization of search problems that are downward-self-reducible? Once again, the answer to this question is discussed in detail in the [next post](https://theoretickles.netlify.app/posts/selfreductionscontinued).
+> On this note, one might ask for a characterization of search problems that are downward-self-reducible? Once again, the answer to this question is discussed in detail in the [next post](https://theoretickles.netlify.app/posts/srcontinued).
 
 Since downward-self-reducibility seems to be untenable for search problems, we turn our attention to self-reducibility for search problems. In that same vein, one might be tempted to raise the following question:
 
@@ -240,7 +240,7 @@ Surprisingly (or not) that answer is no! While, some problems have naturally equ
 
 > Which search problems are (not) known to be self-reducible?
 
-We try to answer this question in our [next post](https://theoretickles.netlify.app/posts/selfreductionscontinued).
+We try to answer this question in our [next post](https://theoretickles.netlify.app/posts/srcontinued).
 **Minor spoiler alert:** A completely unconditional answer is a major open question.
 
 ---

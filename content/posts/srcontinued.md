@@ -1,6 +1,6 @@
 ---
 title: "Self-Reducibility (Part 2)"
-date: 2025-09-01T11:51:18+05:30
+date: 2025-02-08T11:51:18+05:30
 draft: false
 tags:
   [
