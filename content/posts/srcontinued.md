@@ -31,9 +31,9 @@ For example, consider the `Factoring` problem:
 - **The Factoring Decision problem:** Given a natural number $n$, decide if $n$ is prime.
 - **The Factoring Search problem:** Given (the binary representation of) a natural number $n$, produce all of its factors.
 
-Many important classes of cryptosystems such as [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) [^R1] are based on the hardness of the `Factoring Search problem`.[^R2] On the other hand, the `Factoring Decision problem` (also known as the `Primality testing problem`) has long been known to computationally tractable.[^primality] Hence, `Factoring` does not appear to be straightforwardly self-reducible.
+Many important classes of cryptosystems such as RSA[^R1] are based on the hardness of the `Factoring Search problem`.[^R2] On the other hand, the `Factoring Decision problem` (also known as the `Primality testing problem`) has long been known to computationally tractable.[^primality] Hence, `Factoring` does not appear to be straightforwardly self-reducible.
 
-> If **EE** $\neq$ **NEE**, then there exists a language in **NP** that is not self-reducible.[^EE] **[Bellare and Goldwasser'94]**
+> If **EE** $\neq$ **NEE**,[^EE] then there exists a language in **NP** that is not self-reducible. **[Bellare and Goldwasser'94]**
 
 Following the above result, Beame et al. (1998)[^beame98] showed the existence of various search problems in **FNP** that are not computationally equivalent to their decision versions. This is particularly important when a solution for the search problem is **guaranteed to exist** (but hard to find).
 
@@ -142,7 +142,7 @@ The complexity class **UniqueEOPL** (Unique End of Potential Line) captures sear
 [^Brouwer]: **Brouwer's fixed-point theorem** states that for any continuous function $f$ mapping a nonempty compact convex set to itself, there is a point $x_0$ such that $f(x_0)=x_0$.
 [^Kakutani]: The **Kakutani fixed point theorem** is a generalization of the Brouwer fixed point theorem to set-valued functions. By [Weller's Theorem](https://en.wikipedia.org/wiki/Weller%27s_theorem), Kakutani's fixed-point theorem is used in proving the existence of cake allocations that are both envy-free and Pareto efficient.
 [^KKT]: Finding a point where Gradient Descent terminates is equivalent to finding a KKT point—when the domain is bounded. Computing a KKT point of a continuously differentiable function over $[0, 1]^2$ is complete for **PPAD** $\cap$ **PLS**.
-[^R1]: **The RSA problem:** Find $M$ given the public key $(n,e)$ and a cipher text $C\equiv M^e\mod n$.
+[^R1]: **The RSA problem:** Find $M$ given the public key $(n,e)$ and a cipher text $C\equiv M^e\mod n$. [See the wiki for more details.](https://en.wikipedia.org/wiki/RSA_cryptosystem)
 [^R2]: If we can solve the factoring problem then we can solve the RSA problem by factoring the modulus n. Hence, Factoring $\implies$ RSA.
 [^primality]: The seminal result of Agarwal, Kayal, and Saxena showed that this problem is in **P**. See [this writeup](https://www.tcs.tifr.res.in/~jaikumar/Papers/AKS-revised.pdf) for more details on the result.
 [^EE]: **EE** equals DTIME($2^{2^{O(n)}}$).
