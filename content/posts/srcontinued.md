@@ -24,7 +24,7 @@ categories: [toc, complexity]
 
 # Which search problems are (not) known to be self-reducible?
 
-**The one-line asnwer:** Self-reducibility is precluded in cases where the decision version is easy and while the search version is hard.
+**The one-line asnwer:** Self-reducibility is precluded in cases where the decision version is easy while the search version is hard.
 
 For example, consider the `Factoring` problem:
 
