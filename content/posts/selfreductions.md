@@ -40,7 +40,9 @@ We remark here that a relation $R\subset\Sigma_{in}^{\*}\times\Sigma_{out}^{\*}$
 
 Since the complexity class **NP** is defined w.r.t. decision problems, we need to introduce an equivalent notion for search problems. Informally, this is denoted by the class **FNP** (or Function **NP**). (We make this informal connection explicit shortly.)
 
-A relation $R$ is polynomially balanced, any $y$ s.t. $(x,y)\in R$ serves as the certificate/witness for $x$. Formally, a polynomially-balanced relation $R\in$ **FNP** (i.e., $R$ is an NP search problem) if $R$ is polynomial-time computable.
+A relation $R$ is polynomially balanced, if for any $(x,y)\in R$, $|y|\leq\mathrm{poly}(|x|)$. In other words, any certificate/witness for an instance $x$ is at most polynomially large w.r.t. $x$.
+
+Formally, a polynomially-balanced relation $R\in$ **FNP** (i.e., $R$ is an NP search problem) if $R$ is polynomial-time computable.
 
 A search problem $R$ is in **FP** if $R\in$ **FNP** and if there exists an efficient decider for $R$.
 
@@ -185,7 +187,7 @@ We shall dwell on this question in more detail in the [next post](https://theore
 
 > For any arbitrary $k$, consider any problem $L$ that is complete for the $k$th level of the Polynomial Hierarchy. Is $L$ is downward-self-reducible?
 
-While the answer is known to be true for natural complete problems such as Quantified Boolean Formulas, the question seems to be open in full generality[^note1]. What about problems beyond the Polynomial Hierarchy? How high can we go before we encounter a barrier to downward-self-reducibility?
+Using arguments similar to `SAT`, one can show that Quantified Boolean Formulas are, the question seems to be open in full generality[^note1]. What about problems beyond the Polynomial Hierarchy? How high can we go before we encounter a barrier to downward-self-reducibility?
 
 > Every downward self-reducible decision problem is in **PSPACE**.
 
