@@ -1,7 +1,7 @@
 ---
 title: "The Matrix Trace"
 date: 2025-03-08T12:03:46+05:30
-draft: true
+draft: false
 tags: [linear algebra, quantum computing, matrix analysis]
 categories: [math]
 ---
@@ -52,9 +52,7 @@ Let $A$ be a linear operator on an $n$-dimensional vector space $V$. Let $B$ a b
 
 Note that if $C$ is a different basis of $V$, then the matrix representation of $A$ w.r.t. $C$, denoted by $M_C$, then the matrices $M_B$ and $M_C$ are **similar**, i.e., there exists a matrix $S$ (precisely the change of basis matrix from $B$ to $C$), s.t. $M_B = S M_C S^{-1}$. Then, we have
 
-> $P_A(M_C) = \det(M_C - \lambda I) 
-> = \det(S (M_B-\lambda I) S^{-1})$
-> $\implies P_A(M_C)= \det(S)P_A(M_B)\det(S^{-1}) = P_A(M_B).$
+> $P_A(M_C) = \det(M_C - \lambda I) = \det(S\cdot M_B\cdot S^{-1} - S\cdot \lambda I\cdot S^{-1})$ > $\implies P_A(M_C)= \det(S\cdot (M_B-\lambda I)\cdot S^{-1})$ > $\implies P_A(M_C)= \det(S)\cdot P_A(M_B)\cdot\det(S^{-1})$ > $\implies P_A(M_C)= P_A(M_B).$
 
 Hence, the characteristic polynomial is invariant due to change of basis. This implies that the roots of the characteristic polynomial do not change, implying that the trace is invariant under basis change.
 
