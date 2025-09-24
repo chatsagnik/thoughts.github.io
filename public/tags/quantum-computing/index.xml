@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Quantum Computing on Theoretickles</title>
+    <link>http://localhost:1313/tags/quantum-computing/</link>
+    <description>Recent content in Quantum Computing on Theoretickles</description>
+    <image>
+      <title>Theoretickles</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Mar 2025 12:03:46 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/quantum-computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Matrix Trace</title>
+      <link>http://localhost:1313/posts/trace/</link>
+      <pubDate>Sat, 08 Mar 2025 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/posts/trace/</guid>
+      <description>&lt;h2 id=&#34;a-prelude-to-this-post&#34;&gt;A Prelude to this post&lt;/h2&gt;
+&lt;p&gt;I was introduced to the notion of the &lt;strong&gt;trace of a square matrix&lt;/strong&gt; as early as the eleventh grade, but never fully appreciated the nuances attached to this seemingly innocuous concept until I took a &lt;em&gt;second&lt;/em&gt; course in Linear algebra! Funnily, the reason I even took the second course was because I was struggling the intuition behind certain concepts such as density matrices and measurements in basic quantum computing and quantum information theory!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

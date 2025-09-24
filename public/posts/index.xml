@@ -2,22 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Theoretickles</title>
-    <link>https://theoretickles.netlify.app/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Theoretickles</description>
     <image>
       <title>Theoretickles</title>
-      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Apr 2025 12:03:46 +0530</lastBuildDate>
-    <atom:link href="https://theoretickles.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Mar 2025 12:03:46 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Matrix Trace</title>
+      <link>http://localhost:1313/posts/trace/</link>
+      <pubDate>Sat, 08 Mar 2025 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/posts/trace/</guid>
+      <description>&lt;h2 id=&#34;a-prelude-to-this-post&#34;&gt;A Prelude to this post&lt;/h2&gt;
+&lt;p&gt;I was introduced to the notion of the &lt;strong&gt;trace of a square matrix&lt;/strong&gt; as early as the eleventh grade, but never fully appreciated the nuances attached to this seemingly innocuous concept until I took a &lt;em&gt;second&lt;/em&gt; course in Linear algebra! Funnily, the reason I even took the second course was because I was struggling the intuition behind certain concepts such as density matrices and measurements in basic quantum computing and quantum information theory!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>$q$-ary Lattices</title>
-      <link>https://theoretickles.netlify.app/posts/qary/</link>
-      <pubDate>Tue, 01 Apr 2025 12:03:46 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/posts/qary/</guid>
+      <link>http://localhost:1313/posts/qary/</link>
+      <pubDate>Sat, 01 Mar 2025 12:03:46 +0530</pubDate>
+      <guid>http://localhost:1313/posts/qary/</guid>
       <description>&lt;p&gt;In this post, we discuss an important class of algebraic structures known as $q$-ary lattices that are central to lattice-based cryptographic primitives.&lt;/p&gt;
 &lt;h2 id=&#34;hardness-of-problems&#34;&gt;Hardness of problems&lt;/h2&gt;
 &lt;p&gt;Computational hardness usually revolves around problems with &lt;strong&gt;worst-case hardness&lt;/strong&gt; guarantees since we want to design algorithms that run efficiently even on the worst possible input.&lt;/p&gt;
@@ -25,9 +33,9 @@
     </item>
     <item>
       <title>Self-Reducibility (Part 2)</title>
-      <link>https://theoretickles.netlify.app/posts/srcontinued/</link>
+      <link>http://localhost:1313/posts/srcontinued/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/posts/srcontinued/</guid>
+      <guid>http://localhost:1313/posts/srcontinued/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
@@ -36,9 +44,9 @@
     </item>
     <item>
       <title>Self-Reducibility (Part 1)</title>
-      <link>https://theoretickles.netlify.app/posts/selfreductions/</link>
+      <link>http://localhost:1313/posts/selfreductions/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/posts/selfreductions/</guid>
+      <guid>http://localhost:1313/posts/selfreductions/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
@@ -49,9 +57,9 @@
     </item>
     <item>
       <title>An Introduction to Reductions</title>
-      <link>https://theoretickles.netlify.app/posts/reductions/</link>
+      <link>http://localhost:1313/posts/reductions/</link>
       <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
-      <guid>https://theoretickles.netlify.app/posts/reductions/</guid>
+      <guid>http://localhost:1313/posts/reductions/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post assumes basic familiarity with Turing machines, P, NP, NP-completeness, decidability, and undecidability. The reader is referred to the book by Sipser, or the book by Arora and Barak for any formal definitions that have been skipped in this post. Without further ado, let&amp;rsquo;s dive in.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;hr&gt;

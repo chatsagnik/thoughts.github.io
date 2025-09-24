@@ -6,7 +6,7 @@ tags: [linear algebra, quantum computing, matrix analysis]
 categories: [math]
 ---
 
-# A Prelude to this post
+## A Prelude to this post
 
 I was introduced to the notion of the **trace of a square matrix** as early as the eleventh grade, but never fully appreciated the nuances attached to this seemingly innocuous concept until I took a _second_ course in Linear algebra! Funnily, the reason I even took the second course was because I was struggling the intuition behind certain concepts such as density matrices and measurements in basic quantum computing and quantum information theory!
 

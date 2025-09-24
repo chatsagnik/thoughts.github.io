@@ -3,20 +3,19 @@ title: "Toda's Theorem"
 date: 2025-04-08T11:51:18+05:30
 draft: true
 tags:
-[
-randomization,
-randomness,
-reductions,
-p-np,
-self-reducibility,
-worst-to-average case,
-BPP,
-pseudrandomness,
-permanent,
-discrete log,
-]
+  [
+    randomization,
+    randomness,
+    reductions,
+    p-np,
+    self-reducibility,
+    worst-to-average case,
+    BPP,
+    pseudrandomness,
+    permanent,
+    discrete log,
+  ]
 categories: [toc, complexity]
-
 ---
 
 https://users.cs.duke.edu/~reif/courses/complectures/Bulatov/35.pdf
