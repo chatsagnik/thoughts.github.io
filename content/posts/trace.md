@@ -39,7 +39,7 @@ In the following sections, we will prove the equivalence between Definitions 1 a
 
 We start by relating the eigenvalues of an operator to the entries of any of its matrix representations by way of the characteristic polynomial.[^charpoly] Let $A$ be a linear operator on an $n$-dimensional vector space $V$. Let $B$ a basis of $V$ and we denote the matrix representation of $A$ w.r.t. $B$ is $M_B$.
 
-Consider the following matrix representation $M_B = \begin{bmatrix}a_{11}\&\ldots\&\a_{1n}\\ \&\ddots\&\\a_{n1}\&\ldots\& \a_{nn}\end{bmatrix}$.
+Consider the following matrix representation $M_B = \begin{bmatrix}a_{11}\&\ldots\& a_{1n}\\ \&\ddots\& a_{n1}\&\ldots\& a_{nn}\end{bmatrix}$.
 
 s.t. the roots of $p(M_B)$ are the eigenvalues of $A$.
 
