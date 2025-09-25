@@ -35,7 +35,7 @@ Let us pause at this moment and reflect on a few things. What does the above exe
 
 In the following sections, we will prove the equivalence between Definitions 1 and 2, along with the above observations.
 
-### The Characteristic Polynomial and a third definition of Trace
+## A third definition of Trace via the Characteristic Polynomial
 
 We start by relating the eigenvalues of an operator to the entries of any of its matrix representations by way of the characteristic polynomial.[^charpoly] Let $A$ be a linear operator on an $n$-dimensional vector space $V$. Let $B$ a basis of $V$ and we denote the matrix representation of $A$ w.r.t. $B$ is $M_B$.
 
@@ -45,33 +45,51 @@ $$ p(M*B) = \det(M_B-\lambda\cdot I) = \prod*{i=1}^n (a\_{ii} - \lambda) + \text
 
 $$\implies p(M_B) = (-1)^n \big(\lambda^n - \textcolor{red}{\Bigg(\sum_{i=1}^n a_{ii}\Bigg)}  \,\lambda^{n-1} + \dots + (-1)^n \det M_B\big)$$
 
-$$\implies p(M_B) = (-1)^n \big(\lambda^n - \textcolor{red}{(\text{tr}\, M_B)} \,\lambda^{n-1} + \dots + (-1)^n \det M_B\big)\,.\;\; \text{(by Definition 2)}$$
+$$\implies p(M_B) = (-1)^n \big(\lambda^n - \textcolor{red}{(\text{tr}\, M_B)} \,\lambda^{n-1} + \dots + (-1)^n \det M_B\big)\,.\;\; \text{\small(by Definition 2)}$$
 
 > **Exercise:** Check for yourself that the the coefficient of the degree 0 term of the characteristic polynomial is indeed $\det M_B$.
 
-Recall that if a polynomial $p(x)$ has a root $r$, then $x-r$ divides $p(x)$.[^factor] Also recall that by definition, the roots of the characteristic polynomial are the eigenvalues of $A$. Hence, $p(M_B)=\prod_i (x-\lambda_i)$.
+Recall that if a polynomial $p(x)$ has roots $\\{r_i\\}$, then the polynomials $\\{x-r_i\\}_i$ divide $p(x)$.[^factor] Also recall that by definition, the roots of the characteristic polynomial are the eigenvalues of $A$.[^charpoly] Hence, $p(M_B)=\prod_i (x-\lambda_i)$. By Vieta's formula, given a monic polynomial $p(x)=x^n+ \sum_{i<n}c_{i}x^{i}$, $c_{n-1}=-\sum_{i} r_i$. Hence, we have
 
-Note that if $C$ is a different basis of $V$, then the matrix representation of $A$ w.r.t. $C$, denoted by $M_C$, then the matrices $M_B$ and $M_C$ are **similar**, i.e., there exists a matrix $S$ (precisely the change of basis matrix from $B$ to $C$), s.t. $M_B = S M_C S^{-1}$. Then, we have
+$$ \textcolor{red}{\Bigg(\sum*{i=1}^n a*{ii}\Bigg)} = \textcolor{red}{(\text{tr}\, M*B)} = \sum*{i=1}^{n} \lambda_i.\;\; \text{\small(Hence Definitions 1 and 2 are equivalent)}$$
 
-> $$P_A(M_C) = \det(M_C - \lambda I) = \det(S\cdot M_B\cdot S^{-1} - S\cdot \lambda I\cdot S^{-1})$$
+> **Definition 3 (Trace via Characteristic Polynomial):** The trace of a matrix is the coefficient (upto a sign) of the degree $n-1$ term of its characteristic polynomial.
 
-> $$\implies P_A(M_C)= \det(S\cdot (M_B-\lambda I)\cdot S^{-1}) = \det(S)\cdot P_A(M_B)\cdot\det(S^{-1})$$
+It is also straightforward to show that the **trace is invariant** using arguments about the polynomial coefficients. A linear algebraic way of showing it is as follows:
 
-> $$\implies P_A(M_C)= P_A(M_B).$$
+Let $B,C$ be different bases of $V$. Denote the matrix representations of $A:V\mapsto V$ w.r.t. $B,C$ as $M_B,M_C$ respectively. By definition, $M_B$ and $M_C$ are **similar** matrices with $S$ being the (invertible) change of basis matrix from $B$ to $C$.
 
-Hence, the characteristic polynomial is invariant due to change of basis. This implies that **the roots of the characteristic polynomial are invariant under basis transformations**. Therefore, this implies that the trace (the sum of the roots of the characteristic polynomial by Definition 1) is also invariant under basis change. There still remains the question:
+> $$p(M_C) = \det(M_C - \lambda I) = \det(S\cdot M_B\cdot S^{-1} - S\cdot \lambda I\cdot S^{-1})$$
 
-> Why is the sum of eigenvalues related to the sum of diagonal elements?
+> $$\implies p(M_C)= \det(S\cdot (M_B-\lambda I)\cdot S^{-1}) = \det(S)\cdot p(M_B)\cdot\det(S^{-1})$$
 
-This question can be answered in two different ways.
+> $$\implies p(M_C)= p(M_B).$$
 
--- second term, and the fact that two real-valued polynomials are (numerically) equal for all values of t if and only if their individual coefficients are equal
+Hence, the characteristic polynomial is invariant due to change of basis. This implies that **the roots of the characteristic polynomial are invariant under basis transformations**. Therefore, this implies that the trace (the sum of the roots of the characteristic polynomial by Definition 1) is also invariant under basis change.
 
-$$p(t) = \det(A-tI) = (-1)^n \big(t^n - (\text{tr} A) \,t^{n-1} + \dots + (-1)^n \det A\big)\,.$$
+> We note that the above arguments can also be used to show that the Determinant is invariant under basis change. We now leave a small exercise for the reader to verify: Given a bounded linear operator, it has $n+1$ invariant properties (including the trace and determinant).
 
-Trace is preserved under similarity and every matrix is similar to a Jordan block matrix.
+## Trace via Jordan Forms
 
-https://math.stackexchange.com/questions/72303/proving-the-trace-of-a-transformation-is-independent-of-the-basis-chosen
+Since the characteristic polynomial of a bounded operator is invariant under basis change, we consider it to be a canonical representation of the operator. A different way of proving that the trace of a bounded operator is invariant under basis change, is to define the trace via a different canonical/basis-independent representation of linear operators: The **Jordan normal form**.
+
+Let $A:V\mapsto V$ be a linear operator on a finite dimensional vector space $V$ over a field $\mathbb{F}$, s.t. all eigenvalues of $A$ lie in $\mathbb{F}$. Let the eigenvalues of $A$ along with their algebraic multiplicity be denoted by $\\{\lambda_i, m_i\\}$. The Jordan normal form of $A$ is denoted as $J_A$, and it is a block diagonal matrix as follows:
+
+$$ J_A = \begin{bmatrix} B_1 \& 0\&\ldots \&0 \\\ 0\& B_2\&\ldots \&0 \\\ 0\&\ddots\&\ddots\& 0 \\\ 0\&\ldots\&\ldots\& B_k\end{bmatrix},$$
+
+where each block $B_i$ is an upper-triangular matrix of dimension $m_i\times m_i$, with the diagonal entries each being $\lambda_i$ and every super-diagonal entry (corresponding to the coordinates $(i,i+1)$) being $1$.[^block] We denote the $i$th block of the Jordan matrix below, where we assume that $\lambda_i$ has algebraic multiplicity $3$.
+
+$$ B_i = \begin{bmatrix}\lambda_i\& 1\& 0 \\\ 0\&\lambda_i\& 1 \\\ 0\&0\&\lambda_i\end{bmatrix}.$$
+
+We now state the following theorem without proof.
+
+> Every square matrix over an algebraically closed field has a Jordan form.[^answer]
+
+It turns out that every matrix representation of $A$ is similar to the Jordan Normal Form of $A$.[^jnf] Since we have already seen that the characteristic polynomial of $A$ remains invariant under similarity transformations, we can focus on defining the trace solely via Jordan Normal Forms.
+
+> **Definition 4 (Trace via Jordan Normal Forms):** The trace of an operator is the sum of the diagonal entries of its Jordan Normal Form.
+
+#### To Do's
 
 Trace definition for orthonormal systems
 
@@ -90,14 +108,15 @@ We digress for a moment to reflect on the geometric picture of the determinant o
 1. What is the significance of the volume of the parallelopiped being **signed**?
 2. What is the geometric intepretation of non-invertible/singular operators?
 
-Unlike the determinant, however, it is not immediately clear to us what the physical/geometric interpretation of trace would be. Assuming that the operator has distinct eigenvectors, we know that each individual eigenvalue represents the scaling factor of the corresponding eigenvector.
-
-### Invariant quantities of a bounded operator
+Unlike the determinant, however, it is not immediately clear to us what the physical/geometric interpretation of trace would be. Assuming that the operator has distinct eigenvectors, we know that each individual eigenvalue represents the scaling factor of the corresponding eigenvector. We leave it as an open ended exercise for the reader to figure this one out.
 
 [^linmap]: Let $V$ be a vector spaces over some field $\mathbb{F}$. A function $A:V\mapsto V$ is a linear operator on $V$ if $\forall \lambda,\sigma\in\mathbb{F}$ and $\forall v,w\in V$, $A(\lambda v + \sigma w) = \lambda A(v) + \sigma A(w)$.
 [^bounded]: A linear operator on an infinite-dimensional vector space will not have a matrix representation if it is not _bounded_. For the purposes of our discussion, requiring that $V$ is finite-dimensional suffices and also avoids unneccessary complications.
 [^spectral]: If $A$ is a Hermitian operator (i.e., $A=A^{\dagger}$) on a finite-dimensional vector space $W$, $A=\sum_{i=1}^{n} \lambda_i v_i^{\dagger}\cdot v_i$, where $\lambda_i$ are real eigenvalues of $A$ corresponding to the eigenvectors $v_i$, which form an orthonormal basis of $V$. Note that the eigendecomposition of $A$ is not unique if the eigenvalues are not distinct. Equivalently, $A=V\Lambda V^{\dagger}$, where $V$ is a unitary matrix whose columns are $v_i$ and $\lambda$ is the diagonal matrix with $\lambda_i$ as its entries.
 [^innerproduct]: Recall that for general vector spaces, the only property of basis vectors available to us is linear independence. Sometimes, it is desirable if we could add more structure to the basis set. An inner product space is a vector space equipped with the notion of an inner product function. This allows us to capture the notion of _angles_ between vectors. The immediate consequence of note is that we can define a set of orthonormal basis vectors for any vector space equipped with an inner product.
 [^quantum]: Interestingly, these restrictions suffice for the purposes of quantum computation and quantum information theory. Proving the above equivalence in full generality is not straightforward (at least for me). We will prove the general version of the above equivalence shortly.
-[^charpoly]: The characteristic polynomial of an $n\times n$ matrix $M$ is $p(M) = det(M - \lambda\cdot I_{n\times n})$.
+[^charpoly]: The characteristic polynomial of an $n\times n$ matrix $M$ is $p(M) = det(M - \lambda\cdot I_{n\times n})$. Its roots are the eigenvalues of $M$, since for any $\lambda_i$ s.t. $p(M)=0$, we have $det(M - \lambda_i\cdot I)=0$ which implies that $(M - \lambda_i\cdot I)$ has a non-trivial null space, say $N_i$. Now, any $v_i\in N_i$ is an eigenvector of $M$ with eigenvalue $\lambda_i$ as $(M - \lambda\cdot I)v=0\implies Mv_i=\lambda_i v_i$, implying that $\lambda_i$ is an eigenvalue of $M$ w.r.t. $v_i$. Note that any non-trivial null space of $p(M)$ is an eigenspace of $M$.
 [^factor]: This is known as the [Factor Theorem of polynomials](https://en.wikipedia.org/wiki/Factor_theorem).
+[^jnf]: Let $A=P\cdot J_A \cdot P^{-1}$ and $C=Q\cdot A \cdot Q^{-1}$. Then, $C=T\cdot J_A \cdot T^{-1}$, where $T=QP^{-1}$ is an invertible (change of basis matrix). Hence, $C$ is similar to $J_A$. Also by definition, $J_A$ is the JNF of $C$.
+[^answer]: [An elegant proof of the theorem.](https://math.stackexchange.com/a/4901247/120548)
+[^block]: We note that each block $B_i$ of the JNF of a bounded linear operator $A:V\mapsto V$ represents the eigenspace of $A$ corresponding to the eigenvalue $\lambda_i$. If one is familiar with tensor operations, $V = \otimes_{i=1}^{k} B_i$.
