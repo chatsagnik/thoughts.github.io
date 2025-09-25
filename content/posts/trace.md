@@ -39,9 +39,17 @@ In the following sections, we will prove the equivalence between Definitions 1 a
 
 We start by relating the eigenvalues of an operator to the entries of any of its matrix representations by way of the characteristic polynomial.[^charpoly] Let $A$ be a linear operator on an $n$-dimensional vector space $V$. Let $B$ a basis of $V$ and we denote the matrix representation of $A$ w.r.t. $B$ is $M_B$.
 
-Consider the following matrix representation $M_B = \begin{bmatrix}a_{11}\&\ldots\& a_{1n}\\\ \vdots\&\ddots\&\vdots \\\ a_{i1}\& a_{ii}\& a_{in} \\\ \vdots\&\ddots\&\vdots \\\ a_{1}\&\ldots\& a_{nn}\end{bmatrix}$ of the operator $A$.
+Consider the following matrix representation $M_B = \begin{bmatrix}a_{11}\&\ldots\& a_{1n}\\\ \vdots\&\ddots\&\vdots \\\ a_{i1}\& a_{ii}\& a_{in} \\\ \vdots\&\ddots\&\vdots \\\ a_{1}\&\ldots\& a_{nn}\end{bmatrix}$ of the operator $A$. The characteristic polynomial of $M_B$ is as follows:
 
-s.t. the roots of $p(M_B)$ are the eigenvalues of $A$.
+$$ p(M*B) = \det(M_B-\lambda\cdot I) = \prod*{i=1}^n (a\_{ii} - \lambda) + \text{terms of degree }\leq n-2$$
+
+$$\implies p(M_B) = (-1)^n \big(\lambda^n - \textcolor{red}{\Bigg(\sum_{i=1}^n a_{ii}\Bigg)}  \,\lambda^{n-1} + \dots + (-1)^n \det M_B\big)$$
+
+$$\implies p(M_B) = (-1)^n \big(\lambda^n - \textcolor{red}{(\text{tr}\, M_B)} \,\lambda^{n-1} + \dots + (-1)^n \det M_B\big)\,.\;\; \text{(by Definition 2)}$$
+
+> **Exercise:** Check for yourself that the the coefficient of the degree 0 term of the characteristic polynomial is indeed $\det M_B$.
+
+Recall that if a polynomial $p(x)$ has a root $r$, then $x-r$ divides $p(x)$.[^factor] Also recall that by definition, the roots of the characteristic polynomial are the eigenvalues of $A$. Hence, $p(M_B)=\prod_i (x-\lambda_i)$.
 
 Note that if $C$ is a different basis of $V$, then the matrix representation of $A$ w.r.t. $C$, denoted by $M_C$, then the matrices $M_B$ and $M_C$ are **similar**, i.e., there exists a matrix $S$ (precisely the change of basis matrix from $B$ to $C$), s.t. $M_B = S M_C S^{-1}$. Then, we have
 
@@ -92,3 +100,4 @@ Unlike the determinant, however, it is not immediately clear to us what the phys
 [^innerproduct]: Recall that for general vector spaces, the only property of basis vectors available to us is linear independence. Sometimes, it is desirable if we could add more structure to the basis set. An inner product space is a vector space equipped with the notion of an inner product function. This allows us to capture the notion of _angles_ between vectors. The immediate consequence of note is that we can define a set of orthonormal basis vectors for any vector space equipped with an inner product.
 [^quantum]: Interestingly, these restrictions suffice for the purposes of quantum computation and quantum information theory. Proving the above equivalence in full generality is not straightforward (at least for me). We will prove the general version of the above equivalence shortly.
 [^charpoly]: The characteristic polynomial of an $n\times n$ matrix $M$ is $p(M) = det(M - \lambda\cdot I_{n\times n})$.
+[^factor]: This is known as the [Factor Theorem of polynomials](https://en.wikipedia.org/wiki/Factor_theorem).
