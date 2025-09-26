@@ -69,21 +69,39 @@ Hence, the characteristic polynomial is invariant due to change of basis. This i
 
 > We note that the above arguments can also be used to show that the Determinant is invariant under basis change. We now leave a small exercise for the reader to verify: Given a bounded linear operator, it has $n+1$ invariant properties (including the trace and determinant).
 
-## Trace via Jordan Forms
+## A fourth definition of Trace via the Jordan Normal Form
 
 Since the characteristic polynomial of a bounded operator is invariant under basis change, we consider it to be a canonical representation of the operator. A different way of proving that the trace of a bounded operator is invariant under basis change, is to define the trace via a different canonical/basis-independent representation of linear operators: The **Jordan normal form**.
 
-Let $A:V\mapsto V$ be a linear operator on a finite dimensional vector space $V$ over a field $\mathbb{F}$, s.t. all eigenvalues of $A$ lie in $\mathbb{F}$. Let the eigenvalues of $A$ along with their algebraic multiplicity be denoted by $\\{\lambda_i, m_i\\}$. The Jordan normal form of $A$ is denoted as $J_A$, and it is a block diagonal matrix as follows:
+> Note that this view gives us a definition that allows us to understand why trace is the **sum of the eigenvalues counted along with algebraic multiplicities**.
 
-$$ J_A = \begin{bmatrix} B_1 \& 0\&\ldots \&0 \\\ 0\& B_2\&\ldots \&0 \\\ 0\&\ddots\&\ddots\& 0 \\\ 0\&\ldots\&\ldots\& B_k\end{bmatrix},$$
+Let $A:V\mapsto V$ be a linear operator on a finite dimensional vector space $V$ over a field $\mathbb{F}$, s.t. all eigenvalues of $A$ lie in $\mathbb{F}$.[^algclosure] Let the eigenvalues of $A$ along with their algebraic multiplicity be denoted by $\\{\lambda_i, m_i\\}$. The Jordan normal form of $A$ is denoted as $J_A$, and it is a block diagonal matrix as follows:
 
-where each block $B_i$ is an upper-triangular matrix of dimension $m_i\times m_i$, with the diagonal entries each being $\lambda_i$ and every super-diagonal entry (corresponding to the coordinates $(i,i+1)$) being $1$.[^block] We denote the $i$th block of the Jordan matrix below, where we assume that $\lambda_i$ has algebraic multiplicity $3$.
+$$ J*A = \begin{bmatrix} B*{\lambda*1,m1} \& 0\&\ldots \&0 \\\ 0\& B*{\lambda*2,m_2}\&\ldots \&0 \\\ 0\&\ddots\&\ddots\& 0 \\\ 0\&\ldots\&\ldots\& B*{\lambda_k,m_k}\end{bmatrix},$$
 
-$$ B_i = \begin{bmatrix}\lambda_i\& 1\& 0 \\\ 0\&\lambda_i\& 1 \\\ 0\&0\&\lambda_i\end{bmatrix}.$$
+where each block $B_{\lambda_i,m_i}$ is an upper-triangular matrix of dimension $m_i\times m_i$, with the diagonal entries each being $\lambda_i$ and every super-diagonal entry (corresponding to the coordinates $(i,i+1)$) being $1$.[^block] We denote the $i$th block of the Jordan matrix below, where we assume that $\lambda_i=\lambda$ and $m_i=3$.
 
-We now state the following theorem without proof.
+$$ B\_{\lambda,3} = \begin{bmatrix}\lambda\& 1\& 0 \\\ 0\&\lambda\& 1 \\\ 0\&0\&\lambda\end{bmatrix}.$$
 
-> Every square matrix over an algebraically closed field has a Jordan form.[^answer]
+---
+
+> **Digression on Jordan Blocks**
+
+Note that $B_{\lambda,3} e_1 = \lambda e_1$, $B_{\lambda,3} e_2 = e_1+\lambda e_2$, and $B_{\lambda,3} e_3 = e_2+\lambda e_3$. Let $B_\lambda=B_{\lambda,3}-\lambda\cdot I$. This gives us $B_{\lambda} e_1 = 0$, implying that $e_1$ is an eigenvector of $B_{\lambda,3}$ with eigenvalue $\lambda$ (recall [^charpoly]), along with the following relations on $e_2$ and $e_3$.
+
+$$B_{\lambda} e_2 = e_1\,\implies {\big(B_{\lambda}\big)}^2 e_2=0\,,$$
+
+$$B_{\lambda} e_3 = e_2\,\implies {\big(B_{\lambda}\big)}^3 e_3=0\,.$$
+
+We denote $e_2$ and $e_3$ as _generalized eigenvectors_ of $B_{\lambda,3}$. One can similarly extend the above argument to any $B_{\lambda_i,m_i}$ to obtain a set of generalized eigenvectors $\\{e_1,\ldots,e_{m_i}\\}$. Note that the set of generalized eigenvectors is independent. This indicates that there is a basis of generalized eigenvectos that spans the subspace on which $B_{\lambda_i,m_i}$ is an operator.[^block]
+
+> The characteristic polynomial tells us the eigenvalues and the dimension of each generalized eigenspace, which is the algebraic multiplicity of the eigenvalue in the Jordan form.
+
+---
+
+We now state the following theorems without proof.
+
+> Every square matrix over an algebraically closed field[^algclosure] is similar to matrix in Jordan normal form, i.e., for every $A$, $\exists S$ s.t. $J=S^{-1}\cdot A\cdot S$ is in Jordan normal form.[^answer]
 
 It turns out that every matrix representation of $A$ is similar to the Jordan Normal Form of $A$.[^jnf] Since we have already seen that the characteristic polynomial of $A$ remains invariant under similarity transformations, we can focus on defining the trace solely via Jordan Normal Forms.
 
@@ -119,4 +137,5 @@ Unlike the determinant, however, it is not immediately clear to us what the phys
 [^factor]: This is known as the [Factor Theorem of polynomials](https://en.wikipedia.org/wiki/Factor_theorem).
 [^jnf]: Let $A=P\cdot J_A \cdot P^{-1}$ and $C=Q\cdot A \cdot Q^{-1}$. Then, $C=T\cdot J_A \cdot T^{-1}$, where $T=QP^{-1}$ is an invertible (change of basis matrix). Hence, $C$ is similar to $J_A$. Also by definition, $J_A$ is the JNF of $C$.
 [^answer]: [An elegant proof of the theorem.](https://math.stackexchange.com/a/4901247/120548)
-[^block]: We note that each block $B_i$ of the JNF of a bounded linear operator $A:V\mapsto V$ represents the eigenspace of $A$ corresponding to the eigenvalue $\lambda_i$. If one is familiar with tensor operations, $V = \otimes_{i=1}^{k} B_i$.
+[^block]: We note that each block $B_{\lambda_i,m_i}$ of the JNF of a bounded linear operator $A:V\mapsto V$ represents the generalized eigenspace of $A$ corresponding to the eigenvalue $\lambda_i$. If one is familiar with tensor operations, $V = \otimes_{i=1}^{k} B_{\lambda_i,m_i}$.
+[^algclosure]: If $\mathbb{F}$ is not algebraically closed, i.e., if the eigenvalues of the operator do not belong to $\mathbb{F}$, we can first extend $\mathbb{F}$ to an algebraically closed field (for example, extending $\mathbb{R}$ to $\mathbb{C}$), and then considering the Jordan normal form of the operator, now considered as a matrix whose entries come from this algebraically closed field.
