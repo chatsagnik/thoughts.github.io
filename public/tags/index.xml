@@ -2,141 +2,141 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Theoretickles</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://theoretickles.netlify.app/tags/</link>
     <description>Recent content in Tags on Theoretickles</description>
     <image>
       <title>Theoretickles</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://theoretickles.netlify.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 08 Mar 2025 12:03:46 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://theoretickles.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear Algebra</title>
-      <link>http://localhost:1313/tags/linear-algebra/</link>
+      <link>https://theoretickles.netlify.app/tags/linear-algebra/</link>
       <pubDate>Sat, 08 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/linear-algebra/</guid>
+      <guid>https://theoretickles.netlify.app/tags/linear-algebra/</guid>
       <description></description>
     </item>
     <item>
       <title>Matrix Analysis</title>
-      <link>http://localhost:1313/tags/matrix-analysis/</link>
+      <link>https://theoretickles.netlify.app/tags/matrix-analysis/</link>
       <pubDate>Sat, 08 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/matrix-analysis/</guid>
+      <guid>https://theoretickles.netlify.app/tags/matrix-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Quantum Computing</title>
-      <link>http://localhost:1313/tags/quantum-computing/</link>
+      <link>https://theoretickles.netlify.app/tags/quantum-computing/</link>
       <pubDate>Sat, 08 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/quantum-computing/</guid>
+      <guid>https://theoretickles.netlify.app/tags/quantum-computing/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding Theory</title>
-      <link>http://localhost:1313/tags/coding-theory/</link>
+      <link>https://theoretickles.netlify.app/tags/coding-theory/</link>
       <pubDate>Sat, 01 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/coding-theory/</guid>
+      <guid>https://theoretickles.netlify.app/tags/coding-theory/</guid>
       <description></description>
     </item>
     <item>
       <title>Cryptography</title>
-      <link>http://localhost:1313/tags/cryptography/</link>
+      <link>https://theoretickles.netlify.app/tags/cryptography/</link>
       <pubDate>Sat, 01 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/cryptography/</guid>
+      <guid>https://theoretickles.netlify.app/tags/cryptography/</guid>
       <description></description>
     </item>
     <item>
       <title>Lattices</title>
-      <link>http://localhost:1313/tags/lattices/</link>
+      <link>https://theoretickles.netlify.app/tags/lattices/</link>
       <pubDate>Sat, 01 Mar 2025 12:03:46 +0530</pubDate>
-      <guid>http://localhost:1313/tags/lattices/</guid>
+      <guid>https://theoretickles.netlify.app/tags/lattices/</guid>
       <description></description>
     </item>
     <item>
       <title>Eth</title>
-      <link>http://localhost:1313/tags/eth/</link>
+      <link>https://theoretickles.netlify.app/tags/eth/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/eth/</guid>
+      <guid>https://theoretickles.netlify.app/tags/eth/</guid>
       <description></description>
     </item>
     <item>
       <title>Factoring</title>
-      <link>http://localhost:1313/tags/factoring/</link>
+      <link>https://theoretickles.netlify.app/tags/factoring/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/factoring/</guid>
+      <guid>https://theoretickles.netlify.app/tags/factoring/</guid>
       <description></description>
     </item>
     <item>
       <title>P-Np</title>
-      <link>http://localhost:1313/tags/p-np/</link>
+      <link>https://theoretickles.netlify.app/tags/p-np/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/p-np/</guid>
+      <guid>https://theoretickles.netlify.app/tags/p-np/</guid>
       <description></description>
     </item>
     <item>
       <title>Primality</title>
-      <link>http://localhost:1313/tags/primality/</link>
+      <link>https://theoretickles.netlify.app/tags/primality/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/primality/</guid>
+      <guid>https://theoretickles.netlify.app/tags/primality/</guid>
       <description></description>
     </item>
     <item>
       <title>Reductions</title>
-      <link>http://localhost:1313/tags/reductions/</link>
+      <link>https://theoretickles.netlify.app/tags/reductions/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/reductions/</guid>
+      <guid>https://theoretickles.netlify.app/tags/reductions/</guid>
       <description></description>
     </item>
     <item>
       <title>Search-to-Decision</title>
-      <link>http://localhost:1313/tags/search-to-decision/</link>
+      <link>https://theoretickles.netlify.app/tags/search-to-decision/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/search-to-decision/</guid>
+      <guid>https://theoretickles.netlify.app/tags/search-to-decision/</guid>
       <description></description>
     </item>
     <item>
       <title>Self-Reducibility</title>
-      <link>http://localhost:1313/tags/self-reducibility/</link>
+      <link>https://theoretickles.netlify.app/tags/self-reducibility/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/self-reducibility/</guid>
+      <guid>https://theoretickles.netlify.app/tags/self-reducibility/</guid>
       <description></description>
     </item>
     <item>
       <title>TFNP</title>
-      <link>http://localhost:1313/tags/tfnp/</link>
+      <link>https://theoretickles.netlify.app/tags/tfnp/</link>
       <pubDate>Sat, 08 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/tfnp/</guid>
+      <guid>https://theoretickles.netlify.app/tags/tfnp/</guid>
       <description></description>
     </item>
     <item>
       <title>CLIQUE</title>
-      <link>http://localhost:1313/tags/clique/</link>
+      <link>https://theoretickles.netlify.app/tags/clique/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/clique/</guid>
+      <guid>https://theoretickles.netlify.app/tags/clique/</guid>
       <description></description>
     </item>
     <item>
       <title>SAT</title>
-      <link>http://localhost:1313/tags/sat/</link>
+      <link>https://theoretickles.netlify.app/tags/sat/</link>
       <pubDate>Sat, 01 Feb 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sat/</guid>
+      <guid>https://theoretickles.netlify.app/tags/sat/</guid>
       <description></description>
     </item>
     <item>
       <title>Halting Problem</title>
-      <link>http://localhost:1313/tags/halting-problem/</link>
+      <link>https://theoretickles.netlify.app/tags/halting-problem/</link>
       <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/halting-problem/</guid>
+      <guid>https://theoretickles.netlify.app/tags/halting-problem/</guid>
       <description></description>
     </item>
     <item>
       <title>Undecidability</title>
-      <link>http://localhost:1313/tags/undecidability/</link>
+      <link>https://theoretickles.netlify.app/tags/undecidability/</link>
       <pubDate>Wed, 01 Jan 2025 11:51:18 +0530</pubDate>
-      <guid>http://localhost:1313/tags/undecidability/</guid>
+      <guid>https://theoretickles.netlify.app/tags/undecidability/</guid>
       <description></description>
     </item>
   </channel>

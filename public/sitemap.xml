@@ -2,104 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/drafts/</loc>
+    <loc>https://theoretickles.netlify.app/posts/</loc>
+    <lastmod>2025-12-07T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/</loc>
+    <lastmod>2025-12-07T12:03:46+05:30</lastmod>
+  </url><url>
+    <loc>https://theoretickles.netlify.app/drafts/</loc>
     <lastmod>2025-09-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-01T12:03:46+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://theoretickles.netlify.app/categories/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linear-algebra/</loc>
+    <loc>https://theoretickles.netlify.app/tags/linear-algebra/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/math/</loc>
+    <loc>https://theoretickles.netlify.app/categories/math/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/matrix-analysis/</loc>
+    <loc>https://theoretickles.netlify.app/tags/matrix-analysis/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://theoretickles.netlify.app/tags/quantum-computing/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/quantum-computing/</loc>
+    <loc>https://theoretickles.netlify.app/tags/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://theoretickles.netlify.app/posts/trace/</loc>
     <lastmod>2025-03-08T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/trace/</loc>
-    <lastmod>2025-03-08T12:03:46+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/qary/</loc>
+    <loc>https://theoretickles.netlify.app/posts/qary/</loc>
     <lastmod>2025-03-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/coding-theory/</loc>
+    <loc>https://theoretickles.netlify.app/tags/coding-theory/</loc>
     <lastmod>2025-03-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/cryptography/</loc>
+    <loc>https://theoretickles.netlify.app/categories/cryptography/</loc>
     <lastmod>2025-03-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cryptography/</loc>
+    <loc>https://theoretickles.netlify.app/tags/cryptography/</loc>
     <lastmod>2025-03-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lattices/</loc>
+    <loc>https://theoretickles.netlify.app/tags/lattices/</loc>
     <lastmod>2025-03-01T12:03:46+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/complexity/</loc>
+    <loc>https://theoretickles.netlify.app/categories/complexity/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/eth/</loc>
+    <loc>https://theoretickles.netlify.app/tags/eth/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/factoring/</loc>
+    <loc>https://theoretickles.netlify.app/tags/factoring/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/p-np/</loc>
+    <loc>https://theoretickles.netlify.app/tags/p-np/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/primality/</loc>
+    <loc>https://theoretickles.netlify.app/tags/primality/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reductions/</loc>
+    <loc>https://theoretickles.netlify.app/tags/reductions/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/search-to-decision/</loc>
+    <loc>https://theoretickles.netlify.app/tags/search-to-decision/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/self-reducibility/</loc>
+    <loc>https://theoretickles.netlify.app/tags/self-reducibility/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/srcontinued/</loc>
+    <loc>https://theoretickles.netlify.app/posts/srcontinued/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tfnp/</loc>
+    <loc>https://theoretickles.netlify.app/tags/tfnp/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/toc/</loc>
+    <loc>https://theoretickles.netlify.app/categories/toc/</loc>
     <lastmod>2025-02-08T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clique/</loc>
+    <loc>https://theoretickles.netlify.app/tags/clique/</loc>
     <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sat/</loc>
+    <loc>https://theoretickles.netlify.app/tags/sat/</loc>
     <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/selfreductions/</loc>
+    <loc>https://theoretickles.netlify.app/posts/selfreductions/</loc>
     <lastmod>2025-02-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/reductions/</loc>
+    <loc>https://theoretickles.netlify.app/posts/reductions/</loc>
     <lastmod>2025-01-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/halting-problem/</loc>
+    <loc>https://theoretickles.netlify.app/tags/halting-problem/</loc>
     <lastmod>2025-01-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/undecidability/</loc>
+    <loc>https://theoretickles.netlify.app/tags/undecidability/</loc>
     <lastmod>2025-01-01T11:51:18+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://theoretickles.netlify.app/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://theoretickles.netlify.app/search/</loc>
   </url>
 </urlset>
