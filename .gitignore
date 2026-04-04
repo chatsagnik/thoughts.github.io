@@ -7,3 +7,4 @@ content/posts/.obsidian/workspace.json
 *.json
 .obsidian/
 templates/
+.claude/worktrees/elegant-sammet/
